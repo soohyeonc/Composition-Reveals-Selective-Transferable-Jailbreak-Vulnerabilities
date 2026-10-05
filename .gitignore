@@ -1,0 +1,19 @@
+# Local inference outputs and regenerated figures
+/outputs/
+*.sqlite3
+*.sqlite3-wal
+*.sqlite3-shm
+
+# Credentials and machine-local configuration
+.env
+.env.*
+credentials.ini
+openAI.txt
+
+# Python and editor caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+.DS_Store
+.vscode/

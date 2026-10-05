@@ -1,0 +1,2539 @@
+{
+  "release_manifest_sha256": "cbebecf079f80091a1a7d4e61765fc74bfc78de6439cde49d7190daa404b2004",
+  "sources": [
+    {
+      "phase": "discovery",
+      "run": "luna",
+      "sha256": "380efbcde82516ff1b1a4d62b47af7e56bedb5a753f1a5eeb924239362aac050",
+      "source_artifact_id": "source-2fef43e19e32e6e1"
+    },
+    {
+      "phase": "stability",
+      "run": "luna_run1",
+      "sha256": "c3076310a95f42071b2fb706d45f6ae7e9a17f7b338abb041f072642267d6083",
+      "source_artifact_id": "source-6497abe2f6c86753"
+    },
+    {
+      "phase": "stability",
+      "run": "luna_run2",
+      "sha256": "a2c52f3c58314b16973704ecd9a0717a3c9581cf89192bf14f5279599a8ec374",
+      "source_artifact_id": "source-82110dd429fa3bd4"
+    },
+    {
+      "phase": "stability",
+      "run": "luna_run3",
+      "sha256": "cac7699546512b89205296cd77b75833546b948c439b9f1b46546a9bb8c57fc5",
+      "source_artifact_id": "source-067b3bf06640c41e"
+    },
+    {
+      "phase": "stability",
+      "run": "luna_run4",
+      "sha256": "f271e85e699b19fcabc8010af5dc98df816bff014408f05995f054f82bbd0c75",
+      "source_artifact_id": "source-795f14945e911e8f"
+    },
+    {
+      "phase": "stability",
+      "run": "luna_run5",
+      "sha256": "e4159268c63e60ce6a82db02acc9a2974d453eacf20ac91677599def963007c3",
+      "source_artifact_id": "source-9aa882de6b535f68"
+    },
+    {
+      "phase": "discovery",
+      "run": "r1",
+      "sha256": "1e427abcd22e5232ad917e33ad22cb58a873910d817df7421b4413ceae7d4805",
+      "source_artifact_id": "source-a94edf7c141d14fe"
+    },
+    {
+      "phase": "stability",
+      "run": "r1_run1",
+      "sha256": "197acfc0fa50659e5f29bb04969e66055db442d1178bbb84d8f41bacd52e74ea",
+      "source_artifact_id": "source-0563d6659c84f470"
+    },
+    {
+      "phase": "stability",
+      "run": "r1_run2",
+      "sha256": "882e1225b06bb6af2f8f040fcd82e6f00cb847eeacfeb46e419e8285551ea7cd",
+      "source_artifact_id": "source-114a983346650c19"
+    },
+    {
+      "phase": "stability",
+      "run": "r1_run3",
+      "sha256": "428de545d092ad14a99a150a8b1c353ed0bfb280b0ed4f29da14041bc50bed77",
+      "source_artifact_id": "source-cfd41f38af95e4f2"
+    },
+    {
+      "phase": "stability",
+      "run": "r1_run4",
+      "sha256": "99ddc11c716bb5c07cbc8e80ad0a49de246552a9d391f53dac1ca4820437dff1",
+      "source_artifact_id": "source-ca57a36fc03caa56"
+    },
+    {
+      "phase": "stability",
+      "run": "r1_run5",
+      "sha256": "082e303615b7c7df6767e8a31820befca370501176ff19e7cdb746a39c2dedd9",
+      "source_artifact_id": "source-58198196096ec9c1"
+    },
+    {
+      "phase": "discovery",
+      "run": "gemma",
+      "sha256": "7c1042a827f25b6f997872d9675f46c42159460a32b35b6c0b39df75aa8c808b",
+      "source_artifact_id": "source-a21a3e78d3f7998a"
+    },
+    {
+      "phase": "stability",
+      "run": "gemma_run1",
+      "sha256": "8467af25e8e9e559718259b01bbfc98ddec747747a09de104eb875af24a46f1b",
+      "source_artifact_id": "source-46f6c05287e257c0"
+    },
+    {
+      "phase": "stability",
+      "run": "gemma_run2",
+      "sha256": "d600b8476b3e36316a2aaeaaafa21cf219e02016218822ad838821dd450e5135",
+      "source_artifact_id": "source-57c7b98d86e633b1"
+    },
+    {
+      "phase": "stability",
+      "run": "gemma_run3",
+      "sha256": "b77410a7b1a365f4af101150fe4688621c16f6bd4bd27c17f3532619c129abbb",
+      "source_artifact_id": "source-f93583ab1643ff75"
+    },
+    {
+      "phase": "stability",
+      "run": "gemma_run4",
+      "sha256": "e4f3fc01f759eda95f3a14ddc20c39f7d32649be9114f69b77a38552761686e3",
+      "source_artifact_id": "source-cccc2b23984d5b3b"
+    },
+    {
+      "phase": "stability",
+      "run": "gemma_run5",
+      "sha256": "af87f1e937dfbbdd22a118d6f92ac64bb334dbfd3a84d42554fa7221e1b5f15d",
+      "source_artifact_id": "source-0ccfc27c917a7098"
+    },
+    {
+      "phase": "discovery",
+      "run": "qwen",
+      "sha256": "7cd34a48252cd2ef578d0db1bf1108764bb9b5822a476b864313de2e5c366bac",
+      "source_artifact_id": "source-6f47fe1274dc46d9"
+    },
+    {
+      "phase": "stability",
+      "run": "qwen_run1",
+      "sha256": "de808d9627eb8169df8a3b427139fda1976bb9b0bbe9c46d1d598a68c96b02b6",
+      "source_artifact_id": "source-e4edf19e0b67f921"
+    },
+    {
+      "phase": "stability",
+      "run": "qwen_run2",
+      "sha256": "3407c3ea6ade1f093342532541ed884d2e37125967710575a0ee49c5fcc3f3d0",
+      "source_artifact_id": "source-2145096f9c90da3d"
+    },
+    {
+      "phase": "stability",
+      "run": "qwen_run3",
+      "sha256": "3139e31d801ea8770c3fd9e701080d1eb9b9f4b301a29f22ce188d0b33a00e06",
+      "source_artifact_id": "source-30435c310a256a1b"
+    },
+    {
+      "phase": "stability",
+      "run": "qwen_run4",
+      "sha256": "ad5004afe07f38257f93c2096fff225aadf5be249359dc96daa362fd34257ac7",
+      "source_artifact_id": "source-f52d021275c1d1c3"
+    },
+    {
+      "phase": "stability",
+      "run": "qwen_run5",
+      "sha256": "a8bfb97afb0ee49a7a04251e7b4d55c3f25dc47ea524ef46016f22056dc30144",
+      "source_artifact_id": "source-acdbd29ac5e70b50"
+    },
+    {
+      "kind": "writer_pilot",
+      "sha256": "f9f9056fc316da910375ab20c37a26cfb55fc90701f749a9dc191c399bd57ab3"
+    }
+  ],
+  "historical_mutation_sources": [
+    {
+      "batch": "A",
+      "mutator_1": "ea-encryption",
+      "mutator_2": "ea-fictional",
+      "sha256": "f11e08f2fa0b805167b93cec85e03303e1ae87795568bd9d3dc3aefb46ea1c8d"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "ea-encryption",
+      "mutator_2": "ea-fictional",
+      "sha256": "15dc208761444df9c2bbd642ddf70e9e0b114f2b2dacc6e800773e28901a4b92"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "ea-encryption",
+      "mutator_2": "ea-fictional",
+      "sha256": "5a67853c427d016204c42417108bec7ac7b1094df121d906c154af7ee8114fed"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "ea-encryption",
+      "mutator_2": "ea-obfuscation",
+      "sha256": "b155a9ace8b59fded42ebe220b692a7846c589f080a1598ddc297fc7a407bb36"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "ea-encryption",
+      "mutator_2": "ea-obfuscation",
+      "sha256": "835c447e87fe63fdfc4d694feaed5c9ee971844d791251f1337d6a30808383f9"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "ea-encryption",
+      "mutator_2": "ea-obfuscation",
+      "sha256": "52c0c0708493cb75267ca5b66964dc4fd9a35b30bdc96d6d679e62c602130702"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "ea-encryption",
+      "mutator_2": "ea-paraphrasing",
+      "sha256": "8d470e7fc79cc15364c052fde1591268f974434c3352e476015a56f40a0def75"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "ea-encryption",
+      "mutator_2": "ea-paraphrasing",
+      "sha256": "f82cf8b07309715d4871c1bed92e5dc07e5cd5f66cd449a24529a1f3428db588"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "ea-encryption",
+      "mutator_2": "ea-paraphrasing",
+      "sha256": "f09f5eafae50274fa431dea030a9d86556d24240f1461bf6942daeb6bd8d933c"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "ea-encryption",
+      "mutator_2": "ea-translation",
+      "sha256": "2e542093ea492666ae479d96ce5afe50526e19e29e9ea73211f68313e1969e35"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "ea-encryption",
+      "mutator_2": "ea-translation",
+      "sha256": "7857c78ea7b916d32b8e1f94344f34e02b47921b68781eb0ce602f752cee1407"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "ea-encryption",
+      "mutator_2": "ea-translation",
+      "sha256": "b7c522d673fbb8842fdcd2dc2a8a47da4c23e68b222b45ed7e6bb5de6f74eea7"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "ea-encryption",
+      "mutator_2": "mm-cognitive-hacking",
+      "sha256": "1716977824b70492dccdb7f67bb8e1c8f7ed28931044181605c14353c66a7e9f"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "ea-encryption",
+      "mutator_2": "mm-cognitive-hacking",
+      "sha256": "88984936099db6ec44acc03fb68a000b752b7d2ec05d94933a2191db52585ac7"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "ea-encryption",
+      "mutator_2": "mm-cognitive-hacking",
+      "sha256": "7ea04b8fdc38d5fbc82a453cf5464824eb35ac0f321cc3a329b9fbd0a436080b"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "ea-encryption",
+      "mutator_2": "mm-forced-completion",
+      "sha256": "fb091d26b21fd8865765f8fd19c24bfce10103381bd53b4a15712b8acc3c8096"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "ea-encryption",
+      "mutator_2": "mm-forced-completion",
+      "sha256": "eaf5fa7782a9f0e387d88bcbe6e05303623dc73cc17dadce0ff3b1b3d99d3b22"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "ea-encryption",
+      "mutator_2": "mm-forced-completion",
+      "sha256": "4372b2719ada6d7acb5bf62903a4b003c98e8eaf13635601770d6cba9b7611ab"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "ea-encryption",
+      "mutator_2": "mm-gaslighting",
+      "sha256": "44ad6d2c3f20bfe1b82e007c7e697196e8987555afc0a942dfce5c7c08b9d390"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "ea-encryption",
+      "mutator_2": "mm-gaslighting",
+      "sha256": "961a168df4f41d4594d2825f6e73cc3119c8df09db6ac84776040228933d59a8"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "ea-encryption",
+      "mutator_2": "mm-gaslighting",
+      "sha256": "86d14a86763a56b2a9f817a86eb61aff468702faa967c62a065aa72ffe1ea7e8"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "ea-encryption",
+      "mutator_2": "mm-nshot-hacking",
+      "sha256": "3c566c0acc3855d5cf4944ab403105ec3b4e8a719d45d2580d522d94515a6e3d"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "ea-encryption",
+      "mutator_2": "mm-nshot-hacking",
+      "sha256": "c0d43d417b36041cdc6ef61546f491b2f4fcbdb6007c34ce507732253f8d7651"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "ea-encryption",
+      "mutator_2": "mm-nshot-hacking",
+      "sha256": "049403810ca0030144093a4db34317c53051f51982fe4d643679bbce8f03deb6"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "ea-encryption",
+      "mutator_2": "mm-privilege-escalation",
+      "sha256": "ce345f4ec8925f07e682aa9f9c1c9398cd3ebba6555af39887a5b0e27dff6cb7"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "ea-encryption",
+      "mutator_2": "mm-privilege-escalation",
+      "sha256": "fe413d18c56922501b5cbee5cca06eacd08ac7027d5ccb794539a3ab7a9963cb"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "ea-encryption",
+      "mutator_2": "mm-privilege-escalation",
+      "sha256": "4106a1b372fae753a9098222729157fb3b2f53295d9f00d0600966ef118d5c42"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "ea-encryption",
+      "mutator_2": "mm-prompt-injection",
+      "sha256": "b4075a377400dfc10cc45e6a02b3ed0ce65f54e54104be5537db1c7509646ea0"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "ea-encryption",
+      "mutator_2": "mm-prompt-injection",
+      "sha256": "20d4c3f649dc439abfe58d41b3358f0879aa8972e40797f57d2102eefe86cf64"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "ea-encryption",
+      "mutator_2": "mm-prompt-injection",
+      "sha256": "11b98a79f419c10166de7b8e1b66c76b6ffb6447411a52ddd7bf11dc22416786"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "ea-encryption",
+      "mutator_2": "mm-roleplay",
+      "sha256": "8d654bb33d35a1502bd0d320b3b8e23424c0f857d2b999c9e92b180669c5fce9"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "ea-encryption",
+      "mutator_2": "mm-roleplay",
+      "sha256": "fea871ce5a9618265f674f7bab7e31f96141f2d8729b48bfce559b1e8b0d9624"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "ea-encryption",
+      "mutator_2": "mm-roleplay",
+      "sha256": "83cbee29da802be18bfd0d7e143400fbf8197f12310a9b643edb6328fd18dac3"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "ea-fictional",
+      "mutator_2": "ea-encryption",
+      "sha256": "d39d9de916d6c39c0df5453c3f675858cdc929dd4a9cd10a3e2f56a382381129"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "ea-fictional",
+      "mutator_2": "ea-encryption",
+      "sha256": "c845fec18ee5f6c83071e280e47f776d0a1ee2038e54827c2050c311323b937a"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "ea-fictional",
+      "mutator_2": "ea-encryption",
+      "sha256": "f999529a8b9f22bbfbd1690b9abcff060ef5be46ed21e5dd1db800d6bb0b7166"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "ea-fictional",
+      "mutator_2": "ea-obfuscation",
+      "sha256": "33df4917b0fc513c70d23669fa832fbfcfbd7929cf80626796ee43afaa23028a"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "ea-fictional",
+      "mutator_2": "ea-obfuscation",
+      "sha256": "b0b06d33f14c6c29ed375bfddf588d00c5bfafb9281303e75554dcefdd6001b0"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "ea-fictional",
+      "mutator_2": "ea-obfuscation",
+      "sha256": "53e1f46f903f588b083ae6f4d9c1519e50cf7dfa3c9bfb7d6eb8aefb20cf01f5"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "ea-fictional",
+      "mutator_2": "ea-paraphrasing",
+      "sha256": "b6f8dd6cfc2cd45c2893a2ad779639ee721b0630f7d7fdfebc12015fd5f7e3ef"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "ea-fictional",
+      "mutator_2": "ea-paraphrasing",
+      "sha256": "4b4e049a1cb7cee5aeffc850b4f2fbc9bc5fd7127e02b4359708a448cabc8fbe"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "ea-fictional",
+      "mutator_2": "ea-paraphrasing",
+      "sha256": "423e49a13d32af0a2d6255a89eafb65839d6782cdf8995a98fde4f4f35956e22"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "ea-fictional",
+      "mutator_2": "ea-translation",
+      "sha256": "8989213b8a479a3524823e36a4bb7ac0f31ea91de66ad0bd7a8acdd0258ca71d"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "ea-fictional",
+      "mutator_2": "ea-translation",
+      "sha256": "3ac81880bb8088e7ccbbd89713629f6e915311eea735c8de9a638cf18d0206ee"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "ea-fictional",
+      "mutator_2": "ea-translation",
+      "sha256": "93e0742b898223e3a928bc0af9a747f3bf5529e8e71cb582bc9a8439762099c7"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "ea-fictional",
+      "mutator_2": "mm-cognitive-hacking",
+      "sha256": "796b7e7d3187fb08a8cdbff153febcc6094574bc44670109c7602b14a766544c"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "ea-fictional",
+      "mutator_2": "mm-cognitive-hacking",
+      "sha256": "3ee2ec1fd1a321c8b0ac7c5becf09031a3509d19cc9ff8e679a8cec4131b4a9a"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "ea-fictional",
+      "mutator_2": "mm-cognitive-hacking",
+      "sha256": "6136eee706765be835c9c58d0c70c30b4454a63f26cb6bf22e163d1cc8541368"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "ea-fictional",
+      "mutator_2": "mm-forced-completion",
+      "sha256": "de8bc990a4597719230cce9b967c6df8724d872ca913060848f645b3d7cf9184"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "ea-fictional",
+      "mutator_2": "mm-forced-completion",
+      "sha256": "a7851b0f5123b118987a684b7f9b1f6ae52139d50eca5502162ecf78dc3186e3"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "ea-fictional",
+      "mutator_2": "mm-forced-completion",
+      "sha256": "accea6adb318b0d1e0f79a9047d18744c66f7c4145c8fd8c9d00fb00d2c5c55c"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "ea-fictional",
+      "mutator_2": "mm-gaslighting",
+      "sha256": "910f70fce394d03a583a28df92eaf49a6b336afc938e2a4cd67f42752b2796c8"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "ea-fictional",
+      "mutator_2": "mm-gaslighting",
+      "sha256": "1d0d0062aa89686511417c033babfe07af59b950ae68b638c78ff05a5cbf37e6"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "ea-fictional",
+      "mutator_2": "mm-gaslighting",
+      "sha256": "7e9f704f3f4a31b9395653173d6c257ea85f3bd3679e307441055b04b41c2a76"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "ea-fictional",
+      "mutator_2": "mm-nshot-hacking",
+      "sha256": "542eb0222a6b9be8be4f72833b085499a05928107a33cf8652369c5c2505e6b2"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "ea-fictional",
+      "mutator_2": "mm-nshot-hacking",
+      "sha256": "f7b79ea481747343d75058bc3be57e1d273fc9824e33ed2c8864d8178913ee01"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "ea-fictional",
+      "mutator_2": "mm-nshot-hacking",
+      "sha256": "440066d9b23a61e22fe4c0a9165e27a7f70e571b8e8a63a82318e7dac11eec34"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "ea-fictional",
+      "mutator_2": "mm-privilege-escalation",
+      "sha256": "971b4b2f000e10b448fc6bfb6af0c858f29b40d11e543f1217e0ec8eef005955"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "ea-fictional",
+      "mutator_2": "mm-privilege-escalation",
+      "sha256": "3c080d64ba333725a4bb5ce9dce510a754c2cc981de2138f20febb3c3e5c5dfa"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "ea-fictional",
+      "mutator_2": "mm-privilege-escalation",
+      "sha256": "d1c8662c2e7d0c16ea8cc75787b8b9646e4e0151867f4539add733aea545deae"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "ea-fictional",
+      "mutator_2": "mm-prompt-injection",
+      "sha256": "a49311090371fe5ec831fca475c3c75976df46987085e0e515bb2b6ffc2bc06b"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "ea-fictional",
+      "mutator_2": "mm-prompt-injection",
+      "sha256": "fc1a0af62943e74eadf5fa6661952fef6c872bba820884f6c318abd86cd13c35"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "ea-fictional",
+      "mutator_2": "mm-prompt-injection",
+      "sha256": "f650c04c0bd77c44ca097aabfce1f3da4d5574780effed0978307d9eb221dae5"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "ea-fictional",
+      "mutator_2": "mm-roleplay",
+      "sha256": "b12fb9bd4ad0602a9d436c48442c9ff3a67df74b38abc6520f227e4324a4e639"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "ea-fictional",
+      "mutator_2": "mm-roleplay",
+      "sha256": "8bc2cb716660492bb9f275f69304a085e58d97dd19fc5c0ce32efe07d25b1c43"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "ea-fictional",
+      "mutator_2": "mm-roleplay",
+      "sha256": "9733afda877266f82c362ce705c7e2b8a34c08c520f52282446f6dd9c27adc6d"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "ea-obfuscation",
+      "mutator_2": "ea-encryption",
+      "sha256": "687688ceb00a753dd7c7c4f0ac0fc1a694644e1460e0caa21795f5e775a50df7"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "ea-obfuscation",
+      "mutator_2": "ea-encryption",
+      "sha256": "bcf3b61e0c56276c4dd68139de06a66e7e2e67bbbd878098dda240a64d929732"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "ea-obfuscation",
+      "mutator_2": "ea-encryption",
+      "sha256": "ae2cb3d31cce749367e7be7c470d6a577434bb6c51cdcd14506ac3954a8e74a3"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "ea-obfuscation",
+      "mutator_2": "ea-fictional",
+      "sha256": "96affc1618648499c3948aee960f9b605991eecca42601742f79478e8000bb79"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "ea-obfuscation",
+      "mutator_2": "ea-fictional",
+      "sha256": "fc84add7c1f97ca106ebe2fdcada2cba37008687840dbcb1cfb776afd877cbf3"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "ea-obfuscation",
+      "mutator_2": "ea-fictional",
+      "sha256": "fe03f3d2d49035bed4ee331bee473a3e2c21ada35a3e19ecee7105c7bf74c911"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "ea-obfuscation",
+      "mutator_2": "ea-paraphrasing",
+      "sha256": "984b0488b21a67e11e73097b26ae9f85e391681e5b5bc361b2efc96726173c76"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "ea-obfuscation",
+      "mutator_2": "ea-paraphrasing",
+      "sha256": "1be9de396ec9aad63695522fe37f2123f59636a55e73b6d062433efd68bb9365"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "ea-obfuscation",
+      "mutator_2": "ea-paraphrasing",
+      "sha256": "7b2ffaedf781ed9f65bbbde76327e5114530648077c2ac863583571b1c330092"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "ea-obfuscation",
+      "mutator_2": "ea-translation",
+      "sha256": "492719dc500a19355cfc22870e4b551ce3f8c27047878052a9ea25e1832e0dd0"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "ea-obfuscation",
+      "mutator_2": "ea-translation",
+      "sha256": "2e3dd5f8b3e6119d01f175f3596c23476449840a62fa5015a0092c8be17ab155"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "ea-obfuscation",
+      "mutator_2": "ea-translation",
+      "sha256": "419fdf11f6b6a47d5439b8e04d3d8284c3603bcb96e27f4b8bace1c57c676394"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "ea-obfuscation",
+      "mutator_2": "mm-cognitive-hacking",
+      "sha256": "8b4abc990076f46e1e1c4cb1940312c0ba2d545c7ee266cf214f7152d111cc08"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "ea-obfuscation",
+      "mutator_2": "mm-cognitive-hacking",
+      "sha256": "cb45dc0819317a859ff5e36567fbbb290030b380c13bacab8637e467383ce5ea"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "ea-obfuscation",
+      "mutator_2": "mm-cognitive-hacking",
+      "sha256": "fd4a36b4507e9c4e23eab32aed41a1c91fe85ba2eb3e0961de83a781a6a09d6e"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "ea-obfuscation",
+      "mutator_2": "mm-forced-completion",
+      "sha256": "02e8c63642525bc6559056bb51840cdcc9d953e5a94dae20017fc687d0f7a3fb"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "ea-obfuscation",
+      "mutator_2": "mm-forced-completion",
+      "sha256": "38f0da6b0d5db8084ab812d8d3bfd8503765f2fa7c8a6d634804a653e1bcf064"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "ea-obfuscation",
+      "mutator_2": "mm-forced-completion",
+      "sha256": "6fd6e3f360d706e75001323765e4d12079e7b4a5fae8eee4e6e5da77e294e46c"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "ea-obfuscation",
+      "mutator_2": "mm-gaslighting",
+      "sha256": "e0b1e7226d69d07fbbabf473bdead2fd3d30f0a9c5eb2610448a81264c0afe2e"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "ea-obfuscation",
+      "mutator_2": "mm-gaslighting",
+      "sha256": "9040c70918fdbbbe5333a0c7825c75b16c972130c41d5e604ee9e5d8d55b8f0e"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "ea-obfuscation",
+      "mutator_2": "mm-gaslighting",
+      "sha256": "3ec9485d70e20be24176c054bb8c66d9752f9dcd8549c6e77f97238f505abe6b"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "ea-obfuscation",
+      "mutator_2": "mm-nshot-hacking",
+      "sha256": "f9e44fb1700822a572c8f829b3c05e994308f70e8a2c2e413fd9d5c51e6288da"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "ea-obfuscation",
+      "mutator_2": "mm-nshot-hacking",
+      "sha256": "490bfe59e2d6bcea74b1eb4dd9ad908e64986aa4525595d0351a4283e0fa9d60"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "ea-obfuscation",
+      "mutator_2": "mm-nshot-hacking",
+      "sha256": "388d7f3125bb1166b6fc0638ec8be8d09c3744e05e382648b448773fb2d9ead3"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "ea-obfuscation",
+      "mutator_2": "mm-privilege-escalation",
+      "sha256": "3d833246a00bf6ba6c3bbf3a282d14d5448c457d4c9c6d1b3f755f74ae08b81b"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "ea-obfuscation",
+      "mutator_2": "mm-privilege-escalation",
+      "sha256": "1c1452991922a740ab317c049040fa5f546bc05ed5f0908f4691f93d7be7488f"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "ea-obfuscation",
+      "mutator_2": "mm-privilege-escalation",
+      "sha256": "37f28f2fe2dd6762b6896a6c039491895e0bb004ce799b7c6d5eb647579fc2b4"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "ea-obfuscation",
+      "mutator_2": "mm-prompt-injection",
+      "sha256": "3a525fb8cbd979a9b7a40c2d829e266507298e880e28f94f2aaa3e9d0cfa4b21"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "ea-obfuscation",
+      "mutator_2": "mm-prompt-injection",
+      "sha256": "ca32a98606a2baa690d57a77c6376f905d6c84a38bffa27612018752c3848196"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "ea-obfuscation",
+      "mutator_2": "mm-prompt-injection",
+      "sha256": "4f70ff3a9b3b7cb41658320f77564933ed244ca8afdd1e786e2df2df50c70989"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "ea-obfuscation",
+      "mutator_2": "mm-roleplay",
+      "sha256": "32820c40511dbeaf885aa79cf44e77eca340621330ec4ae771de1b7a451105f2"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "ea-obfuscation",
+      "mutator_2": "mm-roleplay",
+      "sha256": "c449c6ce5d1522786679c7c337c18eff7f2471b880af0a733fe3917d7b771bda"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "ea-obfuscation",
+      "mutator_2": "mm-roleplay",
+      "sha256": "4af5a772de5462728a0a211324a3614572c72f3ccc6e342f78a26ebe3cc22192"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "ea-paraphrasing",
+      "mutator_2": "ea-encryption",
+      "sha256": "2a88986d7d3cfaf79204887e3b1ee9a98bacd43cd5793208f7288fcc378247fa"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "ea-paraphrasing",
+      "mutator_2": "ea-encryption",
+      "sha256": "028a41e88a851d2d9fda338fe07af18af7bf060a83e068c14a2de9f4a0571bf4"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "ea-paraphrasing",
+      "mutator_2": "ea-encryption",
+      "sha256": "7093f4e71a9af4741ae7b18b400bde43399526fea4ed36caa62d0ec264d894c1"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "ea-paraphrasing",
+      "mutator_2": "ea-fictional",
+      "sha256": "198bdb09fdf1bf3f94a1c9221870acee3e979db05693a472cd7bb249326d6da1"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "ea-paraphrasing",
+      "mutator_2": "ea-fictional",
+      "sha256": "3699c3e79c9b8e031b7895f1659219da363e5c36f414beac5fccf8c70bc1f7e3"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "ea-paraphrasing",
+      "mutator_2": "ea-fictional",
+      "sha256": "063e1f1b4db041d4c4a088ab1c264fe67f2799bc97798dc44f0a8ad6103be2d3"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "ea-paraphrasing",
+      "mutator_2": "ea-obfuscation",
+      "sha256": "c8d2a1c316e27d326c3078ad0c316df0e8a6b6bec9d1b668aa320c6d072ac8c3"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "ea-paraphrasing",
+      "mutator_2": "ea-obfuscation",
+      "sha256": "8fe7f398a200064d54c32e61b244e97ecc59403ae6a7c649be20667cd28c1602"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "ea-paraphrasing",
+      "mutator_2": "ea-obfuscation",
+      "sha256": "432ef6c81070d1789d1f34dba5cfeef870ebae4f0a4193e245a0d8dd631146f4"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "ea-paraphrasing",
+      "mutator_2": "ea-translation",
+      "sha256": "792d5021c41dc4b8c9a81f4ac0a449b7f5cb25bf9dae5a9609832d01dbec5ac0"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "ea-paraphrasing",
+      "mutator_2": "ea-translation",
+      "sha256": "f24112b79bc9d56926389270ccd6bc660e39ab96edfdb073537f9251d40c1303"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "ea-paraphrasing",
+      "mutator_2": "ea-translation",
+      "sha256": "5e0d4c20ea133741160f6fdc9aa3a338a18d5c289d2f907de522d85042403221"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "ea-paraphrasing",
+      "mutator_2": "mm-cognitive-hacking",
+      "sha256": "e056cc7b6fbff20d2828e22d95e353dfa0c497c589ba56459affdd4ae23fee77"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "ea-paraphrasing",
+      "mutator_2": "mm-cognitive-hacking",
+      "sha256": "9002f69c5b8d3fc0b0b0cc15046a90d2191748b3df972d6f0a1ca2a8717ee9aa"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "ea-paraphrasing",
+      "mutator_2": "mm-cognitive-hacking",
+      "sha256": "85d2381426952007398a4102530f8dca6a7392587f0d19fe9d8b43e961fd89f0"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "ea-paraphrasing",
+      "mutator_2": "mm-forced-completion",
+      "sha256": "399b00c21c141221157de2a33c8ea8c58b846de10efe1dd139476475978fb019"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "ea-paraphrasing",
+      "mutator_2": "mm-forced-completion",
+      "sha256": "69931eb3d278a7141c3fa3bcf3ff34dcd95ee6c0c72bffac06f7d1d5bce1c8aa"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "ea-paraphrasing",
+      "mutator_2": "mm-forced-completion",
+      "sha256": "7b0cd15b1db10958beef7f2be239b8c05a29b5185d65be5d4f18aab7cc9f4cb0"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "ea-paraphrasing",
+      "mutator_2": "mm-gaslighting",
+      "sha256": "0b31df57f80f7ce3994bfd64ae9c66f80eeb0c04374eaa0bd22aa3fc8360d8e8"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "ea-paraphrasing",
+      "mutator_2": "mm-gaslighting",
+      "sha256": "f4a81c731a0ba0cc548ea6b53d0ff4e9f4586df9ff44ed9e8ec2f1690494d482"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "ea-paraphrasing",
+      "mutator_2": "mm-gaslighting",
+      "sha256": "c8844ae9ad2dd32ec6d17044dc95c604545eeeba1ccd420e462843f8ec64c8d5"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "ea-paraphrasing",
+      "mutator_2": "mm-nshot-hacking",
+      "sha256": "b45481dd69ad1c6fd0e4f08e0af9f5186707f2cc2c2fe152db7e47824e722067"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "ea-paraphrasing",
+      "mutator_2": "mm-nshot-hacking",
+      "sha256": "64095ebe3e33ba47bad6f40a1957819a0ecc24bd4c7ff66355cec10d3b06cc7f"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "ea-paraphrasing",
+      "mutator_2": "mm-nshot-hacking",
+      "sha256": "654f4b5ae9753bb2acf38ba37829b96d58d715db3c343faf83c1645a51227c21"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "ea-paraphrasing",
+      "mutator_2": "mm-privilege-escalation",
+      "sha256": "d6a5518546533cd83a4ddd47925d2e024340901d89b967e88a574d24766ee6f2"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "ea-paraphrasing",
+      "mutator_2": "mm-privilege-escalation",
+      "sha256": "b4b1c560fb725bbbb7525798ee979051c01c65d99f6064e37e25ea08ee22fb95"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "ea-paraphrasing",
+      "mutator_2": "mm-privilege-escalation",
+      "sha256": "623f5c3a012a062d1542b1a86dd0098a9730b7b917faab59832205b6bb7be8fe"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "ea-paraphrasing",
+      "mutator_2": "mm-prompt-injection",
+      "sha256": "85935a6c033b8e82bc5577a898cfc200b314af16f7437ec315a5a9d1bff25d8d"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "ea-paraphrasing",
+      "mutator_2": "mm-prompt-injection",
+      "sha256": "895ddc371979ccc601a0f5d3f5369715f2f67803ca333148b98272f39bdd2b23"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "ea-paraphrasing",
+      "mutator_2": "mm-prompt-injection",
+      "sha256": "87201748fd879dce145a4101084304dfe8b9ad756aa5334e075bcf098d1c9d13"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "ea-paraphrasing",
+      "mutator_2": "mm-roleplay",
+      "sha256": "7bfda060d58f2a04f518b2f584da90feae7adf33a5f830e08a95773f60504135"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "ea-paraphrasing",
+      "mutator_2": "mm-roleplay",
+      "sha256": "7d15774449e3cb2bf23fa89db9f8d419112ae24a1e95585abaa4ba187ca306c0"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "ea-paraphrasing",
+      "mutator_2": "mm-roleplay",
+      "sha256": "d6e5657416dd9f66ba1c04726c02f229c1207bb402b430e8930620a354a27580"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "ea-translation",
+      "mutator_2": "ea-encryption",
+      "sha256": "6179411f2d9172df5c6d519973f9d98a726015a3c98657154652511a6fb9af34"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "ea-translation",
+      "mutator_2": "ea-encryption",
+      "sha256": "f0a41cd2cc4f66fa263cb7d4779966296547797fcd9232fec9902df78fe81440"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "ea-translation",
+      "mutator_2": "ea-encryption",
+      "sha256": "a97d9baec2c97ba12a9e9d16a953c8ade2cd23450d9495e86d7a58e68447adb4"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "ea-translation",
+      "mutator_2": "ea-fictional",
+      "sha256": "792ad5eecfdf7dbcc3f657cb8c88d594a252d60341f1408104094399bed8a7d9"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "ea-translation",
+      "mutator_2": "ea-fictional",
+      "sha256": "abd60a0b4602c202b65f7f3ed84d6f6852f2e2688269204c6f2dd4eb3ac300d4"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "ea-translation",
+      "mutator_2": "ea-fictional",
+      "sha256": "1becb902952e741dc92563f5dd057b2a8482912ba90da19fb620fd1f1954681c"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "ea-translation",
+      "mutator_2": "ea-obfuscation",
+      "sha256": "bbb442c483488946446135c2e387ac819daec6e3116f5c3b203f2da867243a50"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "ea-translation",
+      "mutator_2": "ea-obfuscation",
+      "sha256": "e531b424258b3c4ee5a614af8fdc87b642e458265852b828b5e72d930f953e9a"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "ea-translation",
+      "mutator_2": "ea-obfuscation",
+      "sha256": "5d0511ddec98efc4998e1275a7c2e4e8e57ea9f0b4acd34a24595773cf807cad"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "ea-translation",
+      "mutator_2": "ea-paraphrasing",
+      "sha256": "8539e9323b5a8b22c0d0baa9308df8ae74558bcf1c87a2b70133f2805ee462a5"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "ea-translation",
+      "mutator_2": "ea-paraphrasing",
+      "sha256": "e6d3a90866101774dccdf5cfe4739bae5dfbc3ad4f429d91c8e11e416e3c212f"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "ea-translation",
+      "mutator_2": "ea-paraphrasing",
+      "sha256": "a8bce7d855be990855b719aaf82815bc24311c034b48b4f7ead2102ebdefdd5f"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "ea-translation",
+      "mutator_2": "mm-cognitive-hacking",
+      "sha256": "ec0544744cd47590defad2e7e0062c2c66b43cd0818076b5f7212c8dc72b36f9"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "ea-translation",
+      "mutator_2": "mm-cognitive-hacking",
+      "sha256": "8aac4ae0ca7670ce881837448e0396cf8c3d2819b7acc2cd0b67a49775d6da94"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "ea-translation",
+      "mutator_2": "mm-cognitive-hacking",
+      "sha256": "4aaf66a2284ad47497b2b31f11de2563014e2800f400d2b4eee2bf32e8a3816c"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "ea-translation",
+      "mutator_2": "mm-forced-completion",
+      "sha256": "78a9df187e32d248f31f8d7fa4f3dbd074cce7af2cb07052d572f788b3838edc"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "ea-translation",
+      "mutator_2": "mm-forced-completion",
+      "sha256": "d3d63df1f8f10d236ea93668268548f73f7f1aed24d792f930c39b4a6774bfda"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "ea-translation",
+      "mutator_2": "mm-forced-completion",
+      "sha256": "a73e48ff86221fa91ee7067fcb98b9bfda2a609ed4d8820776e7dad5bc091f57"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "ea-translation",
+      "mutator_2": "mm-gaslighting",
+      "sha256": "8d62b0431b792f989abfa6cc0669c148c00f9f58da44b03deeba970fd131b10d"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "ea-translation",
+      "mutator_2": "mm-gaslighting",
+      "sha256": "6c36be51614b4f28a0ae739bef7e04f27f4755cbbd30bcdb9991222629673e51"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "ea-translation",
+      "mutator_2": "mm-gaslighting",
+      "sha256": "9ef2b6ddb656a70eaa5a7bc0e3404f95c20d2894b6a9c4dde258e45d234572ae"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "ea-translation",
+      "mutator_2": "mm-nshot-hacking",
+      "sha256": "57e12fc45568e635651be52c8bcfe20f4e1891f11d2da8d8be2d99bcef5471d0"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "ea-translation",
+      "mutator_2": "mm-nshot-hacking",
+      "sha256": "325e34429aa0eabd3851a1fa9d02d0446937660ea813346db83f74215e514b41"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "ea-translation",
+      "mutator_2": "mm-nshot-hacking",
+      "sha256": "9d907e7cafc6d3ac9176fc8868690eb3663bf151a772ecee27e4a08d0b6e0aa3"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "ea-translation",
+      "mutator_2": "mm-privilege-escalation",
+      "sha256": "7f7c1769f28ed317717e2b7d434d089ad804321d7cff196b04a01326d0a67fec"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "ea-translation",
+      "mutator_2": "mm-privilege-escalation",
+      "sha256": "b821c8e2f3cdf01dff4ec2cf7e532d8d10ebea1844e2b4b191dbbcd40f829913"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "ea-translation",
+      "mutator_2": "mm-privilege-escalation",
+      "sha256": "dc4b0f35b56c5ef542ade0e358107c5736d69edf97d482557243efe194301e4a"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "ea-translation",
+      "mutator_2": "mm-prompt-injection",
+      "sha256": "3f3098f8cd0fb326af5ede65af919d23bbb25e5ee9e48392ec05c8c7ca6c2345"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "ea-translation",
+      "mutator_2": "mm-prompt-injection",
+      "sha256": "3c7d7981633df0da976b708be8fcde8557e68927499c63b7d6754e636f3c3aa0"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "ea-translation",
+      "mutator_2": "mm-prompt-injection",
+      "sha256": "d203575af2d95c87e44a25b526ab5d662d14eae1f9f5a7493b719763022bd329"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "ea-translation",
+      "mutator_2": "mm-roleplay",
+      "sha256": "6306dd4c52eb5ab724b403462481a50ebaf87b2e3b5cd2327627ef6393ee1f66"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "ea-translation",
+      "mutator_2": "mm-roleplay",
+      "sha256": "92115b2ba0d022721d2043610d5e1267cd09e9e5bc448718e35f6c7cbe75ec41"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "ea-translation",
+      "mutator_2": "mm-roleplay",
+      "sha256": "a578366b68f7c0af93f00b7106932f24d28ab74f798446c0d62c878f124957ca"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-cognitive-hacking",
+      "mutator_2": "ea-encryption",
+      "sha256": "6a596753d771d9ad763ec9df21f537c27094a8fdce545c5e81646eb8377af938"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-cognitive-hacking",
+      "mutator_2": "ea-encryption",
+      "sha256": "0132e5153763fc9679da40104f0835b63328d4d70431caad489d468ed2c208ae"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-cognitive-hacking",
+      "mutator_2": "ea-encryption",
+      "sha256": "0256911dd9f768935b97915d5db17048034db3679190b8b2a7cdc8b93d10d7ae"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-cognitive-hacking",
+      "mutator_2": "ea-fictional",
+      "sha256": "b84bb64e98c06714ad8133a01fd2b921ef49dfba6b9e76af8637c47069fac1c2"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-cognitive-hacking",
+      "mutator_2": "ea-fictional",
+      "sha256": "bcfe8bedfcb768c377890184a22917b7df839f0b43d6bd3beb9aeb4506214b17"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-cognitive-hacking",
+      "mutator_2": "ea-fictional",
+      "sha256": "d7ee939f21ee736c4658cec02971565f6afe59733cf1ff8b337ca8d5d036a9f1"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-cognitive-hacking",
+      "mutator_2": "ea-obfuscation",
+      "sha256": "a6d78f6507f117f7d5994a676c35a1579e328372743b2234f7334e9272842cc0"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-cognitive-hacking",
+      "mutator_2": "ea-obfuscation",
+      "sha256": "5e5f948643ed20ae78dd9543fb345ac974bdb952c6db3ca72d57cf18c92c7b0b"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-cognitive-hacking",
+      "mutator_2": "ea-obfuscation",
+      "sha256": "fc2434b51b557a4d34926e5cf0e9370bd007cec3cf8ae7c067434117d738a882"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-cognitive-hacking",
+      "mutator_2": "ea-paraphrasing",
+      "sha256": "377d7971d89df2c41c762ebd1e1a5936d9e6ed2a70a439b9e51e39aaa2e54446"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-cognitive-hacking",
+      "mutator_2": "ea-paraphrasing",
+      "sha256": "984955a3ef5ed1eccd5e00c5050e0074452f33cccd760407b3e49a0213e5f2bd"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-cognitive-hacking",
+      "mutator_2": "ea-paraphrasing",
+      "sha256": "b4462b318a9c616ee83e7fca3d50befca55e80189e909360f15cf77bb3945eec"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-cognitive-hacking",
+      "mutator_2": "ea-translation",
+      "sha256": "ec00b67dcf6c2b6bc82506538d7cab5628925d7d0b8f2dbd572a46549d331921"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-cognitive-hacking",
+      "mutator_2": "ea-translation",
+      "sha256": "998f326eb61b577ef946979b535cdcf82b1b600f930fc7c51fd3c2b1c1a43190"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-cognitive-hacking",
+      "mutator_2": "ea-translation",
+      "sha256": "937ba391364e6ed62c5f1251adb437ea8ba6d6779219ddf0cd64ae3bb54f98ee"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-cognitive-hacking",
+      "mutator_2": "mm-forced-completion",
+      "sha256": "815bf9c99965a6f3ef0073f3498c5eeb28df1afe729f5e92123bfed2c1569b9d"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-cognitive-hacking",
+      "mutator_2": "mm-forced-completion",
+      "sha256": "ce523175e5a4234827c21faf6e7e2a5dfeeaf6dc1a0e480b79cebdd5b50a0608"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-cognitive-hacking",
+      "mutator_2": "mm-forced-completion",
+      "sha256": "16eaa275ff44e7504366b3a143ceb48bb189fc744f329d4981e186c4f415cfe0"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-cognitive-hacking",
+      "mutator_2": "mm-gaslighting",
+      "sha256": "0f116baa48c9c0c6b0d5af386aaf2bb00b804b7b4fb1f13e122e00c20af535ed"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-cognitive-hacking",
+      "mutator_2": "mm-gaslighting",
+      "sha256": "abc5f02c16995af80aa4f52423c4645e69d01328527200ecc341e642f3c42009"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-cognitive-hacking",
+      "mutator_2": "mm-gaslighting",
+      "sha256": "49a3d65b24ebb0d9f3b106d6f65c58509c5c11a63934bf1c00110d90c9685188"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-cognitive-hacking",
+      "mutator_2": "mm-nshot-hacking",
+      "sha256": "bd2de687caa28d0d3f3e5cd71817b5b82e200b83e0a731b8aa8f4d10704c1a0d"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-cognitive-hacking",
+      "mutator_2": "mm-nshot-hacking",
+      "sha256": "3335a17ea610926590cc0883964105c9b7e943ba6147a615877f4b3c703f3d56"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-cognitive-hacking",
+      "mutator_2": "mm-nshot-hacking",
+      "sha256": "c4b934dd06071933b6288f5084addbe13b171970caf601576793fa0494ba5e3c"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-cognitive-hacking",
+      "mutator_2": "mm-privilege-escalation",
+      "sha256": "9f8e806cf9e55a63af4e68bef4c3a6371a19c734454c9dc225b700f6750e299f"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-cognitive-hacking",
+      "mutator_2": "mm-privilege-escalation",
+      "sha256": "beac2da9cce34bc8d8bd41344f93f8a185eb453ffde600bf11da0ffe5b958430"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-cognitive-hacking",
+      "mutator_2": "mm-privilege-escalation",
+      "sha256": "05ec554412bdc188fded94fa4a70ca5df280222d36c4b2ea69edbc9cbb280912"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-cognitive-hacking",
+      "mutator_2": "mm-prompt-injection",
+      "sha256": "f621b8509433026ccb3559bdebe6218129fa82253e4385927ed40a83eec03711"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-cognitive-hacking",
+      "mutator_2": "mm-prompt-injection",
+      "sha256": "8416d58c303e1a41bae6182bc5a7c0fc1ac3f8037f03cb820b27942b2a39d9fa"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-cognitive-hacking",
+      "mutator_2": "mm-prompt-injection",
+      "sha256": "baccb07f6c2f03f4563870198641a3d8f85e2241c52ae82c2c0fa6d60e05967d"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-cognitive-hacking",
+      "mutator_2": "mm-roleplay",
+      "sha256": "ff0f500e666e766ddae4fb0db95396f78305ded76790e55275b3446142f34ca8"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-cognitive-hacking",
+      "mutator_2": "mm-roleplay",
+      "sha256": "feecf13e8d0ab860934514e83ceef3ccdf2eaa68bc80a38b41dcdbbcb201717a"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-cognitive-hacking",
+      "mutator_2": "mm-roleplay",
+      "sha256": "0c57df325ff76f5bcc8741db79c6acb388d7914fc0914c80fc8c90a9125b699c"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-forced-completion",
+      "mutator_2": "ea-encryption",
+      "sha256": "55ac07fcf010ddbaf353d2c6fb008f312f5fe8bc7ab182c1d222eab791631213"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-forced-completion",
+      "mutator_2": "ea-encryption",
+      "sha256": "476dc3d80066d2276a6d03ee71caf251a2396edfc59b839636fd80fca72cd2d8"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-forced-completion",
+      "mutator_2": "ea-encryption",
+      "sha256": "789b48e33e1231386624a2a34e40c77873601ce72c70cf6684fc550b2db67db4"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-forced-completion",
+      "mutator_2": "ea-fictional",
+      "sha256": "fef419f7897248c87dc930df91de1600e4824efc631f588df527eca3203106a2"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-forced-completion",
+      "mutator_2": "ea-fictional",
+      "sha256": "faad493c694c1d99623c204d615334ff99af4df590ca137a35907ededba57857"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-forced-completion",
+      "mutator_2": "ea-fictional",
+      "sha256": "12e2d2dbc6639ac9902ffebe08da98301ea522a72b01993c3fc0788b34ae3f62"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-forced-completion",
+      "mutator_2": "ea-obfuscation",
+      "sha256": "cb970e5e26fddd253711fcf19bf69967bc5080ebda1b9e752e4c6733a4024095"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-forced-completion",
+      "mutator_2": "ea-obfuscation",
+      "sha256": "4135c712bd8a92719c1ab624b9e26a4b44eff7eaec54ca1d341565d34c34f20a"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-forced-completion",
+      "mutator_2": "ea-obfuscation",
+      "sha256": "e3955c10e2b2c6ed2118ead9ccae8bd52d46598397bd4873f9f23cf911f56749"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-forced-completion",
+      "mutator_2": "ea-paraphrasing",
+      "sha256": "17b992136c1a2df47704f1506a1261b9b011f78dee6d7d8b831f0dd99f3bca7f"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-forced-completion",
+      "mutator_2": "ea-paraphrasing",
+      "sha256": "a45dbba0cd2f8f25619590e88511e593e9b6dec20bef27d72a9e5588ca8b82eb"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-forced-completion",
+      "mutator_2": "ea-paraphrasing",
+      "sha256": "b4c3b1f159995225645314ebd3a319cd784b8cceb2b9fd97985164a11c619133"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-forced-completion",
+      "mutator_2": "ea-translation",
+      "sha256": "9db3a4da21c2098af3fde8eb6a529cb78cbdabe13cfad1690e845b09d5dd7cda"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-forced-completion",
+      "mutator_2": "ea-translation",
+      "sha256": "0741efd1805d0e4e7e385e75da0525efee3683218764e4221152ee9810321884"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-forced-completion",
+      "mutator_2": "ea-translation",
+      "sha256": "fedf14e9c66e33bbb8378c054acaf74f0e3d64fdb4b480f64424d0a1fcf7201b"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-forced-completion",
+      "mutator_2": "mm-cognitive-hacking",
+      "sha256": "538a92df7dbb6ae1b2d1f76ee8eb66e25fb363ce7b8b283e8c6d5ad59912c943"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-forced-completion",
+      "mutator_2": "mm-cognitive-hacking",
+      "sha256": "e516fdccf6ee677d342d576c5250386855db2576a771c30e18c40421111419c2"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-forced-completion",
+      "mutator_2": "mm-cognitive-hacking",
+      "sha256": "b97435de9ee3021137adf707b12b625bb82e740165a0e0235e36928bb889994f"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-forced-completion",
+      "mutator_2": "mm-gaslighting",
+      "sha256": "596e41ceb334b72b4f728e8bd3ebfa1c4ecfe9e09814c24cfb4ad7255f3048d1"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-forced-completion",
+      "mutator_2": "mm-gaslighting",
+      "sha256": "ad25567eec6ad0a46816b3a8a654158c2d5aa0dedc1c613eb9547c1eb7e2d489"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-forced-completion",
+      "mutator_2": "mm-gaslighting",
+      "sha256": "e96443ebfdeaf8fdd3fc66803c945b61e43e9298fb4e2fb54fd3fd322abf3e37"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-forced-completion",
+      "mutator_2": "mm-nshot-hacking",
+      "sha256": "76a6947e64c15b2a3a3c57d72189d8aa913682d8c405ec189196aee753a9d8eb"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-forced-completion",
+      "mutator_2": "mm-nshot-hacking",
+      "sha256": "d39729ad7da0a38eb77a906b9ac375a4e3b46b36f4e2a3269d5bdc5845131848"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-forced-completion",
+      "mutator_2": "mm-nshot-hacking",
+      "sha256": "16d3b02a247fc9128f0ac8a53ad994cac5e2fc52c87b658d230aa7b3630826b4"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-forced-completion",
+      "mutator_2": "mm-privilege-escalation",
+      "sha256": "58637836c02bd5464624df0f48aca49b491ed3c86e3f5798ac0136d14c519003"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-forced-completion",
+      "mutator_2": "mm-privilege-escalation",
+      "sha256": "224690f0dbde3514184403732a493e9da95cf67abc0a90ec1de9db0956b118e9"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-forced-completion",
+      "mutator_2": "mm-privilege-escalation",
+      "sha256": "80cc043dd7f92c885e55ded97547de1306e056ecd2965365cc2371931e6e2191"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-forced-completion",
+      "mutator_2": "mm-prompt-injection",
+      "sha256": "89cae4e415299fab0d2c888478b2bc3baa02cd2f57f9d29f116a5e22a53e2b3c"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-forced-completion",
+      "mutator_2": "mm-prompt-injection",
+      "sha256": "ad3ef2e72148f5ec4c6389b27381d5a8549ef8d3df547f7b75ad47842b8074f0"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-forced-completion",
+      "mutator_2": "mm-prompt-injection",
+      "sha256": "b2d85ac53858f1dbb5a3c3edfdc8315449939a7edf004441a524a863bc271917"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-forced-completion",
+      "mutator_2": "mm-roleplay",
+      "sha256": "cd47bdb0b64a18459eadebfe8e16e30e105a9ceced4706b07ea0a6030752cc77"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-forced-completion",
+      "mutator_2": "mm-roleplay",
+      "sha256": "1a2a3e3e2696601144e1c7a682c900d176544b28b7dc7fed39cdd07532cc6a5d"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-forced-completion",
+      "mutator_2": "mm-roleplay",
+      "sha256": "a100c6ecc6fcd3f177e1177e2df403ea11034828cdb24c1d9cb0aa35c492f988"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-gaslighting",
+      "mutator_2": "ea-encryption",
+      "sha256": "7aabe70719f04d39a4341d5057b198bd0617c232d7df4a5cd126d7bd0115b112"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-gaslighting",
+      "mutator_2": "ea-encryption",
+      "sha256": "27a63b961e74a7eaa12a67b0d8e5d6fd09ceda03045c01f884f988327add1fec"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-gaslighting",
+      "mutator_2": "ea-encryption",
+      "sha256": "5c8d7020d07d2b3cb9a08db2b6a0faa773c0b35c60fd4bdcc7aed15596d7dc41"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-gaslighting",
+      "mutator_2": "ea-fictional",
+      "sha256": "408666ee80dd6067b9d9edf0d16ea83d9619ceda3d8f2a80ae642ae6b5d4755a"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-gaslighting",
+      "mutator_2": "ea-fictional",
+      "sha256": "e6186acf7c3ab0edad28fdd77e712f95a01142790c4899dc33fcfd0f022a61f4"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-gaslighting",
+      "mutator_2": "ea-fictional",
+      "sha256": "320da317c8d24cb055b259dd1812a0ad2789659876d61400d7a192ca3aa600d0"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-gaslighting",
+      "mutator_2": "ea-obfuscation",
+      "sha256": "791829e079958a31bcb3ee8eabb71e9ff00c17225c9d7c7ae21edd8f9f4957ed"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-gaslighting",
+      "mutator_2": "ea-obfuscation",
+      "sha256": "857c1887e59ba68c7193bf0f0b95f9358280fd65bf05ab3b367796c6c2fab58a"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-gaslighting",
+      "mutator_2": "ea-obfuscation",
+      "sha256": "0457a22666aa2b8f4292393114ca442a70df7f2e484e8fadf4d6f375c5d050fa"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-gaslighting",
+      "mutator_2": "ea-paraphrasing",
+      "sha256": "e09cc9f9533cda7753801f88729b0bf852174b7c193044af421f98d208a64fce"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-gaslighting",
+      "mutator_2": "ea-paraphrasing",
+      "sha256": "5f949a2a21883ea0b6b85f4558af9c3d144b45becf08ae09600dfece3e9db917"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-gaslighting",
+      "mutator_2": "ea-paraphrasing",
+      "sha256": "8b1a249c4604c5f4f669d59ba4f086f67984507a79360368d9bfd5d078b254f2"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-gaslighting",
+      "mutator_2": "ea-translation",
+      "sha256": "d26409d3b03d60a11aa768b2584bb2ace705f8d9c5bec86d5a17f1d4712483ee"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-gaslighting",
+      "mutator_2": "ea-translation",
+      "sha256": "e91dbff291501f059c22566e5faf14a0fbdc62d6272b4dbcabc907d7eae160d9"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-gaslighting",
+      "mutator_2": "ea-translation",
+      "sha256": "614e41f41bd421b245568b545312c836d29b2c3e77d77b8fd50c0f6d79f9528a"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-gaslighting",
+      "mutator_2": "mm-cognitive-hacking",
+      "sha256": "1b30f37c4a774141fbefe096e694e8632e89609a278abf5d0a44c8e2b2b2e9ae"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-gaslighting",
+      "mutator_2": "mm-cognitive-hacking",
+      "sha256": "7c55b253904bfdf83652f5d008435c362729119bfac5683055d2041cd7cfb42f"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-gaslighting",
+      "mutator_2": "mm-cognitive-hacking",
+      "sha256": "0b01dd4fa9e9516f378f488fab30c6328f0f409367aef4e4bbcd66705395dc6b"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-gaslighting",
+      "mutator_2": "mm-forced-completion",
+      "sha256": "446f730fe5b1f1d292b6f2cd9c2dcc296963a2e8834966f3675383ebdccaf518"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-gaslighting",
+      "mutator_2": "mm-forced-completion",
+      "sha256": "3487853ee68a0677252b773263c6be3adf701d2d75b9f48624950c8c6c6eb74b"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-gaslighting",
+      "mutator_2": "mm-forced-completion",
+      "sha256": "725e12da83a1298580c3bffb603c74b8d26d716b56c7f18787ede1659a538006"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-gaslighting",
+      "mutator_2": "mm-nshot-hacking",
+      "sha256": "62604b52e1087afbff607a2f3a2100c871281ad5574d48c0d9fc5b7b2aa9e388"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-gaslighting",
+      "mutator_2": "mm-nshot-hacking",
+      "sha256": "aa9733765aabc735ad52905f852b390bed1517d8740c7f431ff4b41e139a8c60"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-gaslighting",
+      "mutator_2": "mm-nshot-hacking",
+      "sha256": "7bc5ede9f7f12ba6c058dc493f694e3e44237d023e9877602ef87696436a349f"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-gaslighting",
+      "mutator_2": "mm-privilege-escalation",
+      "sha256": "30f42662d8548978df0a0cf7e9fdd436e7c1fa6e836138244c84ed6e53e3ceb2"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-gaslighting",
+      "mutator_2": "mm-privilege-escalation",
+      "sha256": "1133f5aa2ebc0e47da725eaabf5fcd25a94a049fbf54a23324e3396b7d43da44"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-gaslighting",
+      "mutator_2": "mm-privilege-escalation",
+      "sha256": "22849d14842297b3191501eb0b3f99649a8e4609f9a990b4dfe3c4bffda705dc"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-gaslighting",
+      "mutator_2": "mm-prompt-injection",
+      "sha256": "84c7ffd89731202edf3b4da84cd6c41a94562b9f95f3690602bf32c0dd80fa14"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-gaslighting",
+      "mutator_2": "mm-prompt-injection",
+      "sha256": "2f786060573ebbfdeb2b542b739e3fed8f2c42e8480fe8d06c4e7b62bf27d78c"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-gaslighting",
+      "mutator_2": "mm-prompt-injection",
+      "sha256": "678869392c68b013bf2fadd57a5ca0bccdf209f32aab46594624941e77a3769b"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-gaslighting",
+      "mutator_2": "mm-roleplay",
+      "sha256": "2d7a17fc8162cc0a0809e0545afac12a86245d2511c2f47b6d46bf6dda158851"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-gaslighting",
+      "mutator_2": "mm-roleplay",
+      "sha256": "77691bf278224e4f9651e74fb641e9b0b50e504fab80ae947004f8a8c9aad33e"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-gaslighting",
+      "mutator_2": "mm-roleplay",
+      "sha256": "59102147da49cbb9af083d25e5cd0a0beccac9f1687bc907475f663055978ebd"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-nshot-hacking",
+      "mutator_2": "ea-encryption",
+      "sha256": "34ac5769449b3f0821b08a41d2f6cba6cb78243c8cfb555e2735c364c48efd5b"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-nshot-hacking",
+      "mutator_2": "ea-encryption",
+      "sha256": "13f4d2bdbeb080cf3329684d1338da57392fdd8b4f42664534f54a434dd9f0f7"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-nshot-hacking",
+      "mutator_2": "ea-encryption",
+      "sha256": "778f8a9af49ae1c2d63a6d54e7c82d43dcb1706c7b67247315603639fffc62db"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-nshot-hacking",
+      "mutator_2": "ea-fictional",
+      "sha256": "131a3f8d9722aa6168a33572e9bf6ec458ca7612cda820b92f359cdd748722e5"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-nshot-hacking",
+      "mutator_2": "ea-fictional",
+      "sha256": "9be85bb6fa5fe105431424cdd1f674cfe281e3fbe328bf0e166d3e5b501e1063"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-nshot-hacking",
+      "mutator_2": "ea-fictional",
+      "sha256": "646ead4ab66977f7e20374197ab6c45caab03c06176e555e5a69590f0eae9c4d"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-nshot-hacking",
+      "mutator_2": "ea-obfuscation",
+      "sha256": "4098c14e8e02dda02457231efe7cdd46b2b62bc995a10a5a3fa716a623e0628f"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-nshot-hacking",
+      "mutator_2": "ea-obfuscation",
+      "sha256": "e0e9d70bfe559f41ece809690146717d230894605ef44221e3b39a705363174c"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-nshot-hacking",
+      "mutator_2": "ea-obfuscation",
+      "sha256": "72db810d94de22d054de6957fae2b7a614aafdcc3729966273521f79ce2dad75"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-nshot-hacking",
+      "mutator_2": "ea-paraphrasing",
+      "sha256": "04b4afc53351270fce52cc5ed2aba22638acb56713a34a3341a3211d3f03e773"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-nshot-hacking",
+      "mutator_2": "ea-paraphrasing",
+      "sha256": "d662bb910851a4f4b93825bd8498a0e7f4f2c0ec7a21e7dc54df7ee094f39d0d"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-nshot-hacking",
+      "mutator_2": "ea-paraphrasing",
+      "sha256": "c55721a75a50f164fbd7716c79fa95895a2ef2b7c6b64fee7709743c1d125ea9"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-nshot-hacking",
+      "mutator_2": "ea-translation",
+      "sha256": "b94ac31288778903683ef3cb3b061c75952c9f29726ea59853f7824604f11429"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-nshot-hacking",
+      "mutator_2": "ea-translation",
+      "sha256": "89ac61ad689076037a7b356618ea0961b48d15303bdd872084bfbb94826d38df"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-nshot-hacking",
+      "mutator_2": "ea-translation",
+      "sha256": "ea21cf04a0187ff1f4ba6f47d06ea0d052c59258a691fb8fce43bc267bc6ce5b"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-nshot-hacking",
+      "mutator_2": "mm-cognitive-hacking",
+      "sha256": "6ac6d2bd804d4e2dfda8a0f1d12d0806dc79bfde502e64ab710924a9ae6ec84e"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-nshot-hacking",
+      "mutator_2": "mm-cognitive-hacking",
+      "sha256": "f50a2f982ae683bb2241ee57e7140b30bf0dba1d67c5e8c5bed2298fa318330d"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-nshot-hacking",
+      "mutator_2": "mm-cognitive-hacking",
+      "sha256": "26360c64029f1e61e780a81f4f0b4f42d259f59438d3bd7244a08f20caafb10c"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-nshot-hacking",
+      "mutator_2": "mm-forced-completion",
+      "sha256": "ce6644b62e2609079a7df54d372549f38a732bc70e184913094363fa9355a8ea"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-nshot-hacking",
+      "mutator_2": "mm-forced-completion",
+      "sha256": "e58124f1d258f4ef0f6fa5581babf393a38c7387d463d4dfa55f44ed9ac87f4c"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-nshot-hacking",
+      "mutator_2": "mm-forced-completion",
+      "sha256": "9f2cebde1f5637c27bead12ab0c5c9bc57f3d0d153f1d23649f42d73ae42c595"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-nshot-hacking",
+      "mutator_2": "mm-gaslighting",
+      "sha256": "354a2dfda3061b96a833116dc0d61d25495988ceb0ffd82ab86774b81171eda3"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-nshot-hacking",
+      "mutator_2": "mm-gaslighting",
+      "sha256": "6906a0972826f1e3a453c1c7d182f5c21fcb215b967e1e5bbae6b8ddbaacc4f6"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-nshot-hacking",
+      "mutator_2": "mm-gaslighting",
+      "sha256": "9af8e2e1a58e8f35f1b19ce041db85f514d4f676c82f970ed4765316c636837b"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-nshot-hacking",
+      "mutator_2": "mm-privilege-escalation",
+      "sha256": "0f8e5d1c8e8b021110bb3770c4a04792d23b3bef6b2c9e80ee237bd4ef54b2e2"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-nshot-hacking",
+      "mutator_2": "mm-privilege-escalation",
+      "sha256": "c5e307c0e94d59e20affd7fe9364e0d94c50aa2e7482f92b55f4e54bed8a6c8e"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-nshot-hacking",
+      "mutator_2": "mm-privilege-escalation",
+      "sha256": "793ccf4e3eb9fcb78d08ad181179c03a0781e9c19f8578e90f27dad2b79a8abf"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-nshot-hacking",
+      "mutator_2": "mm-prompt-injection",
+      "sha256": "ce43a363a6b9356799b8d3075728970094a0924841d9d98fcd8c5b097cb17cc4"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-nshot-hacking",
+      "mutator_2": "mm-prompt-injection",
+      "sha256": "b809cb4f205e567883f5afb6538706070a11b3a141e44a17f1f944e588c9f236"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-nshot-hacking",
+      "mutator_2": "mm-prompt-injection",
+      "sha256": "3821c1c5d9785afb1612b8a68820098e690621ad5983575ab59210f9e9a18b0c"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-nshot-hacking",
+      "mutator_2": "mm-roleplay",
+      "sha256": "cfad8954cd9f93b5e14573349744654a0c48435eea3ea964519d14e022bf5821"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-nshot-hacking",
+      "mutator_2": "mm-roleplay",
+      "sha256": "716ceb47663632af322d3eed31246c9acdd0e62b40941d59253c299bc2cfd29b"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-nshot-hacking",
+      "mutator_2": "mm-roleplay",
+      "sha256": "091f3025c163cf99aa2234975e28e9b05e910443eba6f5457d4830c55765925d"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-privilege-escalation",
+      "mutator_2": "ea-encryption",
+      "sha256": "bd97199acf670c2356423060ddd5afcf4695d11a355704025f7d1eb60087c4b1"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-privilege-escalation",
+      "mutator_2": "ea-encryption",
+      "sha256": "d9daccc9e7b4e62c475634489761ea092208ddd1f9ef30b2c1677df3dbc6de80"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-privilege-escalation",
+      "mutator_2": "ea-encryption",
+      "sha256": "538b2c0165e3c0502897a5e6eb90db017abf3f0e529c2f11e49f78629074dd52"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-privilege-escalation",
+      "mutator_2": "ea-fictional",
+      "sha256": "a7cafebb114be9b2f8fc584113d459e4dc496dbee979edef8d09688b00600e70"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-privilege-escalation",
+      "mutator_2": "ea-fictional",
+      "sha256": "f71fdd7db2ad8e1a8640b5381112136e41f911c8fd1b078786982f7d65bc2f6b"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-privilege-escalation",
+      "mutator_2": "ea-fictional",
+      "sha256": "528d4f54accd719bacfea38446858940debb75bd12c85dfe7ff75b6463dad6bc"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-privilege-escalation",
+      "mutator_2": "ea-obfuscation",
+      "sha256": "21ad1dabdbe3d788a0fc7434221dde0879d0dd202eed74e2bab88d2fb54c61b1"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-privilege-escalation",
+      "mutator_2": "ea-obfuscation",
+      "sha256": "cac28a12eaf1b2692c42d2376841cf26171859fc59a2087ace4f463d5db0b98d"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-privilege-escalation",
+      "mutator_2": "ea-obfuscation",
+      "sha256": "c10c27e950e1176f3e82e76445b570752d0b77f5440d97210b4bf2f1326691d9"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-privilege-escalation",
+      "mutator_2": "ea-paraphrasing",
+      "sha256": "561f29e8a8eb411999bc5f5eff607913c1204c2a5a38ca6665206caaf82edc8a"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-privilege-escalation",
+      "mutator_2": "ea-paraphrasing",
+      "sha256": "ca3f454bb355ba2b2867d4146ae91deba87ad9191f587c8a7207c4f0856df457"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-privilege-escalation",
+      "mutator_2": "ea-paraphrasing",
+      "sha256": "a06f509f7b5a42a347b6ddeab324cff6832cf7403579879a5a22c04dbf010afb"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-privilege-escalation",
+      "mutator_2": "ea-translation",
+      "sha256": "da56ec8aa70aa7cec2b44eeef26887e28b26a3e8f026da41fda7a58571f0d1f4"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-privilege-escalation",
+      "mutator_2": "ea-translation",
+      "sha256": "5d0431df0f68e853235b3b7677adabf7ec222937211c42c518234e1d82112abc"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-privilege-escalation",
+      "mutator_2": "ea-translation",
+      "sha256": "b771dd19ae431de551fedfb8c7bee49a4c17faca79b43ed76b56e641409077e5"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-privilege-escalation",
+      "mutator_2": "mm-cognitive-hacking",
+      "sha256": "7c545ff6ec10da3500e6679a8354643aa7f6f4f7cdebab42b18326ef8a06b9b6"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-privilege-escalation",
+      "mutator_2": "mm-cognitive-hacking",
+      "sha256": "0a242fe32fc70e5ab1bf83c6a9a3d8ad69ebd50fece4aa372cefac0e7826d7a6"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-privilege-escalation",
+      "mutator_2": "mm-cognitive-hacking",
+      "sha256": "270e2dbe481d82f53b112dd5f51ebdf9d12d8556e3b1d1f8c9de6395bb2a685e"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-privilege-escalation",
+      "mutator_2": "mm-forced-completion",
+      "sha256": "fb66a5abfcc8c2dac66cd38f286ecf98bf44671f1b7c39b807c1090940d134f3"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-privilege-escalation",
+      "mutator_2": "mm-forced-completion",
+      "sha256": "567818f7abadd6cf3b0cf207e6b306e78e4cc8fbd38aee41d4f789f333416ca8"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-privilege-escalation",
+      "mutator_2": "mm-forced-completion",
+      "sha256": "bd01a831a9b62898a1cefa006d9c563667c5e8ca9d059def553a276791b97afc"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-privilege-escalation",
+      "mutator_2": "mm-gaslighting",
+      "sha256": "4f3c5f03712a8e29413d286c5b31ffe5b9c74fcfa33066b902d5289109d0758b"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-privilege-escalation",
+      "mutator_2": "mm-gaslighting",
+      "sha256": "6af47bdba1aa2d720730021230c7c22f0f693b07f3592632b981066335ecea10"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-privilege-escalation",
+      "mutator_2": "mm-gaslighting",
+      "sha256": "efbec6623c2102ecc15b9e1fcaba9fa863000ec73ea46faec4a6442b4d13829f"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-privilege-escalation",
+      "mutator_2": "mm-nshot-hacking",
+      "sha256": "df01effd404f9336a53f4e819486e6b1b7251baae0818b9a5cfb9283b4c8b604"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-privilege-escalation",
+      "mutator_2": "mm-nshot-hacking",
+      "sha256": "c1dcd8a1bd013dab9bb16bc4d2f135cc5373b4d3c4fd50291ae248545134dbf0"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-privilege-escalation",
+      "mutator_2": "mm-nshot-hacking",
+      "sha256": "802a73f9d4a19c5405e5fb9393677da620e7dd3630219aeb41c1d87d0838a0ba"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-privilege-escalation",
+      "mutator_2": "mm-prompt-injection",
+      "sha256": "76829614a70572dbb58f163912eb4f25e43649d4ddd82beb77788516b796b510"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-privilege-escalation",
+      "mutator_2": "mm-prompt-injection",
+      "sha256": "d61545adb9188d990365e595cefe109f6be4b5ce5cdff36b0980c48c27483cd2"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-privilege-escalation",
+      "mutator_2": "mm-prompt-injection",
+      "sha256": "fb63730a9c9a1a7f8e182b0012925c31465806967130211c86a674149f9c9ca9"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-privilege-escalation",
+      "mutator_2": "mm-roleplay",
+      "sha256": "31f48e12488c5a5c0a55b86d499f870dbafb829acd17c5f4466728aee5036e16"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-privilege-escalation",
+      "mutator_2": "mm-roleplay",
+      "sha256": "3aee008940d39d0c40ff1d432143ad0cdc7cd300de148137a016dbd2e5b6ae66"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-privilege-escalation",
+      "mutator_2": "mm-roleplay",
+      "sha256": "8a92bdc74183761ffc7bd03067cd6d08aecfb340defe6ba9ea922960df234636"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-prompt-injection",
+      "mutator_2": "ea-encryption",
+      "sha256": "61dfd7736a4eae06206262d53d5c1f19333644a17af5d34e0d5c41be461f5c17"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-prompt-injection",
+      "mutator_2": "ea-encryption",
+      "sha256": "bc940ff1b5c2fb501c082a000834717f41fc593b9abb97de0eff2901688df177"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-prompt-injection",
+      "mutator_2": "ea-encryption",
+      "sha256": "1b66eb18c92515b66c7fad9a4717f550d2e8c0856592697258787dfd9983a62e"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-prompt-injection",
+      "mutator_2": "ea-fictional",
+      "sha256": "71063e0a1ad0a1c277b0c431af3ee180b0324b0c9b08aca8a642f0133815c783"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-prompt-injection",
+      "mutator_2": "ea-fictional",
+      "sha256": "1324872e9f2aa642dc74ed6ba2ed8c45ae93dd80b3323830b8202eda9e3d3097"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-prompt-injection",
+      "mutator_2": "ea-fictional",
+      "sha256": "745be8d9582782bc906de5bd03daf5c93120a8acd3306eb55304ee3a40361493"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-prompt-injection",
+      "mutator_2": "ea-obfuscation",
+      "sha256": "bcc9bb29bf16d95094f5cb76bb333e4cb867f410a83ce2a14558fb76c2c1820c"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-prompt-injection",
+      "mutator_2": "ea-obfuscation",
+      "sha256": "d0a59c2e76afb2ae42ba7115fe8f8f1b9bf3ab473ec5a6f6d58b7b831ad06825"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-prompt-injection",
+      "mutator_2": "ea-obfuscation",
+      "sha256": "758c4e50958726c9bccddb882409122be1204b346ba47da23357168187da56bb"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-prompt-injection",
+      "mutator_2": "ea-paraphrasing",
+      "sha256": "f1a960d78998998e5a78ce7ad96ba35b16c3c6b6964e3b759abceb8fd1c55526"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-prompt-injection",
+      "mutator_2": "ea-paraphrasing",
+      "sha256": "abd790ac5ba44fa76928aeb1cbe5e37da2b6a9f8f8f029c1481e1676b73854b3"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-prompt-injection",
+      "mutator_2": "ea-paraphrasing",
+      "sha256": "93b4beee17361c8675687bd0c2ddb0a8416a744ca5298a297a2408e4de1b1d69"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-prompt-injection",
+      "mutator_2": "ea-translation",
+      "sha256": "531196182dca960fcca7742628f2753cf152682d45c27704eeb4c89cbb0bef24"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-prompt-injection",
+      "mutator_2": "ea-translation",
+      "sha256": "92fed93a9a418e5a695a54ab8e8f55c3bbdfb01be0ebe631b887c3d3582bf3b9"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-prompt-injection",
+      "mutator_2": "ea-translation",
+      "sha256": "1b5914f6390876d0044f4bdccb14a8b7d212ee39129bf72a24081e2b3c8c6f35"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-prompt-injection",
+      "mutator_2": "mm-cognitive-hacking",
+      "sha256": "8d65d1f754d5b97e13f80ac373bab9dfc37ec44c97cd127afc824b5d8f77475c"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-prompt-injection",
+      "mutator_2": "mm-cognitive-hacking",
+      "sha256": "8815d67773a8f9cde1113697ea856e9ced6c3c141ba5c77b9f2289ca2e10aaa0"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-prompt-injection",
+      "mutator_2": "mm-cognitive-hacking",
+      "sha256": "8882a8c8fe868007b64c7ee9713e654e7783dd10868639380219ab33f7d73ab7"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-prompt-injection",
+      "mutator_2": "mm-forced-completion",
+      "sha256": "53ca0d4b0d24d38a7a3f1e3c71065df30dad44fc5e789b31d0437d3f4e937891"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-prompt-injection",
+      "mutator_2": "mm-forced-completion",
+      "sha256": "0d8ba66310003d11acee19deaf3ed59670338c6b4df96975fb549717124fe266"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-prompt-injection",
+      "mutator_2": "mm-forced-completion",
+      "sha256": "77f8d37ccd58820a133d4db061d3e6958d469f84efe7d9b38c3ad01264d79a64"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-prompt-injection",
+      "mutator_2": "mm-gaslighting",
+      "sha256": "2d386b7fc059009fba5ba5be829682917dd8005c1ea23f3c6c1ae7f152a28075"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-prompt-injection",
+      "mutator_2": "mm-gaslighting",
+      "sha256": "af325c0f72bff59367496a4025885f8e419598c45c55ef479b8792edc4a09211"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-prompt-injection",
+      "mutator_2": "mm-gaslighting",
+      "sha256": "0b66037b48eefea4bb5dd71f97233cfdbfdefcadad9cc3a5a722262b2c548806"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-prompt-injection",
+      "mutator_2": "mm-nshot-hacking",
+      "sha256": "49e533e7c9356d53fcfa83b948e199249c3d6008ac2e13a6a964f7228362b9ee"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-prompt-injection",
+      "mutator_2": "mm-nshot-hacking",
+      "sha256": "a0ac03f3ef0a76c6952f64afa1ebee415053e3024e776ddb6db50bd4aeaf22aa"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-prompt-injection",
+      "mutator_2": "mm-nshot-hacking",
+      "sha256": "07f9ecc8752cba12fd2c91a91a59e6f095965b369d3e00c6d96a76906f1ca3e6"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-prompt-injection",
+      "mutator_2": "mm-privilege-escalation",
+      "sha256": "8826d5a72e6706b09f9acb21524f1324b9b4007343c1c7d0ca79e0ed2d42a034"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-prompt-injection",
+      "mutator_2": "mm-privilege-escalation",
+      "sha256": "d282d219fd8470cfa4570009a290e87a3ff591b53aca210c2c34c6cb5d8eaf86"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-prompt-injection",
+      "mutator_2": "mm-privilege-escalation",
+      "sha256": "78599ab554566604f5c1ea480552565c3f2af901b248d962a70795d4321e6fa1"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-prompt-injection",
+      "mutator_2": "mm-roleplay",
+      "sha256": "e087f94a91bf6a7b31d44595787eea3f9d6d8666e7243c098b5f0ba6a62c4f9d"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-prompt-injection",
+      "mutator_2": "mm-roleplay",
+      "sha256": "6b117f5b18bc49dfe8412e300ebb231d8cecef94613e50a16746448084c30544"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-prompt-injection",
+      "mutator_2": "mm-roleplay",
+      "sha256": "0f1dc620546d9045b73f6932e8e1c07a2e94d532bcadb4bafce9de56b7338d57"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-roleplay",
+      "mutator_2": "ea-encryption",
+      "sha256": "fc786b2da48852a7cd8e383b916ad5699c84a753240803015ed8acfbe97b5c52"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-roleplay",
+      "mutator_2": "ea-encryption",
+      "sha256": "c8e48d30902c57916910268bcc13f0611e5bf7af1e77f17159653183f0be14bd"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-roleplay",
+      "mutator_2": "ea-encryption",
+      "sha256": "823107e2aaef5176009c3352fa43e9f80febd9332e275639dc232f74274e0a96"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-roleplay",
+      "mutator_2": "ea-fictional",
+      "sha256": "c22808e2677dc51cfb3c0abec55002d1cebab39a71c69ffc31b309ccf2c86bc4"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-roleplay",
+      "mutator_2": "ea-fictional",
+      "sha256": "a2295a83e1c70caba2becbf4b86e796aabc2f5e9c12cc5ee994f5ce23d60e2ae"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-roleplay",
+      "mutator_2": "ea-fictional",
+      "sha256": "c351ecfd56752214c7d247661c074b4c4e8808ef87745f61b7673e5f2b784895"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-roleplay",
+      "mutator_2": "ea-obfuscation",
+      "sha256": "301f700040bb95eed91a8a4b4150bb5b06f243d90a395f619d218373b9accfa3"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-roleplay",
+      "mutator_2": "ea-obfuscation",
+      "sha256": "373e917f81c3cc9fb47d5232c501608e7b85b2b0611828fde652bb089d1f1424"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-roleplay",
+      "mutator_2": "ea-obfuscation",
+      "sha256": "440dd38bb34eb598a5f6f47ad89875d736053362d8349e6445da623466b03a16"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-roleplay",
+      "mutator_2": "ea-paraphrasing",
+      "sha256": "2ee6bd4eedaf97c79f5d4428e2d83f135f604391c2c2e3deaedec970c465fe52"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-roleplay",
+      "mutator_2": "ea-paraphrasing",
+      "sha256": "59501a0e6d1c5b7101d800692e39a64fe0e030d32ece32bc2417f1046c57aed1"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-roleplay",
+      "mutator_2": "ea-paraphrasing",
+      "sha256": "acafc5102cf9cc66c9d31c4d11522103aea8f91267e5cc7cea16fffc5f647522"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-roleplay",
+      "mutator_2": "ea-translation",
+      "sha256": "3cf24f7a7415218281dcf1863c9bda601ebd05577d6af63a2a025f5f011ef719"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-roleplay",
+      "mutator_2": "ea-translation",
+      "sha256": "957b72eb78838f52cb54eecf760f19fdf77adf60fefe4bc71c6f848f2c4006f5"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-roleplay",
+      "mutator_2": "ea-translation",
+      "sha256": "66a7f285099cdc763feb7dbb781c8b550bcffd5a755d80f449cd7820b1873809"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-roleplay",
+      "mutator_2": "mm-cognitive-hacking",
+      "sha256": "7072960960ad892b904bd6cd2af99c3953e39ef3ca50b65914e16901f399c34b"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-roleplay",
+      "mutator_2": "mm-cognitive-hacking",
+      "sha256": "cc02f637e6314520fe8fcad1daf82ac953105563a259225e1f0d3b97d03a5a56"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-roleplay",
+      "mutator_2": "mm-cognitive-hacking",
+      "sha256": "fa44111846d8ea66295f65a4b6c10ce862463698ba2833782a050e97d4b5618b"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-roleplay",
+      "mutator_2": "mm-forced-completion",
+      "sha256": "e2bd216f256c5f045524106e6a141e4a7ee026b71524fe339702bc072d7af01c"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-roleplay",
+      "mutator_2": "mm-forced-completion",
+      "sha256": "f44b55a87e565fb0d7fea6c322a959d51eb7ac376145a0342e1d255386ea45f6"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-roleplay",
+      "mutator_2": "mm-forced-completion",
+      "sha256": "cfd18dae6a1fe7eee53ebbfe2854e4a8c9b5cb38cbe3f4424323cabd3ebd03d9"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-roleplay",
+      "mutator_2": "mm-gaslighting",
+      "sha256": "56b4d65467d3ace5fbe50e41f62d491d48c147d16fe4b3624a58207ad0e72a74"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-roleplay",
+      "mutator_2": "mm-gaslighting",
+      "sha256": "bb79808e44a39b8d7b2ffa1a52b48950e77930ffa6202b9d58b025920d7c14cc"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-roleplay",
+      "mutator_2": "mm-gaslighting",
+      "sha256": "47a09a0f2b8999ec6ac4bdf63d7a7f542a133e05b126c6e30d17459bf143894a"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-roleplay",
+      "mutator_2": "mm-nshot-hacking",
+      "sha256": "9702ec2577a7a2cb91c03c01152e24360ab42bc7a456cc77b1e46fc15ae4df1d"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-roleplay",
+      "mutator_2": "mm-nshot-hacking",
+      "sha256": "4ed306e87d1b4560fd49bd77e14212a7c0639de38a3a60f32b012d05f7365a07"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-roleplay",
+      "mutator_2": "mm-nshot-hacking",
+      "sha256": "b81edebc4267d484b83152539f711c02bc3668d38bfb2a515741da4ed209a907"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-roleplay",
+      "mutator_2": "mm-privilege-escalation",
+      "sha256": "c76a6cf0341b21d26a2d0c215cc8334a00b7853f7ba853cf81a7fc3c46420c16"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-roleplay",
+      "mutator_2": "mm-privilege-escalation",
+      "sha256": "3ce37f2412fc0d8ba0b498346eadeebb9bcd88c17a443e395edb2480531e75c8"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-roleplay",
+      "mutator_2": "mm-privilege-escalation",
+      "sha256": "9559ff170307d19d8f9e989cc91871b5e1f631564851b6409fd276954416e2f7"
+    },
+    {
+      "batch": "A",
+      "mutator_1": "mm-roleplay",
+      "mutator_2": "mm-prompt-injection",
+      "sha256": "191eaf2f5eea6ecd93347694a192957b3db1f4e62f662ed2d7dfcda9c8c8321a"
+    },
+    {
+      "batch": "B",
+      "mutator_1": "mm-roleplay",
+      "mutator_2": "mm-prompt-injection",
+      "sha256": "4075ebd88955341ebbbc4009bde1d5814d69c83c3103cb7a2474dba53a94eb03"
+    },
+    {
+      "batch": "C",
+      "mutator_1": "mm-roleplay",
+      "mutator_2": "mm-prompt-injection",
+      "sha256": "bf847d89ca2bf84caea4027bfa5a15f3d6c3bee42a67a943213222ee7dfe78f6"
+    }
+  ],
+  "scope": "Only four targets and seven reported stability conditions. No new inference.",
+  "missing_evidence": [
+    "Independent safety-judge benchmark validation is outside the distributed artifact"
+  ],
+  "metadata_revision": {
+    "reason": "Repository-specific wording revision; experimental observations and source hashes unchanged",
+    "previous_provenance_sha256": "65d4462b715a24d1e5d6fc96b4e279152ca414c3c7417875eeaca9700e040c93"
+  }
+}

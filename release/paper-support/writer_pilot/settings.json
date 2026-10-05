@@ -1,0 +1,43 @@
+{
+  "sample_seed": 20260902,
+  "sample_prompt_rows": [
+    17,
+    20,
+    33,
+    66,
+    90,
+    109,
+    175,
+    200,
+    202,
+    282,
+    319,
+    351,
+    360,
+    370,
+    385,
+    458,
+    465,
+    468,
+    480,
+    484
+  ],
+  "sample_prompts": 20,
+  "candidate_mutator_model": "gpt-5.6-luna",
+  "reference_mutator_model": "gpt-3.5-turbo-0125",
+  "evaluator_model": "gpt-4o-mini-2024-07-18",
+  "mutator_prompts_sha256": "5b809fec99b1e72a7e95b537a03a8cbdd1d86641df386e9ead31ac44db8c606e",
+  "persistence_prompts_sha256": "2ab8147151883a3915f6b2def91ec9a50e691780ff95bcc8bb47d4611b61a6a5",
+  "alignment_rule": {
+    "aligned": {
+      "mean_absolute_difference_max": 0.1,
+      "median_gate_agreement_min": 0.8,
+      "spearman_min": 0.8
+    },
+    "materially_different": {
+      "mean_absolute_difference_above": 0.15,
+      "median_gate_agreement_below": 0.7,
+      "spearman_below": 0.65
+    }
+  }
+}

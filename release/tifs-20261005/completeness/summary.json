@@ -1,0 +1,54 @@
+{
+  "aggregate": {
+    "batch_count": 4,
+    "grand_mean_complete_count": 196.49451097804393,
+    "mean_cell_sd_complete_count": 7.240928393844938,
+    "median_mean_complete_count": 135.75,
+    "normalization": "Each batch count is divided by its pair-specific evaluated row count, averaged across batches, and rescaled to 520 prompts.",
+    "pairwise_correlation_range": [
+      0.9964063878167628,
+      0.997851657093764
+    ],
+    "retained_pairs_at_mean_median": 66
+  },
+  "batches": [
+    {
+      "batch": "A",
+      "evaluated_rows": 68640,
+      "median_complete_count": 133.5,
+      "retained_pairs": 66,
+      "source": "deepseek-chat",
+      "source_digest": "6e9773293044d68dadd1efd6262ed7f452ca4cae64fd3b601dcf58b8f7365986",
+      "source_files": 132
+    },
+    {
+      "batch": "B",
+      "evaluated_rows": 68640,
+      "median_complete_count": 135.5,
+      "retained_pairs": 66,
+      "source": "gpt-3.5-turbo",
+      "source_digest": "36869cb411abb4c3befab4db93ee00ec96948a24c40c46a13beb849e9d364f89",
+      "source_files": 132
+    },
+    {
+      "batch": "C",
+      "evaluated_rows": 68621,
+      "median_complete_count": 141.0,
+      "retained_pairs": 66,
+      "source": "gpt-4-turbo",
+      "source_digest": "2f264626762ebf1b9c56f920b6a95bd07769131a30a6a8db6f62d51f67b5040b",
+      "source_files": 132
+    },
+    {
+      "batch": "D",
+      "evaluated_rows": 68640,
+      "median_complete_count": 146.0,
+      "retained_pairs": 66,
+      "source": "current",
+      "source_digest": "c809113cd3a930624de1d72ca4cff579a633958afe976928b11b6c2596606111",
+      "source_files": 1
+    }
+  ],
+  "definition": "Completeness belongs to a mutation batch, not a target model.",
+  "interpretation": "The four-batch mean is descriptive rather than a controlled repeated-run estimate because mutator prompts changed during archived data collection."
+}

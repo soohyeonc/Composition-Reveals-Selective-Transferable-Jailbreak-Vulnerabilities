@@ -1,0 +1,55 @@
+{
+  "alignment_rule": {
+    "aligned": {
+      "mean_absolute_difference_max": 0.1,
+      "median_gate_agreement_min": 0.8,
+      "spearman_min": 0.8
+    },
+    "materially_different": {
+      "mean_absolute_difference_above": 0.15,
+      "median_gate_agreement_below": 0.7,
+      "spearman_below": 0.65
+    }
+  },
+  "analysis": "GPT-5.6 versus GPT-3.5 mutation persistence alignment pilot",
+  "bootstrap_95_percent_intervals": {
+    "mean_absolute_difference": {
+      "high": 0.3325757575757576,
+      "low": 0.2890151515151515
+    },
+    "mean_signed_difference": {
+      "high": -0.24621212121212122,
+      "low": -0.28901515151515156
+    },
+    "median_gate_agreement": {
+      "high": 0.5454545454545454,
+      "low": 0.5
+    },
+    "median_gate_jaccard": {
+      "high": 0.5454545454545454,
+      "low": 0.5
+    },
+    "pearson": {
+      "high": 0.402303434036266,
+      "low": 0.27677143663678905
+    },
+    "spearman": {
+      "high": 0.44735728316890966,
+      "low": 0.31590908480298757
+    }
+  },
+  "candidate_provider_blocks": 109,
+  "decision": "materially_different",
+  "pairs": 132,
+  "point_estimates": {
+    "mean_absolute_difference": 0.3053030303030303,
+    "mean_signed_difference": -0.2674242424242424,
+    "median_gate_agreement": 0.5,
+    "median_gate_jaccard": 0.5,
+    "pearson": 0.3597529785285456,
+    "spearman": 0.4259639212148431
+  },
+  "row_level_complete_agreement": 0.656060606060606,
+  "rows": 2640,
+  "sample_prompts": 20
+}

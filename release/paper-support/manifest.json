@@ -1,0 +1,648 @@
+{
+  "files": {
+    "completeness/batch_A.csv.gz": {
+      "sha256": "b30130b73f1b3c3335afb1baeed41eaa9600d63bffc95e8cb91f7034e757b6bc",
+      "bytes": 24909059
+    },
+    "completeness/batch_B.csv.gz": {
+      "sha256": "22a4a086ae9e1f3a281d92813cb05a1504cdcba567ef58092bbd78d31ba534e5",
+      "bytes": 24763269
+    },
+    "completeness/batch_C.csv.gz": {
+      "sha256": "582d2a34295ca2ff877735cc77bcaaa13fafd8eaf37702feb06e22dc0add6c99",
+      "bytes": 25007493
+    },
+    "figures/chained-mutator.png": {
+      "sha256": "5ce001509da01a04f211413aab02957b9553b171d59592c00286d876b6a8e85f",
+      "bytes": 321950
+    },
+    "provenance.json": {
+      "sha256": "2c6f22aca1ef4a78f61c735b81575325db565c2ba43e042e4a45626886cfdbf8",
+      "bytes": 82384
+    },
+    "responses/discovery/gemma/baselines.csv.gz": {
+      "sha256": "e427db8e37b00098cf627e9e5da0e1292d38755a00277c2c13d0df0c8a877457",
+      "bytes": 1973947
+    },
+    "responses/discovery/gemma/chains_ea-encryption.csv.gz": {
+      "sha256": "3dfaca27963037d43e5882a700ed612a757dbb150b4962eb808f5d44bbbce27f",
+      "bytes": 1401223
+    },
+    "responses/discovery/gemma/chains_ea-fictional.csv.gz": {
+      "sha256": "5b08099b1126a78c6e4ef37b4eb9f6fac52b0b1013d0a99bf40a4c66078e4554",
+      "bytes": 3300694
+    },
+    "responses/discovery/gemma/chains_ea-obfuscation.csv.gz": {
+      "sha256": "157f13aaef27dba389f637d8006858cd634742868fc0c4e59ad192cd3ffc93cd",
+      "bytes": 1939051
+    },
+    "responses/discovery/gemma/chains_ea-paraphrasing.csv.gz": {
+      "sha256": "b7e973199ad8eb3939a35afea3dee6817a510121d9f2d6e7dd24e4f1a6d79dd6",
+      "bytes": 1791031
+    },
+    "responses/discovery/gemma/chains_ea-translation.csv.gz": {
+      "sha256": "bf97812f7d3d455938fe18099da24215e6ee3f99b3e1c3b6afac7e44e123e28e",
+      "bytes": 3058161
+    },
+    "responses/discovery/gemma/chains_mm-cognitive-hacking.csv.gz": {
+      "sha256": "87341e44fac6eebb2fc07a7231ae215361a37d2fc1800439f2c3ca93e856a31c",
+      "bytes": 4233051
+    },
+    "responses/discovery/gemma/chains_mm-forced-completion.csv.gz": {
+      "sha256": "385da97396ff7d0a1b34dfb2d8c1cef304e9bbb07ab2975d1f59c229466ac328",
+      "bytes": 1613339
+    },
+    "responses/discovery/gemma/chains_mm-gaslighting.csv.gz": {
+      "sha256": "2337396d37da281be7f0ccb417f1d504bf3af25f4d1bcdd9a9f64001f5e49372",
+      "bytes": 4403806
+    },
+    "responses/discovery/gemma/chains_mm-nshot-hacking.csv.gz": {
+      "sha256": "6f5c3124a8930c752241cdf6731742f7d40280a7cdb8018a8cdb1ecec3a9d435",
+      "bytes": 1499158
+    },
+    "responses/discovery/gemma/chains_mm-privilege-escalation.csv.gz": {
+      "sha256": "e629959e601d1f9efc5f361426303f2e29c21a1c2e343e847e1934a031cb7f79",
+      "bytes": 2493204
+    },
+    "responses/discovery/gemma/chains_mm-prompt-injection.csv.gz": {
+      "sha256": "e1a6b43926dbc425b33656752ff6875d389bacb04466e1fa9fe5b8ebccc03cd5",
+      "bytes": 1259458
+    },
+    "responses/discovery/gemma/chains_mm-roleplay.csv.gz": {
+      "sha256": "154317aa22e2edbd7288bb6ab6932ef498084a2f11cc47ae9afc7e9f663d70c4",
+      "bytes": 1774461
+    },
+    "responses/discovery/luna/baselines.csv.gz": {
+      "sha256": "18161cd46552ca14dab37dac6a0a112f1d3ddea3479c10940d9accfd2e8465a0",
+      "bytes": 3327348
+    },
+    "responses/discovery/luna/chains_ea-encryption.csv.gz": {
+      "sha256": "841b481894c23188336fab3ae9a8b29b2e60d81d963b9517bd8431d2691803d8",
+      "bytes": 2478310
+    },
+    "responses/discovery/luna/chains_ea-fictional.csv.gz": {
+      "sha256": "2a906b19335a48026a8d7e41da4c433563882d298c7894a91cf992178b63f859",
+      "bytes": 5420131
+    },
+    "responses/discovery/luna/chains_ea-obfuscation.csv.gz": {
+      "sha256": "b9467915d50a5fc2a5505b54635a464c853a70f4f12afae24e02c3abe1c156df",
+      "bytes": 3184060
+    },
+    "responses/discovery/luna/chains_ea-paraphrasing.csv.gz": {
+      "sha256": "8efb8ddb642208e954dcde9d86d5ee6685ab7b2695d78b2f865fb12d35c34087",
+      "bytes": 3037518
+    },
+    "responses/discovery/luna/chains_ea-translation.csv.gz": {
+      "sha256": "cabbfc84e2adf34fe11afa0625206b2f20101c1300f85ae3613e1f63937902eb",
+      "bytes": 3782543
+    },
+    "responses/discovery/luna/chains_mm-cognitive-hacking.csv.gz": {
+      "sha256": "27a0c1de39c51ea2dfa749a0a1cdd2c0787c41c23c1dbe120d0e0fc88910c21f",
+      "bytes": 5491716
+    },
+    "responses/discovery/luna/chains_mm-forced-completion.csv.gz": {
+      "sha256": "e29918ef7a808bb431f3d6fbf7f4f5001cd19cfe6c18ef65a18c8653a05ab3f8",
+      "bytes": 2243602
+    },
+    "responses/discovery/luna/chains_mm-gaslighting.csv.gz": {
+      "sha256": "6ff96d43780d6a56f55ec0e4f5ae84788dc22d1c1e81aee5b8a604718b6d1b7f",
+      "bytes": 6837315
+    },
+    "responses/discovery/luna/chains_mm-nshot-hacking.csv.gz": {
+      "sha256": "26f5a5cf113315b0bd2d474c8f171ada29800ea65df6d4a20da58d7a1c66c9fa",
+      "bytes": 2848081
+    },
+    "responses/discovery/luna/chains_mm-privilege-escalation.csv.gz": {
+      "sha256": "aaa2733b1557bb3fa739aeb9556da6607bce9b8b22024e8c43edc9f816125173",
+      "bytes": 4388197
+    },
+    "responses/discovery/luna/chains_mm-prompt-injection.csv.gz": {
+      "sha256": "1e1de46e3aeec69426bb3d82ea6851eaf2965823fa1839cb755d46162714b2ef",
+      "bytes": 2517832
+    },
+    "responses/discovery/luna/chains_mm-roleplay.csv.gz": {
+      "sha256": "b6d111b0aa7b38a8ad2f6d4308e05d4e94bac05a3a67f2dc76de2f7042776bee",
+      "bytes": 3567867
+    },
+    "responses/discovery/qwen/baselines.csv.gz": {
+      "sha256": "95f74c8adb4840e4f0c4983326b5d0f427aebf1b275cfdc41d986ff7bc24a85c",
+      "bytes": 4785917
+    },
+    "responses/discovery/qwen/chains_ea-encryption.csv.gz": {
+      "sha256": "2da012385661d9688594a603281c7beba842e29ca348cef35a1d6c0bc460b356",
+      "bytes": 3813969
+    },
+    "responses/discovery/qwen/chains_ea-fictional.csv.gz": {
+      "sha256": "2d99f639f32929ed1f7d422fa98347f00d86b520d5024c031e38ebe27dca3d64",
+      "bytes": 6368128
+    },
+    "responses/discovery/qwen/chains_ea-obfuscation.csv.gz": {
+      "sha256": "598a548131754185fbc8a2f44875756f0e74674f1e1ff8a4565d85ad5157dc46",
+      "bytes": 4510086
+    },
+    "responses/discovery/qwen/chains_ea-paraphrasing.csv.gz": {
+      "sha256": "eddc47f2414bbf039a3de8a71b422fbfa7c97272b98e786c698bd80f850c899b",
+      "bytes": 4495347
+    },
+    "responses/discovery/qwen/chains_ea-translation.csv.gz": {
+      "sha256": "ebadadd198e41d9eb2a664f0a6475bb24a66636dfde9b7b0bd2588f021d56389",
+      "bytes": 5233173
+    },
+    "responses/discovery/qwen/chains_mm-cognitive-hacking.csv.gz": {
+      "sha256": "ba2b1888e86fe107f335b413d0f73e0ed6d1f19902ff1512536c4fc5f73a7a83",
+      "bytes": 6326692
+    },
+    "responses/discovery/qwen/chains_mm-forced-completion.csv.gz": {
+      "sha256": "31fdd2b69e2a6a75a88ac1e61ec9d9a6b32293d4353043484823e34e1c1f7b1f",
+      "bytes": 3914827
+    },
+    "responses/discovery/qwen/chains_mm-gaslighting.csv.gz": {
+      "sha256": "569d2acf11f3b3aa80d84f714a6ad08bcb3fc92b8918b9d1967bbd5ddcd17079",
+      "bytes": 7016806
+    },
+    "responses/discovery/qwen/chains_mm-nshot-hacking.csv.gz": {
+      "sha256": "0db8bdb73f22550022648b8b298d6f73e032283ae0f7f0474c4991feef4f4334",
+      "bytes": 4788937
+    },
+    "responses/discovery/qwen/chains_mm-privilege-escalation.csv.gz": {
+      "sha256": "9546394bc99a90d95c7c20198f9e8f8417600b27fb04f4aaaeff2df7a67edefd",
+      "bytes": 5175530
+    },
+    "responses/discovery/qwen/chains_mm-prompt-injection.csv.gz": {
+      "sha256": "56c1cf679b3da861b89d7d9630288bb6433c6251db281f66df3da3985c13104a",
+      "bytes": 4055991
+    },
+    "responses/discovery/qwen/chains_mm-roleplay.csv.gz": {
+      "sha256": "fff0b9eb7db0db07c7ceb7a264bab6b2ecb4757653fbe379042e468f05611019",
+      "bytes": 4859478
+    },
+    "responses/discovery/r1/baselines.csv.gz": {
+      "sha256": "25b6dd3c9cdff1b21c3e100e0bf1dbf3c059086df6f827f06b10c93e5f778497",
+      "bytes": 1999184
+    },
+    "responses/discovery/r1/chains_ea-encryption.csv.gz": {
+      "sha256": "7fe439a522e5f3088ebb94ba896b0a4133766fb3eca143bd3710c3fd2b6655f2",
+      "bytes": 1742202
+    },
+    "responses/discovery/r1/chains_ea-fictional.csv.gz": {
+      "sha256": "81a5ecf1a88bdbf399f4225a65fc4863cebe005013b046c70af370ba0985b571",
+      "bytes": 3985240
+    },
+    "responses/discovery/r1/chains_ea-obfuscation.csv.gz": {
+      "sha256": "b1419aba6bbd3e55ee8d7024a070ef376592536bb79578a52a1b33645b4440c1",
+      "bytes": 1991597
+    },
+    "responses/discovery/r1/chains_ea-paraphrasing.csv.gz": {
+      "sha256": "90ed23755035f7f5bf702e1cb731cb239826e38460cf6411572dd31165679fa5",
+      "bytes": 1940690
+    },
+    "responses/discovery/r1/chains_ea-translation.csv.gz": {
+      "sha256": "db06363b7780e700b892930acd2c0ea096b47bfa3b6be264631565a1a33d56af",
+      "bytes": 2731470
+    },
+    "responses/discovery/r1/chains_mm-cognitive-hacking.csv.gz": {
+      "sha256": "99aad8d492ce8899c97009a22ac34ea0392098b38b95c3132c976064b7e880ac",
+      "bytes": 2952389
+    },
+    "responses/discovery/r1/chains_mm-forced-completion.csv.gz": {
+      "sha256": "4fed8b38d9f146b56463aaef93d5621ec010ce90fc4a667c6a8986e5964ef9ca",
+      "bytes": 1687211
+    },
+    "responses/discovery/r1/chains_mm-gaslighting.csv.gz": {
+      "sha256": "43df37ca642390f0a8d4586cdae70b827c1fd7170c592f57a0f2aa5fe4e22048",
+      "bytes": 3719647
+    },
+    "responses/discovery/r1/chains_mm-nshot-hacking.csv.gz": {
+      "sha256": "8c18c5e00b9c13aadda2c6e005238bb495b4ace50b6eb0a913dff6aa9c996077",
+      "bytes": 1946989
+    },
+    "responses/discovery/r1/chains_mm-privilege-escalation.csv.gz": {
+      "sha256": "18b3d978b0d46126925eb2e86f8cc1f140ef1c5a06bfb32cec9e6b9f8f0f0296",
+      "bytes": 2467884
+    },
+    "responses/discovery/r1/chains_mm-prompt-injection.csv.gz": {
+      "sha256": "d652d61c8c35dde4d6f3480fa4f4b08df9bfb056b93e345e80000fd3bb95cb5e",
+      "bytes": 1520449
+    },
+    "responses/discovery/r1/chains_mm-roleplay.csv.gz": {
+      "sha256": "c1c3d8cca83b69550ce6b3ace968ce02f311339dfd37d297f05e2707abcf6218",
+      "bytes": 1968676
+    },
+    "responses/stability/gemma_run1/baselines.csv.gz": {
+      "sha256": "8a18813177e5b1808fe418d38a723b892f4f8c1914018492365423fec6a71ba6",
+      "bytes": 1289859
+    },
+    "responses/stability/gemma_run1/chains_ea-translation.csv.gz": {
+      "sha256": "fca03b532b720f9ebfafbf367dfd602a617a8105608e32e3a58b32da1ed9a9b0",
+      "bytes": 252581
+    },
+    "responses/stability/gemma_run1/chains_mm-cognitive-hacking.csv.gz": {
+      "sha256": "34813cfc70b1123d8cc6f4a38adab4588ed30f4ac9f9b80e96c021d2275c2cc0",
+      "bytes": 510765
+    },
+    "responses/stability/gemma_run1/chains_mm-forced-completion.csv.gz": {
+      "sha256": "0eaadf2263691e989d1f50a0692d5bb3daf082ece70d34456327e36bcb234240",
+      "bytes": 186487
+    },
+    "responses/stability/gemma_run1/chains_mm-gaslighting.csv.gz": {
+      "sha256": "0c6649162c421cfa92d11083a12c228476401da86886afffc4decbbc5cd3383f",
+      "bytes": 432454
+    },
+    "responses/stability/gemma_run1/chains_mm-nshot-hacking.csv.gz": {
+      "sha256": "a7737dfe12f6e6d745a9f3c7828c9c10dd50244d1ca04a7d3350be2c81f37fab",
+      "bytes": 278379
+    },
+    "responses/stability/gemma_run2/baselines.csv.gz": {
+      "sha256": "00ca91c20f68867009c9232f5e4c5940f6be088c1f98c344125c8be2b84d1411",
+      "bytes": 1302552
+    },
+    "responses/stability/gemma_run2/chains_ea-translation.csv.gz": {
+      "sha256": "491e6332830be80fac0448e6e81f0bf43d72caf04fe0da4777936f02a5ded2d4",
+      "bytes": 250848
+    },
+    "responses/stability/gemma_run2/chains_mm-cognitive-hacking.csv.gz": {
+      "sha256": "43e436222921310e853ba94e45121fa0e45a5cffa52e25adce8e0afb2352100e",
+      "bytes": 522389
+    },
+    "responses/stability/gemma_run2/chains_mm-forced-completion.csv.gz": {
+      "sha256": "e389cadc7411dc21a9835ae55669b2ef9f08e878f6017c347db99563f317a982",
+      "bytes": 187549
+    },
+    "responses/stability/gemma_run2/chains_mm-gaslighting.csv.gz": {
+      "sha256": "141801e3e160fbf93a90ecabf1c744fb2a6306cf553d2f90b44256a64751ffdd",
+      "bytes": 426760
+    },
+    "responses/stability/gemma_run2/chains_mm-nshot-hacking.csv.gz": {
+      "sha256": "940ddf0a04930f2a60d9d4b9bf7a2f435e08945afe012daa129a08e9867cfa81",
+      "bytes": 272966
+    },
+    "responses/stability/gemma_run3/baselines.csv.gz": {
+      "sha256": "b866b53222c12cca956e205944d742a75f2746b582eb2534e135d68c41c8e410",
+      "bytes": 1283888
+    },
+    "responses/stability/gemma_run3/chains_ea-translation.csv.gz": {
+      "sha256": "aedfd937bbaea9773235217c014df7ab6233955feff2fefb94656bc3e3eda20a",
+      "bytes": 251671
+    },
+    "responses/stability/gemma_run3/chains_mm-cognitive-hacking.csv.gz": {
+      "sha256": "f1b104b93fdfa05a3cfa13dde2800d9009ca4121161c28fed652f12353cb7cb9",
+      "bytes": 510753
+    },
+    "responses/stability/gemma_run3/chains_mm-forced-completion.csv.gz": {
+      "sha256": "015376f8c8ad03f78019b59fecad8f5bfe05bb5f33321f6ad6fd97ad2c9cd81d",
+      "bytes": 185466
+    },
+    "responses/stability/gemma_run3/chains_mm-gaslighting.csv.gz": {
+      "sha256": "123465ca51c2203be3f0924141fccfc2e3d8d57ac85f6991984183bcb6b024ad",
+      "bytes": 421986
+    },
+    "responses/stability/gemma_run3/chains_mm-nshot-hacking.csv.gz": {
+      "sha256": "da3d55a53fad807128993c6678ee5e16315b9095ed544e43f9fcf8e0846b9d12",
+      "bytes": 277250
+    },
+    "responses/stability/gemma_run4/baselines.csv.gz": {
+      "sha256": "43d17c434c5b2d192bd3877e25e8931a0cdaaddba12a2a9103774d73351021eb",
+      "bytes": 1294605
+    },
+    "responses/stability/gemma_run4/chains_ea-translation.csv.gz": {
+      "sha256": "9ad9bb6a45f852d41edafd762fb0fe0f25b26fb36c6c2df5a7b46644f5e8d098",
+      "bytes": 256771
+    },
+    "responses/stability/gemma_run4/chains_mm-cognitive-hacking.csv.gz": {
+      "sha256": "a0b6b087a402013f53eda50a7ec7aaa66932b5dadb2c7bce71cb55b5c6cc5718",
+      "bytes": 517980
+    },
+    "responses/stability/gemma_run4/chains_mm-forced-completion.csv.gz": {
+      "sha256": "dc74874e0fb55d75dfe04c3223bbf75603d423c798cc3204145e90d13af90f63",
+      "bytes": 182977
+    },
+    "responses/stability/gemma_run4/chains_mm-gaslighting.csv.gz": {
+      "sha256": "4401be50376b00378fddbf8f020cb2f66a2c60d5502dfedd47c8bdeb5a22ce52",
+      "bytes": 427498
+    },
+    "responses/stability/gemma_run4/chains_mm-nshot-hacking.csv.gz": {
+      "sha256": "92cc025196eaa4000c0389584b50e428c205251fb99a6d6b3bd6a6a7288cb147",
+      "bytes": 279505
+    },
+    "responses/stability/gemma_run5/baselines.csv.gz": {
+      "sha256": "356c7c30ef5c49e562d0fe089e67cb5ed0b7aece095078d633b7d153c17d2654",
+      "bytes": 1300855
+    },
+    "responses/stability/gemma_run5/chains_ea-translation.csv.gz": {
+      "sha256": "825825ee14eafac707a95657c9b5b4945154c7c85f2936f7953d03cc7ea1e4fd",
+      "bytes": 255884
+    },
+    "responses/stability/gemma_run5/chains_mm-cognitive-hacking.csv.gz": {
+      "sha256": "1fec22e649b39f819e335b5c1dbb49ab36a25b499782e0b5ab676901d91246d3",
+      "bytes": 516569
+    },
+    "responses/stability/gemma_run5/chains_mm-forced-completion.csv.gz": {
+      "sha256": "09c177efd34b15bd4ae55bd1e087b786902a83a97b44d9d0c6de2cb842d79e39",
+      "bytes": 185410
+    },
+    "responses/stability/gemma_run5/chains_mm-gaslighting.csv.gz": {
+      "sha256": "4189db2e4d087ff33d695850ef674b1f11a7c0ab3e38e41bb53b28f75a17efb5",
+      "bytes": 420124
+    },
+    "responses/stability/gemma_run5/chains_mm-nshot-hacking.csv.gz": {
+      "sha256": "5110897b4cf1f63cd0bc4b55ecd085a97086689776643700afb9673382b59623",
+      "bytes": 279708
+    },
+    "responses/stability/luna_run1/baselines.csv.gz": {
+      "sha256": "3b6dd7b60b5724186faef5fd9a364f37eefa066e9bac310d29893743e31dd35f",
+      "bytes": 2319440
+    },
+    "responses/stability/luna_run1/chains_ea-fictional.csv.gz": {
+      "sha256": "a299a715b149ba148dbb85af6cf30bd0281734f76f911aaefb6196ea01f12afc",
+      "bytes": 702360
+    },
+    "responses/stability/luna_run1/chains_mm-cognitive-hacking.csv.gz": {
+      "sha256": "218e6b3cceecfb2140257a2eca312d08d58daab4a7c2a36c864dbd23cf91302d",
+      "bytes": 623849
+    },
+    "responses/stability/luna_run1/chains_mm-gaslighting.csv.gz": {
+      "sha256": "f0ec243a0841f3f6ea3993e256579bec79b01a235e319136dc9762d67b99b5ab",
+      "bytes": 388886
+    },
+    "responses/stability/luna_run1/chains_mm-nshot-hacking.csv.gz": {
+      "sha256": "f3a42dce5b9adbc2eee4fa8eaf448ae7a63674d0ad579a0fed0226cca44d8c00",
+      "bytes": 781387
+    },
+    "responses/stability/luna_run2/baselines.csv.gz": {
+      "sha256": "59ccbe7546c68fd6add0d1c08cfba4ef4a390a2498aba40bfe7d1d7c8d43e738",
+      "bytes": 2317320
+    },
+    "responses/stability/luna_run2/chains_ea-fictional.csv.gz": {
+      "sha256": "05f47c186895fe730885bd6f259857b809506dfd39ab12031791525e8386386b",
+      "bytes": 697426
+    },
+    "responses/stability/luna_run2/chains_mm-cognitive-hacking.csv.gz": {
+      "sha256": "e77b943a7c0307fc6f871310ae356216f10a75d98814c9c61df7fb28bb04afc3",
+      "bytes": 620103
+    },
+    "responses/stability/luna_run2/chains_mm-gaslighting.csv.gz": {
+      "sha256": "0645171f4808c3e7dce2a3f1e5666e8827b66e0ca552dd6c1f3d657102260c21",
+      "bytes": 391276
+    },
+    "responses/stability/luna_run2/chains_mm-nshot-hacking.csv.gz": {
+      "sha256": "83fb09226f8a594ba3602b477c8b7dcf928b106908d584ec85faf7eb688c5d00",
+      "bytes": 776321
+    },
+    "responses/stability/luna_run3/baselines.csv.gz": {
+      "sha256": "b88eeed343891e5a7d20b8dcb94e99e7d4eacbbfa2ecf6ce35fb12ced38a60f5",
+      "bytes": 2333524
+    },
+    "responses/stability/luna_run3/chains_ea-fictional.csv.gz": {
+      "sha256": "9a292a959e3190a83280114b252961ff42fbb9eff65e6cfc010872820cb86cbf",
+      "bytes": 696506
+    },
+    "responses/stability/luna_run3/chains_mm-cognitive-hacking.csv.gz": {
+      "sha256": "a168bf844832a810ad16f043724983acf15e46c8d8bb3506af2eb18d5a8871dc",
+      "bytes": 627420
+    },
+    "responses/stability/luna_run3/chains_mm-gaslighting.csv.gz": {
+      "sha256": "93fc7f6b960943ce525406f72249bffbb3cd9ff139ffae405debe8dd03266610",
+      "bytes": 396811
+    },
+    "responses/stability/luna_run3/chains_mm-nshot-hacking.csv.gz": {
+      "sha256": "0540f1837f05cfb9a57291ed1104acd0cda7577cf938c816e20243cd01856edc",
+      "bytes": 774874
+    },
+    "responses/stability/luna_run4/baselines.csv.gz": {
+      "sha256": "5843124db0d8c22168991f49cd95f04aaed2af20a7802c14b3ece6da86b11c47",
+      "bytes": 2309367
+    },
+    "responses/stability/luna_run4/chains_ea-fictional.csv.gz": {
+      "sha256": "b1196a0cbe58b3f6b33dd4811e83878d3d1954eccb23eff6aaa02db7c441c79b",
+      "bytes": 700236
+    },
+    "responses/stability/luna_run4/chains_mm-cognitive-hacking.csv.gz": {
+      "sha256": "49bfaad7d58a0e56a94f7e33d3ad1d3b4ca8e3f55c601f5619d8b699d1aa13da",
+      "bytes": 623216
+    },
+    "responses/stability/luna_run4/chains_mm-gaslighting.csv.gz": {
+      "sha256": "ebf859d8f47f90fb452301235dbb0568fa4308ec39913456b6eb7b15c9035b58",
+      "bytes": 392932
+    },
+    "responses/stability/luna_run4/chains_mm-nshot-hacking.csv.gz": {
+      "sha256": "aea8cb34ccbe5e378ab95ad111170656745a5e8147a6b454a9cec676833c7e89",
+      "bytes": 782581
+    },
+    "responses/stability/luna_run5/baselines.csv.gz": {
+      "sha256": "c453db4a751515b302d4d3113463353896f487326cdfb08f374f41aed9453359",
+      "bytes": 2331611
+    },
+    "responses/stability/luna_run5/chains_ea-fictional.csv.gz": {
+      "sha256": "3b80c851b07d1eeb3b2246c12ceae1e6fa6d9bc68220e3103812ac0a9f02d8ec",
+      "bytes": 700528
+    },
+    "responses/stability/luna_run5/chains_mm-cognitive-hacking.csv.gz": {
+      "sha256": "a85ea6a349b98ec7fce916b5d647854bd66626678a99c1c771cd2b915c83ead2",
+      "bytes": 623426
+    },
+    "responses/stability/luna_run5/chains_mm-gaslighting.csv.gz": {
+      "sha256": "fdebd0f247685ffda5031cd8d138dbf0ad55ea47a71a3a2a50075028a434554a",
+      "bytes": 389621
+    },
+    "responses/stability/luna_run5/chains_mm-nshot-hacking.csv.gz": {
+      "sha256": "393f4b4a1aad5c48b7454161dbb1ff43a7ea4b435318b9bbf4311031e27a00e9",
+      "bytes": 784161
+    },
+    "responses/stability/qwen_run1/baselines.csv.gz": {
+      "sha256": "bc74cf6b18826ae9951eb68e3178958269a7b6689daee19669a0cc45c3b1a143",
+      "bytes": 2531885
+    },
+    "responses/stability/qwen_run1/chains_mm-cognitive-hacking.csv.gz": {
+      "sha256": "08f420d49145d198d99ebbf224de73831835e81242d94db319bb327e4c6ca87d",
+      "bytes": 986586
+    },
+    "responses/stability/qwen_run1/chains_mm-gaslighting.csv.gz": {
+      "sha256": "843499dffa7c7feb0d1293a4d5d99e2de4af687e86c22b31be8ed9927ecdcdf7",
+      "bytes": 1347387
+    },
+    "responses/stability/qwen_run1/chains_mm-nshot-hacking.csv.gz": {
+      "sha256": "2d9287ab8bfd9915f084d6ffd472f5b73edbb451f043d5b5617806537670db0f",
+      "bytes": 1330848
+    },
+    "responses/stability/qwen_run2/baselines.csv.gz": {
+      "sha256": "e6a297c3841444cb36f05b8100cc18b00ef5d03409b15e9fad10297aec652044",
+      "bytes": 2522674
+    },
+    "responses/stability/qwen_run2/chains_mm-cognitive-hacking.csv.gz": {
+      "sha256": "c4d68188f25cad2a3758b524ea3621a144e3f13e6bd6664788fa019fb255f37e",
+      "bytes": 1001137
+    },
+    "responses/stability/qwen_run2/chains_mm-gaslighting.csv.gz": {
+      "sha256": "6e24fe1362b2a81376812063c6ab43b4303cddd6decad410dae66497641cb208",
+      "bytes": 1375068
+    },
+    "responses/stability/qwen_run2/chains_mm-nshot-hacking.csv.gz": {
+      "sha256": "ced9fd4454c57292c51768c0620feb85da2e25fb8ac2b09593fb23d969316b5c",
+      "bytes": 1340797
+    },
+    "responses/stability/qwen_run3/baselines.csv.gz": {
+      "sha256": "4c7377b1016c3e9f4760880a1d504222b2df04d49700baf5e0bbcba0125c3abc",
+      "bytes": 2538910
+    },
+    "responses/stability/qwen_run3/chains_mm-cognitive-hacking.csv.gz": {
+      "sha256": "4e7a2a24cf46b4591fdbd6ce3a54410345e4618685760889a7c8e9dacc678c44",
+      "bytes": 996815
+    },
+    "responses/stability/qwen_run3/chains_mm-gaslighting.csv.gz": {
+      "sha256": "17ff07f7d16bd586b48e45ec06efd4da3e52e7495d53976c23b5c26282d1bccd",
+      "bytes": 1370549
+    },
+    "responses/stability/qwen_run3/chains_mm-nshot-hacking.csv.gz": {
+      "sha256": "a26405468d8d70e4a254ca28a7a34b28ce6c1bf845bda0099196baf6d4cfb076",
+      "bytes": 1341841
+    },
+    "responses/stability/qwen_run4/baselines.csv.gz": {
+      "sha256": "6d698722d47c85edd176b19bbddfbeee170a69429069bc52c430845d6a874c0a",
+      "bytes": 2550440
+    },
+    "responses/stability/qwen_run4/chains_mm-cognitive-hacking.csv.gz": {
+      "sha256": "9167f2001e25cc17939018df14b9f2fa226787e84f632939127d1986d191c43f",
+      "bytes": 994965
+    },
+    "responses/stability/qwen_run4/chains_mm-gaslighting.csv.gz": {
+      "sha256": "188bef8322e74945357e823309784a35f486d04e4d58c374b58a923940d978d4",
+      "bytes": 1385246
+    },
+    "responses/stability/qwen_run4/chains_mm-nshot-hacking.csv.gz": {
+      "sha256": "c1e4de5d857322e5e4da494870b0a2134a6ebb85ed9a28761edb5e09c4c4dc15",
+      "bytes": 1371669
+    },
+    "responses/stability/qwen_run5/baselines.csv.gz": {
+      "sha256": "2ab59b6e0a566abccc8e0a60dbd9375782be3e593a3155a2468b509797f07414",
+      "bytes": 2540006
+    },
+    "responses/stability/qwen_run5/chains_mm-cognitive-hacking.csv.gz": {
+      "sha256": "e9157442cc43239b25130c8422ded59682deddff60f789059d6d97755e1920d3",
+      "bytes": 1009238
+    },
+    "responses/stability/qwen_run5/chains_mm-gaslighting.csv.gz": {
+      "sha256": "b81d076b5635afca0dfba8f16eda8871a85ec0d91592af12061fc33fefc06ab3",
+      "bytes": 1351876
+    },
+    "responses/stability/qwen_run5/chains_mm-nshot-hacking.csv.gz": {
+      "sha256": "5fede8c651b5bca9be3c79434e7e3cf0fc1d31fb10a95f11bfed0e1898b4c1ae",
+      "bytes": 1365010
+    },
+    "responses/stability/r1_run1/baselines.csv.gz": {
+      "sha256": "7d0e3a1320d31a8cef9d9f4e88de219ae957e3c43afa205f8989f20eacdf7c88",
+      "bytes": 1183017
+    },
+    "responses/stability/r1_run1/chains_ea-fictional.csv.gz": {
+      "sha256": "b484b4be07678f41de256575194a8380ab8bd3c5005103f7018ead7c90c7805a",
+      "bytes": 719588
+    },
+    "responses/stability/r1_run1/chains_mm-cognitive-hacking.csv.gz": {
+      "sha256": "cfce333c9d0155abf1e0b8490ac9c5ef7563232695aeeb1ae02ad5e950838353",
+      "bytes": 439467
+    },
+    "responses/stability/r1_run1/chains_mm-forced-completion.csv.gz": {
+      "sha256": "22b3a508c5c18f124a973924f7e583bf40e2ce9597e92df3db55c3e93137af80",
+      "bytes": 616334
+    },
+    "responses/stability/r1_run1/chains_mm-privilege-escalation.csv.gz": {
+      "sha256": "6d8c751c83e3c383e6248083851889bd4158047820053eb09829b72af64aac45",
+      "bytes": 231517
+    },
+    "responses/stability/r1_run2/baselines.csv.gz": {
+      "sha256": "9114ef0ba00bc4ce4ab47b700c00f215aafabd02f66a74081935a733f298c389",
+      "bytes": 1177828
+    },
+    "responses/stability/r1_run2/chains_ea-fictional.csv.gz": {
+      "sha256": "dac88ffa62e4c1200b106e0da645a5c916204a3e83c56839a62ac624e32ab0f3",
+      "bytes": 737569
+    },
+    "responses/stability/r1_run2/chains_mm-cognitive-hacking.csv.gz": {
+      "sha256": "3880ac0353f3de732c193fd83dc23de67a39727af93ddf392de4faf95a0879a6",
+      "bytes": 452423
+    },
+    "responses/stability/r1_run2/chains_mm-forced-completion.csv.gz": {
+      "sha256": "ffb20f556e30b482a8a68838982799534c662a0b52e0bf2d6c189ed84be2248f",
+      "bytes": 606111
+    },
+    "responses/stability/r1_run2/chains_mm-privilege-escalation.csv.gz": {
+      "sha256": "8e5d67d058e52f9caf09edea8dd980e5b6ea62e55a39728dcf74666466508e43",
+      "bytes": 229690
+    },
+    "responses/stability/r1_run3/baselines.csv.gz": {
+      "sha256": "ca307a0449ea269e2cb766fa8ce448468ab875b5f39aa097fe3aaff0243acb06",
+      "bytes": 1209806
+    },
+    "responses/stability/r1_run3/chains_ea-fictional.csv.gz": {
+      "sha256": "3c6280f12603e5bb0275d558b2320ccfbd8d557615a00b9c5a79390b71033f06",
+      "bytes": 734259
+    },
+    "responses/stability/r1_run3/chains_mm-cognitive-hacking.csv.gz": {
+      "sha256": "5d056dba781384b51cebd02c22cb745895f7e9b629b867e7218534325bf713a8",
+      "bytes": 441019
+    },
+    "responses/stability/r1_run3/chains_mm-forced-completion.csv.gz": {
+      "sha256": "11ce35962454a71afb862e5b4283bef684995c68818aa9aa60065b245713c2bd",
+      "bytes": 616092
+    },
+    "responses/stability/r1_run3/chains_mm-privilege-escalation.csv.gz": {
+      "sha256": "79109cbac739481a8d62cf7baa8d584375d3ca1f941930835199032894feabd1",
+      "bytes": 240015
+    },
+    "responses/stability/r1_run4/baselines.csv.gz": {
+      "sha256": "c3a7def3c96aeb880dd55f1cf52bc6fbc6cca88208c0893c8b0ca009c0ac696f",
+      "bytes": 1180577
+    },
+    "responses/stability/r1_run4/chains_ea-fictional.csv.gz": {
+      "sha256": "a87146fdb0eb1acb7528f667f2e9532cda61455c163caa6dca5b35f7a609764b",
+      "bytes": 723235
+    },
+    "responses/stability/r1_run4/chains_mm-cognitive-hacking.csv.gz": {
+      "sha256": "dfe313e83ca6ba2328ad69cc8c94854c63dcbcc62533f872d4c2b1b4d5a2a491",
+      "bytes": 445762
+    },
+    "responses/stability/r1_run4/chains_mm-forced-completion.csv.gz": {
+      "sha256": "8ac29e24a201a08f0cd7b28fbacbf27a3aceefc96ee920dcb2b116f81ac18f01",
+      "bytes": 620103
+    },
+    "responses/stability/r1_run4/chains_mm-privilege-escalation.csv.gz": {
+      "sha256": "ba22471fa1724d348a21996247f571876dc5d12a18fb2db4cc8b373bea31f10a",
+      "bytes": 228912
+    },
+    "responses/stability/r1_run5/baselines.csv.gz": {
+      "sha256": "6917a118978b6e70dc2bf1ee2e2b7ed429ec22cad1f3b274277aca954c7a44b0",
+      "bytes": 1175247
+    },
+    "responses/stability/r1_run5/chains_ea-fictional.csv.gz": {
+      "sha256": "eaa162145469d37e582f903c2d88d7436438c7cc8cc5afb1dfd4c8ac2d5f1a05",
+      "bytes": 727846
+    },
+    "responses/stability/r1_run5/chains_mm-cognitive-hacking.csv.gz": {
+      "sha256": "34b7d2704e142d88c7412c1671fcfe742a9b3f12cfc76b26c113874712854961",
+      "bytes": 453763
+    },
+    "responses/stability/r1_run5/chains_mm-forced-completion.csv.gz": {
+      "sha256": "698d4cc50decb4eebc8e27964c52da1a989cf574c4f1ea6f8ba9f971bf5c7d26",
+      "bytes": 603534
+    },
+    "responses/stability/r1_run5/chains_mm-privilege-escalation.csv.gz": {
+      "sha256": "d839ce10e39fdc944b95b56e4814134ba990683354c04169f448c6a0dd515e97",
+      "bytes": 236718
+    },
+    "validation/intent_source_metadata.csv": {
+      "sha256": "713abdfc2f92be96ea30206d0e34c1c8933335b4dd721706684ad1c7d6909a91",
+      "bytes": 74005
+    },
+    "validation/persistence_check_gt.csv": {
+      "sha256": "2d8aaccdd190f823a161c3cd9df60e01a1c0cfe9ef4980eb34b0cffec703aadc",
+      "bytes": 813216
+    },
+    "writer_pilot/candidate_chains.csv.gz": {
+      "sha256": "fdde2235b730b21a1914e3165d35699eece581d655b3db33ffd3b133f57af054",
+      "bytes": 636865
+    },
+    "writer_pilot/settings.json": {
+      "sha256": "377be8d24f4268b48a8f4626a31eb8ea5dbc138368b15cb059f44083a1c0cb1d",
+      "bytes": 911
+    }
+  }
+}

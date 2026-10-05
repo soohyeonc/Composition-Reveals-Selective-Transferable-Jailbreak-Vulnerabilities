@@ -1,0 +1,150 @@
+{
+  "completeness": {
+    "grand_mean_complete_count": 196.49451097804393,
+    "median_mean_complete_count": 135.75,
+    "mean_cell_sd_complete_count": 7.240928393844938,
+    "retained_pairs": 66,
+    "pairwise_correlations": {
+      "batch_a_rate": {
+        "batch_a_rate": 1.0,
+        "batch_b_rate": 0.996691121149817,
+        "batch_c_rate": 0.9975547847258897,
+        "batch_d_rate": 0.997851657093764
+      },
+      "batch_b_rate": {
+        "batch_a_rate": 0.996691121149817,
+        "batch_b_rate": 1.0,
+        "batch_c_rate": 0.9964063878167628,
+        "batch_d_rate": 0.9969552280689372
+      },
+      "batch_c_rate": {
+        "batch_a_rate": 0.9975547847258897,
+        "batch_b_rate": 0.9964063878167628,
+        "batch_c_rate": 1.0,
+        "batch_d_rate": 0.9977115871191364
+      },
+      "batch_d_rate": {
+        "batch_a_rate": 0.997851657093764,
+        "batch_b_rate": 0.9969552280689372,
+        "batch_c_rate": 0.9977115871191364,
+        "batch_d_rate": 1.0
+      }
+    }
+  },
+  "stability": {
+    "luna": {
+      "max_discovery_rerun_count_difference": 8,
+      "stability_target_tasks": 36400,
+      "stability_provider_blocks": 87
+    },
+    "r1": {
+      "max_discovery_rerun_count_difference": 19,
+      "stability_target_tasks": 36400,
+      "stability_provider_blocks": 0
+    },
+    "gemma": {
+      "max_discovery_rerun_count_difference": 8,
+      "stability_target_tasks": 36400,
+      "stability_provider_blocks": 0
+    },
+    "qwen": {
+      "max_discovery_rerun_count_difference": 6,
+      "stability_target_tasks": 33800,
+      "stability_provider_blocks": 0
+    }
+  },
+  "writer_pilot": {
+    "alignment_rule": {
+      "aligned": {
+        "mean_absolute_difference_max": 0.1,
+        "median_gate_agreement_min": 0.8,
+        "spearman_min": 0.8
+      },
+      "materially_different": {
+        "mean_absolute_difference_above": 0.15,
+        "median_gate_agreement_below": 0.7,
+        "spearman_below": 0.65
+      }
+    },
+    "analysis": "GPT-5.6 versus GPT-3.5 mutation persistence alignment pilot",
+    "bootstrap_95_percent_intervals": {
+      "mean_absolute_difference": {
+        "high": 0.3325757575757576,
+        "low": 0.2890151515151515
+      },
+      "mean_signed_difference": {
+        "high": -0.24621212121212122,
+        "low": -0.28901515151515156
+      },
+      "median_gate_agreement": {
+        "high": 0.5454545454545454,
+        "low": 0.5
+      },
+      "median_gate_jaccard": {
+        "high": 0.5454545454545454,
+        "low": 0.5
+      },
+      "pearson": {
+        "high": 0.402303434036266,
+        "low": 0.27677143663678905
+      },
+      "spearman": {
+        "high": 0.44735728316890966,
+        "low": 0.31590908480298757
+      }
+    },
+    "candidate_provider_blocks": 109,
+    "decision": "materially_different",
+    "pairs": 132,
+    "point_estimates": {
+      "mean_absolute_difference": 0.3053030303030303,
+      "mean_signed_difference": -0.2674242424242424,
+      "median_gate_agreement": 0.5,
+      "median_gate_jaccard": 0.5,
+      "pearson": 0.3597529785285456,
+      "spearman": 0.4259639212148431
+    },
+    "row_level_complete_agreement": 0.656060606060606,
+    "rows": 2640,
+    "sample_prompts": 20,
+    "candidate_complete_upper_bound_with_all_blocks_successful": 0.14696969696969697
+  },
+  "frozen_first_stage_identity": {
+    "identical": 294,
+    "chains": 68640
+  },
+  "case_study": [
+    {
+      "model": "GPT-5.6 Luna",
+      "prompt_row": 1,
+      "pair_success": true,
+      "m1_success": false,
+      "m2_success": false,
+      "complete_pair_only_rescues": 20
+    },
+    {
+      "model": "DeepSeek R1 8B",
+      "prompt_row": 1,
+      "pair_success": true,
+      "m1_success": false,
+      "m2_success": false,
+      "complete_pair_only_rescues": 23
+    },
+    {
+      "model": "Gemma 4 31B",
+      "prompt_row": 1,
+      "pair_success": false,
+      "m1_success": false,
+      "m2_success": false,
+      "complete_pair_only_rescues": 14
+    },
+    {
+      "model": "Qwen3.8 27B",
+      "prompt_row": 1,
+      "pair_success": false,
+      "m1_success": false,
+      "m2_success": false,
+      "complete_pair_only_rescues": 4
+    }
+  ]
+}

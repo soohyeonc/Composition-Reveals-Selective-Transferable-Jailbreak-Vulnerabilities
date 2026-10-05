@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "rows": 1361,
+  "unique_prompts": 39,
+  "primary_human_reference": "label_median > 0",
+  "primary_human_positive": 326,
+  "primary_human_negative": 1035,
+  "judge_disagreements": 161,
+  "bootstrap_replicates": 10000
+}

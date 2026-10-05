@@ -1,0 +1,427 @@
+[
+  {
+    "model": "GPT-5.6 Luna",
+    "phase": "discovery",
+    "settings": {
+      "dataset_sha256": "72935e1b47c38739a6b04fe2137493eb973963dc53065a2d497cfd84c4376ef5",
+      "evaluator_model": "gpt-4o-mini-2024-07-18",
+      "evaluator_prompts_sha256": "8b5fbeed2ca5041623fa9b65514273a6adb4af19fd8179ec02d61262a2fb0341",
+      "mutator_model": "gpt-3.5-turbo-0125",
+      "mutator_prompts_sha256": "5b809fec99b1e72a7e95b537a03a8cbdd1d86641df386e9ead31ac44db8c606e",
+      "persistence_prompts_sha256": "2ab8147151883a3915f6b2def91ec9a50e691780ff95bcc8bb47d4611b61a6a5",
+      "target_model": "gpt-5.6-luna",
+      "target_reasoning_effort": "none"
+    },
+    "source_artifact_id": "source-2fef43e19e32e6e1"
+  },
+  {
+    "model": "GPT-5.6 Luna",
+    "phase": "stability",
+    "release_run_id": "luna-run-1",
+    "run": 1,
+    "settings": {
+      "evaluator_model": "gpt-4o-mini-2024-07-18",
+      "mutator_model": "gpt-3.5-turbo-0125",
+      "target_model": "gpt-5.6-luna",
+      "target_reasoning_effort": "none",
+      "target_seed": null
+    },
+    "source_artifact_id": "source-6497abe2f6c86753"
+  },
+  {
+    "model": "GPT-5.6 Luna",
+    "phase": "stability",
+    "release_run_id": "luna-run-2",
+    "run": 2,
+    "settings": {
+      "evaluator_model": "gpt-4o-mini-2024-07-18",
+      "mutator_model": "gpt-3.5-turbo-0125",
+      "target_model": "gpt-5.6-luna",
+      "target_reasoning_effort": "none",
+      "target_seed": null
+    },
+    "source_artifact_id": "source-82110dd429fa3bd4"
+  },
+  {
+    "model": "GPT-5.6 Luna",
+    "phase": "stability",
+    "release_run_id": "luna-run-3",
+    "run": 3,
+    "settings": {
+      "evaluator_model": "gpt-4o-mini-2024-07-18",
+      "mutator_model": "gpt-3.5-turbo-0125",
+      "target_model": "gpt-5.6-luna",
+      "target_reasoning_effort": "none",
+      "target_seed": null
+    },
+    "source_artifact_id": "source-067b3bf06640c41e"
+  },
+  {
+    "model": "GPT-5.6 Luna",
+    "phase": "stability",
+    "release_run_id": "luna-run-4",
+    "run": 4,
+    "settings": {
+      "evaluator_model": "gpt-4o-mini-2024-07-18",
+      "mutator_model": "gpt-3.5-turbo-0125",
+      "target_model": "gpt-5.6-luna",
+      "target_reasoning_effort": "none",
+      "target_seed": null
+    },
+    "source_artifact_id": "source-795f14945e911e8f"
+  },
+  {
+    "model": "GPT-5.6 Luna",
+    "phase": "stability",
+    "release_run_id": "luna-run-5",
+    "run": 5,
+    "settings": {
+      "evaluator_model": "gpt-4o-mini-2024-07-18",
+      "mutator_model": "gpt-3.5-turbo-0125",
+      "target_model": "gpt-5.6-luna",
+      "target_reasoning_effort": "none",
+      "target_seed": null
+    },
+    "source_artifact_id": "source-9aa882de6b535f68"
+  },
+  {
+    "model": "DeepSeek R1 8B",
+    "phase": "discovery",
+    "settings": {
+      "evaluator_model": "gpt-4o-mini-2024-07-18",
+      "mutator_model": "gpt-3.5-turbo-0125",
+      "target_model": "deepseek-r1:8b",
+      "target_model_digest": "6995872bfe4c",
+      "target_think": false
+    },
+    "source_artifact_id": "source-a94edf7c141d14fe"
+  },
+  {
+    "model": "DeepSeek R1 8B",
+    "phase": "stability",
+    "release_run_id": "r1-run-1",
+    "run": 1,
+    "settings": {
+      "evaluator_model": "gpt-4o-mini-2024-07-18",
+      "mutator_model": "gpt-3.5-turbo-0125",
+      "ollama_library": "CUDA12",
+      "ollama_quantization": "Q4_K_M",
+      "ollama_version": "0.12.9",
+      "target_model": "deepseek-r1:8b",
+      "target_model_digest": "6995872bfe4c521a67b32da386cd21d5c6e819b6e0d62f79f64ec83be99f5763",
+      "target_num_ctx": 8192,
+      "target_seed": 92001,
+      "target_seed_derivation": "sha256(root_seed\\x1ftask_kind\\x1ftask_id)[:4]",
+      "target_think": false
+    },
+    "source_artifact_id": "source-0563d6659c84f470"
+  },
+  {
+    "model": "DeepSeek R1 8B",
+    "phase": "stability",
+    "release_run_id": "r1-run-2",
+    "run": 2,
+    "settings": {
+      "evaluator_model": "gpt-4o-mini-2024-07-18",
+      "mutator_model": "gpt-3.5-turbo-0125",
+      "ollama_library": "CUDA12",
+      "ollama_quantization": "Q4_K_M",
+      "ollama_version": "0.12.9",
+      "target_model": "deepseek-r1:8b",
+      "target_model_digest": "6995872bfe4c521a67b32da386cd21d5c6e819b6e0d62f79f64ec83be99f5763",
+      "target_num_ctx": 8192,
+      "target_seed": 92002,
+      "target_seed_derivation": "sha256(root_seed\\x1ftask_kind\\x1ftask_id)[:4]",
+      "target_think": false
+    },
+    "source_artifact_id": "source-114a983346650c19"
+  },
+  {
+    "model": "DeepSeek R1 8B",
+    "phase": "stability",
+    "release_run_id": "r1-run-3",
+    "run": 3,
+    "settings": {
+      "evaluator_model": "gpt-4o-mini-2024-07-18",
+      "mutator_model": "gpt-3.5-turbo-0125",
+      "ollama_library": "CUDA12",
+      "ollama_quantization": "Q4_K_M",
+      "ollama_version": "0.12.9",
+      "target_model": "deepseek-r1:8b",
+      "target_model_digest": "6995872bfe4c521a67b32da386cd21d5c6e819b6e0d62f79f64ec83be99f5763",
+      "target_num_ctx": 8192,
+      "target_seed": 92003,
+      "target_seed_derivation": "sha256(root_seed\\x1ftask_kind\\x1ftask_id)[:4]",
+      "target_think": false
+    },
+    "source_artifact_id": "source-cfd41f38af95e4f2"
+  },
+  {
+    "model": "DeepSeek R1 8B",
+    "phase": "stability",
+    "release_run_id": "r1-run-4",
+    "run": 4,
+    "settings": {
+      "evaluator_model": "gpt-4o-mini-2024-07-18",
+      "mutator_model": "gpt-3.5-turbo-0125",
+      "ollama_library": "CUDA12",
+      "ollama_quantization": "Q4_K_M",
+      "ollama_version": "0.12.9",
+      "target_model": "deepseek-r1:8b",
+      "target_model_digest": "6995872bfe4c521a67b32da386cd21d5c6e819b6e0d62f79f64ec83be99f5763",
+      "target_num_ctx": 8192,
+      "target_seed": 92004,
+      "target_seed_derivation": "sha256(root_seed\\x1ftask_kind\\x1ftask_id)[:4]",
+      "target_think": false
+    },
+    "source_artifact_id": "source-ca57a36fc03caa56"
+  },
+  {
+    "model": "DeepSeek R1 8B",
+    "phase": "stability",
+    "release_run_id": "r1-run-5",
+    "run": 5,
+    "settings": {
+      "evaluator_model": "gpt-4o-mini-2024-07-18",
+      "mutator_model": "gpt-3.5-turbo-0125",
+      "ollama_library": "CUDA12",
+      "ollama_quantization": "Q4_K_M",
+      "ollama_version": "0.12.9",
+      "target_model": "deepseek-r1:8b",
+      "target_model_digest": "6995872bfe4c521a67b32da386cd21d5c6e819b6e0d62f79f64ec83be99f5763",
+      "target_num_ctx": 8192,
+      "target_seed": 92005,
+      "target_seed_derivation": "sha256(root_seed\\x1ftask_kind\\x1ftask_id)[:4]",
+      "target_think": false
+    },
+    "source_artifact_id": "source-58198196096ec9c1"
+  },
+  {
+    "model": "Gemma 4 31B",
+    "phase": "discovery",
+    "settings": {
+      "evaluator_model": "gpt-4o-mini-2024-07-18",
+      "mutator_model": "gpt-3.5-turbo-0125",
+      "target_model": "gemma4:31b",
+      "target_model_digest": "6316f0629137b426c9d9b853ffc4c8209589f30ee39aebede6285096c0ff47e7",
+      "target_think": false
+    },
+    "source_artifact_id": "source-a21a3e78d3f7998a"
+  },
+  {
+    "model": "Gemma 4 31B",
+    "phase": "stability",
+    "release_run_id": "gemma-run-1",
+    "run": 1,
+    "settings": {
+      "evaluator_model": "gpt-4o-mini-2024-07-18",
+      "mutator_model": "gpt-3.5-turbo-0125",
+      "ollama_library": "CUDA12",
+      "ollama_quantization": "Q4_K_M",
+      "ollama_version": "0.32.9",
+      "target_model": "gemma4:31b",
+      "target_model_digest": "6316f0629137b426c9d9b853ffc4c8209589f30ee39aebede6285096c0ff47e7",
+      "target_num_ctx": 8192,
+      "target_seed": 93001,
+      "target_seed_derivation": "sha256(root_seed\\x1ftask_kind\\x1ftask_id)[:4]",
+      "target_think": false
+    },
+    "source_artifact_id": "source-46f6c05287e257c0"
+  },
+  {
+    "model": "Gemma 4 31B",
+    "phase": "stability",
+    "release_run_id": "gemma-run-2",
+    "run": 2,
+    "settings": {
+      "evaluator_model": "gpt-4o-mini-2024-07-18",
+      "mutator_model": "gpt-3.5-turbo-0125",
+      "ollama_library": "CUDA12",
+      "ollama_quantization": "Q4_K_M",
+      "ollama_version": "0.32.9",
+      "target_model": "gemma4:31b",
+      "target_model_digest": "6316f0629137b426c9d9b853ffc4c8209589f30ee39aebede6285096c0ff47e7",
+      "target_num_ctx": 8192,
+      "target_seed": 93002,
+      "target_seed_derivation": "sha256(root_seed\\x1ftask_kind\\x1ftask_id)[:4]",
+      "target_think": false
+    },
+    "source_artifact_id": "source-57c7b98d86e633b1"
+  },
+  {
+    "model": "Gemma 4 31B",
+    "phase": "stability",
+    "release_run_id": "gemma-run-3",
+    "run": 3,
+    "settings": {
+      "evaluator_model": "gpt-4o-mini-2024-07-18",
+      "mutator_model": "gpt-3.5-turbo-0125",
+      "ollama_library": "CUDA12",
+      "ollama_quantization": "Q4_K_M",
+      "ollama_version": "0.32.9",
+      "target_model": "gemma4:31b",
+      "target_model_digest": "6316f0629137b426c9d9b853ffc4c8209589f30ee39aebede6285096c0ff47e7",
+      "target_num_ctx": 8192,
+      "target_seed": 93003,
+      "target_seed_derivation": "sha256(root_seed\\x1ftask_kind\\x1ftask_id)[:4]",
+      "target_think": false
+    },
+    "source_artifact_id": "source-f93583ab1643ff75"
+  },
+  {
+    "model": "Gemma 4 31B",
+    "phase": "stability",
+    "release_run_id": "gemma-run-4",
+    "run": 4,
+    "settings": {
+      "evaluator_model": "gpt-4o-mini-2024-07-18",
+      "mutator_model": "gpt-3.5-turbo-0125",
+      "ollama_library": "CUDA12",
+      "ollama_quantization": "Q4_K_M",
+      "ollama_version": "0.32.9",
+      "target_model": "gemma4:31b",
+      "target_model_digest": "6316f0629137b426c9d9b853ffc4c8209589f30ee39aebede6285096c0ff47e7",
+      "target_num_ctx": 8192,
+      "target_seed": 93004,
+      "target_seed_derivation": "sha256(root_seed\\x1ftask_kind\\x1ftask_id)[:4]",
+      "target_think": false
+    },
+    "source_artifact_id": "source-cccc2b23984d5b3b"
+  },
+  {
+    "model": "Gemma 4 31B",
+    "phase": "stability",
+    "release_run_id": "gemma-run-5",
+    "run": 5,
+    "settings": {
+      "evaluator_model": "gpt-4o-mini-2024-07-18",
+      "mutator_model": "gpt-3.5-turbo-0125",
+      "ollama_library": "CUDA12",
+      "ollama_quantization": "Q4_K_M",
+      "ollama_version": "0.32.9",
+      "target_model": "gemma4:31b",
+      "target_model_digest": "6316f0629137b426c9d9b853ffc4c8209589f30ee39aebede6285096c0ff47e7",
+      "target_num_ctx": 8192,
+      "target_seed": 93005,
+      "target_seed_derivation": "sha256(root_seed\\x1ftask_kind\\x1ftask_id)[:4]",
+      "target_think": false
+    },
+    "source_artifact_id": "source-0ccfc27c917a7098"
+  },
+  {
+    "model": "Qwen3.8 27B",
+    "phase": "discovery",
+    "settings": {
+      "evaluator_model": "gpt-4o-mini-2024-07-18",
+      "mutator_model": "gpt-3.5-turbo-0125",
+      "ollama_library": "cuda_v12",
+      "ollama_quantization": "Q4_K_M",
+      "ollama_version": "0.33.1",
+      "target_model": "qwen3.8:27b",
+      "target_model_digest": "22130167c4c20e20c7b71454612966ca8e8171e9b3cc8ab6ce8aa6cbfec79643",
+      "target_num_ctx": 8192,
+      "target_think": false
+    },
+    "source_artifact_id": "source-6f47fe1274dc46d9"
+  },
+  {
+    "model": "Qwen3.8 27B",
+    "phase": "stability",
+    "release_run_id": "qwen-run-1",
+    "run": 1,
+    "settings": {
+      "evaluator_model": "gpt-4o-mini-2024-07-18",
+      "mutator_model": "gpt-3.5-turbo-0125",
+      "ollama_library": "CUDA12",
+      "ollama_quantization": "Q4_K_M",
+      "ollama_version": "0.33.1",
+      "target_model": "qwen3.8:27b",
+      "target_model_digest": "22130167c4c20e20c7b71454612966ca8e8171e9b3cc8ab6ce8aa6cbfec79643",
+      "target_num_ctx": 8192,
+      "target_seed": 91001,
+      "target_seed_derivation": "sha256(root_seed\\x1ftask_kind\\x1ftask_id)[:4]",
+      "target_think": false
+    },
+    "source_artifact_id": "source-e4edf19e0b67f921"
+  },
+  {
+    "model": "Qwen3.8 27B",
+    "phase": "stability",
+    "release_run_id": "qwen-run-2",
+    "run": 2,
+    "settings": {
+      "evaluator_model": "gpt-4o-mini-2024-07-18",
+      "mutator_model": "gpt-3.5-turbo-0125",
+      "ollama_library": "CUDA12",
+      "ollama_quantization": "Q4_K_M",
+      "ollama_version": "0.33.1",
+      "target_model": "qwen3.8:27b",
+      "target_model_digest": "22130167c4c20e20c7b71454612966ca8e8171e9b3cc8ab6ce8aa6cbfec79643",
+      "target_num_ctx": 8192,
+      "target_seed": 91002,
+      "target_seed_derivation": "sha256(root_seed\\x1ftask_kind\\x1ftask_id)[:4]",
+      "target_think": false
+    },
+    "source_artifact_id": "source-2145096f9c90da3d"
+  },
+  {
+    "model": "Qwen3.8 27B",
+    "phase": "stability",
+    "release_run_id": "qwen-run-3",
+    "run": 3,
+    "settings": {
+      "evaluator_model": "gpt-4o-mini-2024-07-18",
+      "mutator_model": "gpt-3.5-turbo-0125",
+      "ollama_library": "CUDA12",
+      "ollama_quantization": "Q4_K_M",
+      "ollama_version": "0.33.1",
+      "target_model": "qwen3.8:27b",
+      "target_model_digest": "22130167c4c20e20c7b71454612966ca8e8171e9b3cc8ab6ce8aa6cbfec79643",
+      "target_num_ctx": 8192,
+      "target_seed": 91003,
+      "target_seed_derivation": "sha256(root_seed\\x1ftask_kind\\x1ftask_id)[:4]",
+      "target_think": false
+    },
+    "source_artifact_id": "source-30435c310a256a1b"
+  },
+  {
+    "model": "Qwen3.8 27B",
+    "phase": "stability",
+    "release_run_id": "qwen-run-4",
+    "run": 4,
+    "settings": {
+      "evaluator_model": "gpt-4o-mini-2024-07-18",
+      "mutator_model": "gpt-3.5-turbo-0125",
+      "ollama_library": "CUDA12",
+      "ollama_quantization": "Q4_K_M",
+      "ollama_version": "0.33.1",
+      "target_model": "qwen3.8:27b",
+      "target_model_digest": "22130167c4c20e20c7b71454612966ca8e8171e9b3cc8ab6ce8aa6cbfec79643",
+      "target_num_ctx": 8192,
+      "target_seed": 91004,
+      "target_seed_derivation": "sha256(root_seed\\x1ftask_kind\\x1ftask_id)[:4]",
+      "target_think": false
+    },
+    "source_artifact_id": "source-f52d021275c1d1c3"
+  },
+  {
+    "model": "Qwen3.8 27B",
+    "phase": "stability",
+    "release_run_id": "qwen-run-5",
+    "run": 5,
+    "settings": {
+      "evaluator_model": "gpt-4o-mini-2024-07-18",
+      "mutator_model": "gpt-3.5-turbo-0125",
+      "ollama_library": "CUDA12",
+      "ollama_quantization": "Q4_K_M",
+      "ollama_version": "0.33.1",
+      "target_model": "qwen3.8:27b",
+      "target_model_digest": "22130167c4c20e20c7b71454612966ca8e8171e9b3cc8ab6ce8aa6cbfec79643",
+      "target_num_ctx": 8192,
+      "target_seed": 91005,
+      "target_seed_derivation": "sha256(root_seed\\x1ftask_kind\\x1ftask_id)[:4]",
+      "target_think": false
+    },
+    "source_artifact_id": "source-acdbd29ac5e70b50"
+  }
+]

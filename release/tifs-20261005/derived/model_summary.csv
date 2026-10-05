@@ -1,0 +1,5 @@
+model,individual_successes,individual_attempts,pair_successes,pair_attempts,raw_positive_pairs,matched_screen_pairs,baseline_blocks,pair_blocks
+GPT-5.6 Luna,41,6240,471,68640,22,13,7,114
+DeepSeek R1 8B,156,6240,2785,68640,54,34,0,0
+Gemma 4 31B,56,6240,689,68640,21,16,0,0
+Qwen3.8 27B,10,6240,114,68640,18,9,0,0

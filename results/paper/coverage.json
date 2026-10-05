@@ -1,0 +1,24 @@
+{
+  "artifact_checks": "PASS",
+  "paper_coverage": "INCOMPLETE",
+  "release_manifest_sha256": "cbebecf079f80091a1a7d4e61765fc74bfc78de6439cde49d7190daa404b2004",
+  "support_manifest_sha256": "d2eadf84040a1a2354a69df3b64c0271b1dc362d82bf57f4db0eb5001579c37c",
+  "response_records_checked": 442520,
+  "reported_stability_conditions": 28,
+  "reported_pair_runs": 140,
+  "judge_bootstrap_replicates": 10000,
+  "writer_bootstrap_replicates": 2000,
+  "model_calls": 0,
+  "missing_evidence": [
+    {
+      "scope": "Independent safety-judge benchmark validation",
+      "status": "Outside the distributed artifact"
+    }
+  ],
+  "external_input": {
+    "kind": "StrongREJECT text for fresh judge inference only",
+    "url": "https://osf.io/download/jwmqe/",
+    "sha256": "7a5928a4f09b4cbfce274001873ccf095510d5a990f8be52e4323d4c069fbad2",
+    "offline_numeric_reproduction": "All metadata, clusters and labels included"
+  }
+}

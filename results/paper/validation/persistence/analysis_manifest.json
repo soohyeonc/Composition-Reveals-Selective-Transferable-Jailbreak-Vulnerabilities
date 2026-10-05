@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "source_chains": 132,
+  "decisions": 264,
+  "human_positive": 164,
+  "human_negative": 100,
+  "m1_positive": 39,
+  "m2_positive": 125,
+  "majority_errors": 27,
+  "judge_disagreements": 43,
+  "bootstrap_replicates": 10000,
+  "bootstrap_cluster": "chain_id"
+}
