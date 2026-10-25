@@ -1,5 +1,7 @@
 # Composition Reveals Selective, Transferable Jailbreak Vulnerabilities in Four Large Language Models
 
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue?style=flat-square)](LICENSE) [![Python 3.11](https://img.shields.io/badge/python-3.11-blue?style=flat-square)](environment.yml) [![Offline reproduction](https://img.shields.io/badge/reproduction-offline-blue?style=flat-square)](#reproduce-the-recorded-results) [![Research content warning](https://img.shields.io/badge/content-research%20warning-orange?style=flat-square)](#research-content-warning)
+
 Code, frozen inputs, recorded outputs, and analysis for the four-target study of
 compositional jailbreaking. The experiments compare twelve individual prompt
 transformations with all 132 ordered pairs on 520 AdvBench requests. One frozen
@@ -11,14 +13,26 @@ conditions per target**, five repetitions, historical completeness measurements,
 the mutation-writer comparison, and both three-judge validation studies. It does
 not include unreported stability conditions or experiments on older targets.
 
-**Artifact scope:** all included empirical artifacts pass offline reproduction.
-Verification covers the distributed datasets and analyses, not every manuscript
-statement or the independent correctness of automated judgments. See
-[the paper-to-artifact map](REPRODUCIBILITY.md) for the precise boundary.
+<a id="research-content-warning"></a>
 
-**Research content warning:** inputs and recorded model responses contain harmful
-requests and jailbreak material. Use these artifacts for controlled security
-evaluation. No model weights or credentials are distributed.
+> [!WARNING]
+> **Research content warning:** inputs and recorded model responses contain harmful
+> requests and jailbreak material. Use these artifacts for controlled security
+> evaluation. No model weights or credentials are distributed.
+
+> [!IMPORTANT]
+> **Artifact scope:** all included empirical artifacts pass offline reproduction.
+> Verification covers the distributed datasets and analyses, not every manuscript
+> statement or the independent correctness of automated judgments. See
+> [the paper-to-artifact map](REPRODUCIBILITY.md) for the precise boundary.
+
+## Where to start
+
+| If you want to… | Start here |
+| --- | --- |
+| Read the recorded results | [FOUR_MODEL_RESULTS.md](FOUR_MODEL_RESULTS.md) and the [results index](#read-the-results) |
+| Check those results offline | [Reproduce the recorded results](#reproduce-the-recorded-results) |
+| Run a new target evaluation | [Run a fresh target evaluation](#run-a-fresh-target-evaluation). Needs `OPENAI_API_KEY`, an available target, and `--budget-usd` |
 
 ## Reproduce the recorded results
 
@@ -68,25 +82,26 @@ Start with [FOUR_MODEL_RESULTS.md](FOUR_MODEL_RESULTS.md). The complete,
 paper-aligned outputs are already saved under [results/paper/](results/paper/).
 No rerun is needed to inspect them.
 
-| Results | File |
-| --- | --- |
-| Model-level summary | [Table VI](results/paper/table06_model_summary.csv) |
-| Every individual mutator | [Individual results](results/paper/individual_mutator_results.csv) |
-| All 528 discovery pair comparisons | [Pair results](results/paper/all_discovery_pairs.csv) |
-| Featured discovery examples | [Table VII](results/paper/table07_featured_discovery.csv) |
-| Featured five-run summaries | [Table VIII](results/paper/table08_featured_stability.csv) |
-| Featured per-run counts | [Table IX](results/paper/table09_featured_runs.csv) |
-| All seven conditions, original and runs 1–5 | [Readable stability tables](results/paper/STABILITY_TABLES.md) |
-| All 28 stability summaries | [Supplemental table](results/paper/table11_all_stability_conditions.csv) |
-| Completeness and writer comparison | [Table V](results/paper/table05_completeness_batches.csv), [Table X](results/paper/table10_writer_pilot.csv) |
-| Judge validation | [Intent](results/paper/validation/intent/SUMMARY.md), [persistence](results/paper/validation/persistence/SUMMARY.md) |
-| Figures and claim coverage | [Figures](results/paper/figures/), [coverage report](results/paper/coverage.json) |
+| Group | Results | File |
+| --- | --- | --- |
+| Summary | Model-level summary | [Table VI](results/paper/table06_model_summary.csv) |
+| Discovery | Every individual mutator | [Individual results](results/paper/individual_mutator_results.csv) |
+| Discovery | All 528 discovery pair comparisons | [Pair results](results/paper/all_discovery_pairs.csv) |
+| Discovery | Featured discovery examples | [Table VII](results/paper/table07_featured_discovery.csv) |
+| Stability | Featured five-run summaries | [Table VIII](results/paper/table08_featured_stability.csv) |
+| Stability | Featured per-run counts | [Table IX](results/paper/table09_featured_runs.csv) |
+| Stability | All seven conditions, original and runs 1–5 | [Readable stability tables](results/paper/STABILITY_TABLES.md) |
+| Stability | All 28 stability summaries | [Supplemental table](results/paper/table11_all_stability_conditions.csv) |
+| Validation | Judge validation | [Intent](results/paper/validation/intent/SUMMARY.md), [persistence](results/paper/validation/persistence/SUMMARY.md) |
+| Completeness | Completeness and writer comparison | [Table V](results/paper/table05_completeness_batches.csv), [Table X](results/paper/table10_writer_pilot.csv) |
+| Figures | Figures and claim coverage | [Figures](results/paper/figures/), [coverage report](results/paper/coverage.json) |
 
-All reported data come from the completed dataset frozen on 14 September 2026.
-The seven-condition panels were selected retrospectively. Their five-run outcomes
-describe those conditions, not general consistency across all 132 pairs. The
-four historical mutation batches are not controlled repetitions of a pinned
-writer configuration.
+> [!NOTE]
+> All reported data come from the completed dataset frozen on 14 September 2026.
+> The seven-condition panels were selected retrospectively. Their five-run outcomes
+> describe those conditions, not general consistency across all 132 pairs. The
+> four historical mutation batches are not controlled repetitions of a pinned
+> writer configuration.
 
 ## Run a fresh target evaluation
 
@@ -116,6 +131,8 @@ python scripts/run_frozen_experiment.py \
 
 python scripts/analyze_target_run.py --run-dir outputs/r1-run1
 ```
+
+### Details
 
 Local targets require Ollama with the recorded checkpoint digest. The runner
 checks that digest before inference. Luna requires access to its recorded hosted
