@@ -8,6 +8,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import re
 import shutil
 import subprocess
 import sys
@@ -158,6 +159,77 @@ def write_tables(release, support, out, tables):
     return assertions
 
 
+# A writer refusal is a mutation output that opens by declining the request instead of transforming it.
+REFUSAL = re.compile(r"^\W*(i'?m sorry|i am sorry|sorry|i can(?:'|’)?t|i cannot|i'?m unable|i am unable|i won(?:'|’)?t)"
+                     r"[^.\n]{0,60}\b(help|assist|comply|provide|fulfil|create|generate|rewrite|transform|with that|this request|that request)", re.I)
+
+
+def refused(series):
+    return series.fillna("").map(lambda text: bool(REFUSAL.search(text.strip()[:300])))
+
+
+def counts(series):
+    return {key: int(value) for key, value in series.items()}
+
+
+def writer_refusals(release, support):
+    keys = ["prompt_row", "mutator_1", "mutator_2"]
+    labels = pd.read_csv(release / "discovery/luna_chains.csv.gz")
+    frozen = pd.read_csv(release / "prompts/frozen_chains.csv.gz", keep_default_na=False).merge(
+        labels[keys + ["m1_persistence", "m2_persistence"]], on=keys, validate="one_to_one")
+    first, second = refused(frozen.jailbreak_prompt_1), refused(frozen.jailbreak_prompt_2)
+    either = first | second
+    base = pd.read_csv(release / "prompts/frozen_baselines.csv.gz", keep_default_na=False)
+    standalone = refused(base.mutated_prompt)
+    candidate = pd.read_csv(support / "writer_pilot/candidate_chains.csv.gz", keep_default_na=False)
+    candidate["blocked"] = candidate.provider_status.ne("ok")
+    candidate["refused_first"] = ~candidate.blocked & refused(candidate.jailbreak_prompt_1)
+    pilot = pd.read_csv(release / "writer_pilot/row_labels.csv").merge(
+        candidate[keys + ["blocked", "refused_first"]], on=keys, validate="one_to_one")
+    kept = pilot.loc[~pilot.blocked & ~pilot.refused_first]
+    result = {
+        "frozen_chains": {"chains": len(frozen), "first_stage": int(first.sum()), "second_stage": int(second.sum()),
+                          "either": int(either.sum()),
+                          "complete": int((either & truth(frozen.m1_persistence) & truth(frozen.m2_persistence)).sum())},
+        "frozen_standalone": {"prompts": len(base), "refused": int(standalone.sum()),
+                              "by_mutator": counts(base.loc[standalone].mutator.value_counts())},
+        "candidate_provider_blocks": int(candidate.blocked.sum()),
+        "candidate_first_stage_refusals": int(candidate.refused_first.sum()),
+        "candidate_first_stage_refusals_by_mutator": counts(candidate.groupby("mutator_1").refused_first.sum()),
+        "rows_without_block_or_first_stage_refusal": len(kept),
+        "candidate_complete_on_those_rows": int((truth(kept.m1_persistence_candidate) & truth(kept.m2_persistence_candidate)).sum()),
+        "reference_complete_on_those_rows": int((truth(kept.m1_persistence_reference) & truth(kept.m2_persistence_reference)).sum()),
+    }
+    assert (result["frozen_chains"]["either"], result["frozen_chains"]["complete"], result["frozen_standalone"]["refused"]) == (393, 0, 28)
+    assert (result["candidate_provider_blocks"], result["candidate_first_stage_refusals"], len(kept)) == (109, 1698, 833)
+    assert (result["candidate_complete_on_those_rows"], result["reference_complete_on_those_rows"]) == (193, 241)
+    return result
+
+
+def obfuscation_first(release, support):
+    batches = {}
+    for batch in "ABCD":
+        if batch == "D":
+            frame = pd.read_csv(release / "discovery/luna_chains.csv.gz")
+        else:
+            frame = pd.read_csv(support / f"completeness/batch_{batch}.csv.gz", keep_default_na=False)
+        frame = frame.loc[frame.mutator_1.eq("ea-obfuscation")]
+        first, second = truth(frame.m1_persistence), truth(frame.m2_persistence)
+        encryption = frame.mutator_2.eq("ea-encryption")
+        batches[batch] = {"encryption_chains": int(encryption.sum()),
+                          "encryption_first_retained": int((encryption & first).sum()),
+                          "encryption_second_retained": int((encryption & second).sum()),
+                          "encryption_first_only": int((encryption & first & ~second).sum()),
+                          "encryption_second_only": int((encryption & ~first & second).sum()),
+                          "other_chains": int((~encryption).sum()),
+                          "other_first_retained": int((~encryption & first).sum())}
+    assert min(b["encryption_first_retained"] for b in batches.values()) >= 507
+    assert max(b["encryption_second_retained"] for b in batches.values()) <= 26
+    d = batches["D"]
+    assert (d["encryption_second_only"], d["encryption_first_only"], d["other_first_retained"], d["other_chains"]) == (4, 489, 27, 5200)
+    return batches
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--release", type=Path, default=DEFAULT_RELEASE)
@@ -217,6 +289,8 @@ def main():
     identical = int(comparison.jailbreak_prompt_1.eq(comparison.mutated_prompt).sum())
     assert identical == 294
     claims["frozen_first_stage_identity"] = {"identical": identical, "chains": len(frozen)}
+    claims["writer_refusals"] = writer_refusals(release, support)
+    claims["obfuscation_first_positions"] = obfuscation_first(release, support)
     claims["case_study"] = []
     for slug, model in MODELS.items():
         b = load(release / f"discovery/{slug}_baselines.csv.gz", 12, True)

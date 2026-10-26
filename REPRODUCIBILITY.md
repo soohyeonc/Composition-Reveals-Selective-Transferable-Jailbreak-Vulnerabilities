@@ -31,7 +31,7 @@ All paths below are relative to this repository. Run
 | Figure 3, completeness panels | Normalized four-batch pair metrics | `results/paper/figures/fig3*.png` |
 | Figure 4, four target screens | Matched prompt-level comparisons and mean completeness gate | `results/paper/figures/fig4*.png` |
 | Figure 5, Jaccard overlap | Raw-positive pair sets from complete discovery matrices | `results/paper/figures/fig_jaccard_dotplot.png` |
-| Prose, positional effects, first-stage identity, rescues and blocks | Underlying frozen inputs, labels and settings | `results/paper/prose_checks.json`, `completeness_by_position.csv`, `overlap_with_independence_reference.csv` |
+| Prose, positional effects, first-stage identity, rescues, blocks and writer refusals | Underlying frozen inputs, candidate generations, labels and settings | `results/paper/prose_checks.json`, `completeness_by_position.csv`, `overlap_with_independence_reference.csv` |
 
 The experimental examples can be located by `prompt_row` and ordered mutator pair
 in the frozen prompt export and corresponding response shards. No illustrative
@@ -73,7 +73,10 @@ are not needed once the released support data are present.
 
 One frozen intermediate prompt is empty. Its final target input is nonempty.
 This row is preserved rather than regenerated or silently removed. Provider
-blocks likewise stay in the all-520 denominator as failed attacks.
+blocks likewise stay in the all-520 denominator as failed attacks. Writer refusals,
+mutation outputs that open by declining the request, are also kept as generated.
+`reproduce_paper.py` counts them with one fixed opening-phrase pattern, so the
+counts in `prose_checks.json` are a pattern match rather than a validated label.
 
 ## Analysis entry points
 
