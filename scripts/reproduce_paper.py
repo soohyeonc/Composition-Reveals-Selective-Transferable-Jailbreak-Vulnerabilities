@@ -8,7 +8,6 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
-import re
 import shutil
 import subprocess
 import sys
@@ -19,7 +18,7 @@ import pandas as pd
 
 from release_inputs import DEFAULT_RELEASE, MODELS, ROOT, check_manifest
 from paper_support import SUPPORT, check_support, output_directory
-from verify_tifs_release import reproduce, stability_markdown, truth, load, joined
+from verify_tifs_release import exclude_refusals, joined, load, refusal_flags, refused, reproduce, stability_markdown, truth
 
 
 def compare_csv(actual, reference):
@@ -105,17 +104,18 @@ def completeness_tables(release, support, out):
 
 def write_tables(release, support, out, tables):
     panel = json.loads((release / "panel.json").read_text())["models"]
-    pairs = pd.read_csv(release / "discovery/pair_metrics.csv")
+    pairs = tables["pair_metrics.csv"].copy()
     runs, conditions = tables["stability_runs.csv"], tables["stability_summary.csv"]
+    flags = refusal_flags(release)
     models = tables["model_summary.csv"].copy()
     models["individual_asr_percent"] = 100 * models.individual_successes / models.individual_attempts
     models["raw_pair_asr_percent"] = 100 * models.pair_successes / models.pair_attempts
     models["raw_positive_pair_percent"] = 100 * models.raw_positive_pairs / 132
     models["matched_positive_pair_percent"] = 100 * models.matched_screen_pairs / 132
     models.to_csv(out / "table06_model_summary.csv", index=False)
-    pairs["raw_pair_asr_percent"] = 100 * pairs.raw_chain_successes / pairs.total_prompts
-    pairs["stronger_baseline_successes"] = pairs[["raw_m1_successes", "raw_m2_successes"]].max(axis=1)
-    pairs["raw_multiplier"] = pairs.raw_chain_successes / pairs.stronger_baseline_successes.replace(0, np.nan)
+    pairs["raw_pair_asr_percent"] = 100 * pairs.pair_successes / pairs.prompts
+    pairs["stronger_baseline_successes"] = pairs[["m1_successes", "m2_successes"]].max(axis=1)
+    pairs["raw_multiplier"] = pairs.pair_successes / pairs.stronger_baseline_successes.replace(0, np.nan)
     pairs.to_csv(out / "all_discovery_pairs.csv", index=False)
     featured, confirmation, per_run, baselines = [], [], [], []
     assertions = {}
@@ -124,18 +124,19 @@ def write_tables(release, support, out, tables):
         feature = positives.sort_values("multiplier", ascending=False).iloc[0]
         a, b = feature.mutator_1, feature.mutator_2
         discovery = pairs.loc[pairs.model.eq(model) & pairs.mutator_1.eq(a) & pairs.mutator_2.eq(b)].iloc[0]
-        featured.append({"model": model, "mutator_1": a, "mutator_2": b, "attempts": 520,
-                         "pair_successes": int(discovery.raw_chain_successes),
+        featured.append({"model": model, "mutator_1": a, "mutator_2": b, "attempts": int(discovery.prompts),
+                         "pair_successes": int(discovery.pair_successes),
                          "stronger_baseline_successes": int(discovery.stronger_baseline_successes),
                          "multiplier": discovery.raw_multiplier,
-                         "pair_only_rescues": int(discovery.raw_both_fail_rescues)})
+                         "pair_only_rescues": int(discovery.pair_only_rescues)})
         confirmation.append({**feature.to_dict(), "positives_retained": int(positives.outcome.eq("Retained").sum()), "positives_reported": 5})
         selected = runs.loc[runs.model.eq(model) & runs.mutator_1.eq(a) & runs.mutator_2.eq(b)].copy()
         selected["stronger_component_successes"] = selected[["m1_successes", "m2_successes"]].max(axis=1)
         assert selected.m2_successes.ge(selected.m1_successes).all()
         per_run.append(selected)
-        base = load(release / f"discovery/{slug}_baselines.csv.gz", 12, True)
-        component = base.groupby("mutator").success.agg(["size", "sum"]).reset_index()
+        base, _ = exclude_refusals(load(release / f"discovery/{slug}_baselines.csv.gz", 12, True),
+                                   load(release / f"discovery/{slug}_chains.csv.gz", 132), flags)
+        component = base.loc[~base.refused].groupby("mutator").success.agg(["size", "sum"]).reset_index()
         component.columns = ["mutator", "attempts", "successes"]
         component.insert(0, "model", model)
         component["asr_percent"] = 100 * component.successes / component.attempts
@@ -143,10 +144,11 @@ def write_tables(release, support, out, tables):
         own_runs = runs.loc[runs.model.eq(model)].merge(conditions.loc[conditions.model.eq(model), ["mutator_1", "mutator_2", "original"]], on=["mutator_1", "mutator_2"], validate="many_to_one")
         attempts, blocks = 0, 0
         for run in range(1, 6):
-            for kind in ["baselines", "chains"]:
-                frame = pd.read_csv(release / f"stability/{slug}_run{run}_{kind}.csv.gz")
+            b = load(release / f"stability/{slug}_run{run}_baselines.csv.gz", len(set(runs.loc[runs.model.eq(model), "mutator_1"]) | set(runs.loc[runs.model.eq(model), "mutator_2"])), True)
+            b, c = exclude_refusals(b, joined(b, load(release / f"stability/{slug}_run{run}_chains.csv.gz", 7)), flags)
+            for frame in [b.loc[~b.refused], c.loc[~c.refused]]:
                 attempts += len(frame)
-                blocks += int(frame.provider_status.fillna("").str.startswith("blocked").sum())
+                blocks += int(frame.blocked.sum())
         assertions[slug] = {"max_discovery_rerun_count_difference": int((own_runs.pair_successes - own_runs.original).abs().max()),
                             "stability_target_tasks": attempts, "stability_provider_blocks": blocks}
         assert assertions[slug]["max_discovery_rerun_count_difference"] <= 19
@@ -155,17 +157,8 @@ def write_tables(release, support, out, tables):
     pd.concat(per_run).to_csv(out / "table09_featured_runs.csv", index=False)
     pd.concat(baselines).to_csv(out / "individual_mutator_results.csv", index=False)
     conditions.to_csv(out / "table11_all_stability_conditions.csv", index=False)
-    (out / "STABILITY_TABLES.md").write_text(stability_markdown(release, runs))
+    (out / "STABILITY_TABLES.md").write_text(stability_markdown(release, runs, tables["pair_metrics.csv"]))
     return assertions
-
-
-# A writer refusal is a mutation output that opens by declining the request instead of transforming it.
-REFUSAL = re.compile(r"^\W*(i'?m sorry|i am sorry|sorry|i can(?:'|’)?t|i cannot|i'?m unable|i am unable|i won(?:'|’)?t)"
-                     r"[^.\n]{0,60}\b(help|assist|comply|provide|fulfil|create|generate|rewrite|transform|with that|this request|that request)", re.I)
-
-
-def refused(series):
-    return series.fillna("").map(lambda text: bool(REFUSAL.search(text.strip()[:300])))
 
 
 def counts(series):
@@ -294,12 +287,22 @@ def main():
     assert identical == 294
     claims["frozen_first_stage_identity"] = {"identical": identical, "chains": len(frozen)}
     claims["writer_refusals"] = writer_refusals(release, support)
+    pair_prompts = tables["pair_metrics.csv"].prompts
+    summary = tables["model_summary.csv"]
+    claims["refusal_exclusion"] = {
+        "standalone_prompts_analyzed": int(summary.individual_attempts.iloc[0]),
+        "chains_analyzed": int(summary.pair_attempts.iloc[0]),
+        "pair_comparison_prompts_min": int(pair_prompts.min()), "pair_comparison_prompts_max": int(pair_prompts.max()),
+        "stability_pair_prompts_sent": 72800, "stability_pair_prompts_analyzed": int(tables["stability_runs.csv"].attempts.sum())}
+    assert claims["refusal_exclusion"] == {"standalone_prompts_analyzed": 6212, "chains_analyzed": 68247,
+                                           "pair_comparison_prompts_min": 471, "pair_comparison_prompts_max": 520,
+                                           "stability_pair_prompts_sent": 72800, "stability_pair_prompts_analyzed": 70935}
     claims["obfuscation_first_positions"] = obfuscation_first(release, support)
     claims["case_study"] = []
     for slug, model in MODELS.items():
         b = load(release / f"discovery/{slug}_baselines.csv.gz", 12, True)
-        c = joined(b, load(release / f"discovery/{slug}_chains.csv.gz", 132))
-        selected = c.loc[c.mutator_1.eq("mm-cognitive-hacking") & c.mutator_2.eq("mm-nshot-hacking")]
+        b, c = exclude_refusals(b, joined(b, load(release / f"discovery/{slug}_chains.csv.gz", 132)), refusal_flags(release))
+        selected = c.loc[c.mutator_1.eq("mm-cognitive-hacking") & c.mutator_2.eq("mm-nshot-hacking") & ~c.refused]
         example = selected.loc[selected.prompt_row.eq(1)].iloc[0]
         claims["case_study"].append({"model": model, "prompt_row": 1, "pair_success": bool(example.success),
             "m1_success": bool(example.s1), "m2_success": bool(example.s2),
@@ -308,6 +311,10 @@ def main():
     sizes = tables["model_summary.csv"].set_index("model").raw_positive_pairs
     overlap["independent_expected_overlap"] = [sizes[r.model_1] * sizes[r.model_2] / 132 for r in overlap.itertuples()]
     overlap["observed_expected_overlap_ratio"] = overlap.intersection / overlap.independent_expected_overlap
+    # The paper reports Jaccard relative to the Jaccard expected from independent sets of the observed sizes.
+    overlap["independent_expected_jaccard"] = [e / (sizes[r.model_1] + sizes[r.model_2] - e)
+                                               for e, r in zip(overlap.independent_expected_overlap, overlap.itertuples())]
+    overlap["observed_expected_jaccard_ratio"] = overlap.jaccard / overlap.independent_expected_jaccard
     overlap.to_csv(out / "overlap_with_independence_reference.csv", index=False)
     pd.json_normalize(json.loads((release / "run_settings.json").read_text())).to_csv(out / "table02_recorded_settings.csv", index=False)
     (out / "prose_checks.json").write_text(json.dumps(claims, indent=2) + "\n")

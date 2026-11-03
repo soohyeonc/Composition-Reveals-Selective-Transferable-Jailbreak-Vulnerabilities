@@ -72,12 +72,13 @@ def plot(release, output):
     fig.savefig(output / "fig3c_distribution.png", dpi=300, bbox_inches="tight")
     plt.close(fig)
 
-    pairs = pd.read_csv(release / "discovery/pair_metrics.csv")
+    # Writer-refused prompts are excluded, as in every reported target comparison.
+    pairs = pd.read_csv(release / "derived/pair_metrics.csv")
     for letter, (slug, model) in zip("abcd", MODELS.items()):
         frame = pairs.loc[pairs.model.eq(model)].rename(columns={
-            "mutator_1": "m1", "mutator_2": "m2", "matched_prompts": "complete_count"}).copy()
-        frame["conditional_asr"] = 100 * frame.chain_successes / frame.complete_count.replace(0, np.nan)
-        heatmap(matrix(frame, "conditional_asr", frame.average_gate_matched_success),
+            "mutator_1": "m1", "mutator_2": "m2", "complete_prompts": "complete_count"}).copy()
+        frame["conditional_asr"] = 100 * frame.complete_pair_successes / frame.complete_count.replace(0, np.nan)
+        heatmap(matrix(frame, "conditional_asr", frame.matched_positive),
                 output / f"fig4{letter}_{slug}.png", 100)
 
     overlap = pd.read_csv(release / "derived/cross_target_overlap.csv").sort_values("jaccard")
@@ -90,6 +91,7 @@ def plot(release, output):
         ax.text(value + 0.025, y, f"{value:.3f}", va="center", fontsize=13)
     ax.set_yticks(positions, labels, fontsize=13)
     ax.set_xlim(0, 1)
+    ax.tick_params(axis="x", labelsize=13)
     ax.set_xlabel("Jaccard similarity\n(0 = no overlap, 1 = identical sets)", fontsize=13)
     ax.xaxis.grid(True, linestyle=":", alpha=0.55)
     ax.set_axisbelow(True)

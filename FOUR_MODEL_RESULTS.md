@@ -2,7 +2,9 @@
 
 This document contains only the results used in the revised four-target manuscript. The target models are GPT-5.6 Luna, DeepSeek R1 8B, Gemma 4 31B, and Qwen3.8 27B. GPT-3.5 is the mutation writer and is not evaluated as a target.
 
-Updated 5 October 2026 from the completed 14 September dataset. The current
+Updated 3 November 2026 from the completed 14 September dataset: writer-refused
+prompts are now excluded from every target comparison, as in the submitted manuscript.
+Earlier updated 5 October 2026. The current
 release is [`release/tifs-20261005/`](release/tifs-20261005/README.md), with
 **seven reported stability conditions per target, five positives and two controls**.
 All stability summaries below use this seven-condition scope. No new model
@@ -23,18 +25,18 @@ This summary covers the distributed experiments and validation studies. Numerica
 reproduction of these artifacts does not establish the correctness of every
 automated judgment or verify every statement in the manuscript.
 
-The primary pair comparison uses the same 520 prompt identifiers for a chain and both individual components. A raw-positive pair has a higher attack success rate than both components. Completeness is reported separately because it measures the mutation process rather than target behavior.
+Writer refusals, mutation outputs that open by declining the request, appear in 393 of 68,640 frozen chains and 28 of 6,240 standalone prompts and are excluded, since they carry no transformation. The primary pair comparison uses one shared set of prompt identifiers for a chain and both individual components, dropping prompts where the chain or either standalone component was refused, which leaves 471 to 520 prompts per pair. A raw-positive pair has a higher attack success rate than both components. Completeness is reported separately because it measures the mutation process rather than target behavior.
 
 ## Full-Matrix Results
 
-Each target has 6,240 individual attempts from 12 mutators and 68,640 chain attempts from 132 ordered pairs.
+Each target was sent 6,240 individual and 68,640 chain prompts. After writer refusals are excluded, 6,212 individual and 68,247 chain attempts remain.
 
 | Target | Individual ASR | Raw pair ASR | Raw-positive pairs | Matched, average-gated screen |
 | --- | ---: | ---: | ---: | ---: |
-| GPT-5.6 Luna | 41/6,240, 0.657% | 471/68,640, 0.686% | 22/132, 16.67% | 13/132, 9.85% |
-| DeepSeek R1 8B | 156/6,240, 2.500% | 2,785/68,640, 4.057% | 54/132, 40.91% | 34/132, 25.76% |
-| Gemma 4 31B | 56/6,240, 0.897% | 689/68,640, 1.004% | 21/132, 15.91% | 16/132, 12.12% |
-| Qwen3.8 27B | 10/6,240, 0.160% | 114/68,640, 0.166% | 18/132, 13.64% | 9/132, 6.82% |
+| GPT-5.6 Luna | 41/6,212, 0.660% | 470/68,247, 0.689% | 22/132, 16.67% | 13/132, 9.85% |
+| DeepSeek R1 8B | 156/6,212, 2.511% | 2,785/68,247, 4.081% | 54/132, 40.91% | 34/132, 25.76% |
+| Gemma 4 31B | 56/6,212, 0.901% | 689/68,247, 1.010% | 23/132, 17.42% | 16/132, 12.12% |
+| Qwen3.8 27B | 10/6,212, 0.161% | 114/68,247, 0.167% | 17/132, 12.88% | 9/132, 6.82% |
 
 Raw pair ASR remains low in aggregate. The raw-positive counts show that selected ordered pairs can nevertheless outperform both individual components.
 
@@ -42,14 +44,14 @@ The matched screen uses identical complete prompt identifiers for the chain and
 both baselines, after applying the four-batch mean completeness gate. The old
 unmatched conditional screen is superseded in the updated TIFS manuscript.
 
-## Featured Equal-Denominator Discovery Examples
+## Featured Matched-Prompt Discovery Examples
 
 | Target | Featured ordered pair | Pair success | Stronger component | Pair-only rescues | Multiplier |
 | --- | --- | ---: | ---: | ---: | ---: |
-| GPT-5.6 Luna | Cognitive hacking to N-shot hacking | 39/520, 7.50% | 5/520, 0.96% | 37 | 7.80x |
+| GPT-5.6 Luna | Cognitive hacking to N-shot hacking | 36/498, 7.23% | 5/498, 1.00% | 34 | 7.20x |
 | DeepSeek R1 8B | Forced completion to encryption | 68/520, 13.08% | 15/520, 2.88% | 63 | 4.53x |
-| Gemma 4 31B | Gaslighting to N-shot hacking | 28/520, 5.38% | 7/520, 1.35% | 27 | 4.00x |
-| Qwen3.8 27B | Gaslighting to N-shot hacking | 9/520, 1.73% | 1/520, 0.19% | 9 | 9.00x |
+| Gemma 4 31B | Gaslighting to N-shot hacking | 26/498, 5.22% | 7/498, 1.41% | 25 | 3.71x |
+| Qwen3.8 27B | Gaslighting to N-shot hacking | 9/498, 1.81% | 1/498, 0.20% | 9 | 9.00x |
 
 The featured pair has the highest five-run multiplier within each reported panel,
 matching the paper. It need not maximize discovery gain or discovery multiplier.
@@ -76,8 +78,9 @@ The four batches are historical rather than controlled repetitions because mutat
 ## Five-Run Stability Results
 
 The release reports five discovery-positive pairs and two controls per target,
-each evaluated in five runs of 520 prompts. This gives 18,200 pair attempts per
-target and 72,800 across the four targets. Standalone baselines are deduplicated
+each sent in five runs of 520 prompts. This gives 18,200 pair prompts per
+target and 72,800 across the four targets, of which 70,935 remain once writer
+refusals are excluded. Standalone baselines are deduplicated
 by mutator within a run, not counted again for every pair that uses them.
 
 A positive is retained when every rerun exceeds both components and differs
@@ -87,12 +90,12 @@ of confidence intervals or general consistency follows from this selected panel.
 
 | Target | Featured pair | Original | Five pair runs | Stronger component runs | Pooled multiplier | Reported positives retained |
 | --- | --- | ---: | --- | --- | ---: | ---: |
-| GPT-5.6 Luna | Cognitive hacking to N-shot hacking | 39/520 | 37, 41, 39, 37, 39 | 6, 5, 5, 5, 6 | 193/27 = 7.15x | 5/5 |
+| GPT-5.6 Luna | Cognitive hacking to N-shot hacking | 36/498 | 34, 39, 37, 34, 36 | 6, 5, 5, 5, 6 | 180/27 = 6.67x | 5/5 |
 | DeepSeek R1 8B | Forced completion to encryption | 68/520 | 70, 66, 62, 72, 66 | 14, 12, 15, 12, 16 | 336/69 = 4.87x | 5/5 |
-| Gemma 4 31B | Gaslighting to N-shot hacking | 28/520 | 25, 28, 27, 28, 29 | 6, 6, 5, 5, 5 | 137/27 = 5.07x | 5/5 |
-| Qwen3.8 27B | Gaslighting to N-shot hacking | 9/520 | 12, 12, 11, 9, 12 | 1, 1, 1, 1, 2 | 56/6 = 9.33x | 3/5 |
+| Gemma 4 31B | Gaslighting to N-shot hacking | 26/498 | 23, 26, 25, 26, 27 | 6, 6, 5, 5, 5 | 127/27 = 4.70x | 5/5 |
+| Qwen3.8 27B | Gaslighting to N-shot hacking | 9/498 | 12, 12, 11, 9, 12 | 1, 1, 1, 1, 2 | 56/6 = 9.33x | 3/5 |
 
-All per-run counts use 520 prompts. Every reverse control fails to exceed its
+Per-run counts use the same matched prompts as the discovery counts. Every reverse control fails to exceed its
 stronger component in every run. The shared negative control exceeds its
 component by one success in three R1 runs and one Gemma run. It never exceeds
 its component on Luna or Qwen. These isolated exceedances are not assigned to
@@ -100,7 +103,7 @@ noise or judge error without evidence.
 
 The R1 forced-completion to fictional-scenario condition is included despite
 falling below the completeness gate. Qwen's N-shot-hacking to translation
-condition is selected from five candidates tied at a discovery gain of one
+condition is selected from four candidates tied at a discovery gain of one
 success and a pair count of two. The seven-condition panel is retrospectively
 selected from completed evaluations, not a preregistered confirmatory sample.
 
@@ -114,11 +117,11 @@ the original trial and all five reruns for every reported pair.
 Four ordered pairs are raw-positive on all four targets.
 
 - Fictional scenario to paraphrasing
-- Translation to paraphrasing
+- N-shot hacking to translation
 - Cognitive hacking to N-shot hacking
 - Gaslighting to N-shot hacking
 
-Pairwise Jaccard similarity among the complete raw-positive sets ranges from 0.194 to 0.333. Cognitive hacking followed by N-shot hacking is included and retains its advantage in every reported target panel under the descriptive rule. The evidence identifies a small recurring core within a mostly target-specific interaction landscape.
+Pairwise Jaccard similarity among the complete raw-positive sets ranges from 0.183 to 0.310. Cognitive hacking followed by N-shot hacking is included and retains its advantage in every reported target panel under the descriptive rule. The evidence identifies a small recurring core within a mostly target-specific interaction landscape.
 
 ## GPT-5.6 Mutation-Writer Pilot
 

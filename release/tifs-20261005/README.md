@@ -17,6 +17,7 @@ after activating the `compositional_jailbreaking` Conda environment.
 - `stability/` holds only the seven selected conditions and their unique standalone
   component baselines, with five runs for each model.
 - `derived/model_summary.csv` contains the paper's model-level counts.
+- `derived/pair_metrics.csv` contains the 528 reported pair comparisons, with writer-refused prompts excluded.
 - `derived/stability_runs.csv` contains all 140 model-pair-run measurements.
 - `derived/stability_summary.csv` contains the 28 discovery-to-rerun comparisons.
 - `derived/cross_target_overlap.csv` and `common_positive_pairs.csv` give transfer results.
@@ -30,7 +31,15 @@ after activating the `compositional_jailbreaking` Conda environment.
   map is retained privately for auditability.
 - `manifest.json` hashes the exact release file inventory.
 
-All raw pair and standalone comparisons use the same 520 prompt identifiers.
+Every condition was sent on all 520 prompts, but writer refusals, mutation outputs
+that open by declining the request, are excluded from the reported analysis. They
+appear in 393 frozen chains and 28 standalone prompts. Aggregate rates use the 6,212
+non-refused standalone prompts and 68,247 non-refused chains per target. A pair is
+compared with its components on one shared set that also drops prompts where either
+standalone component was refused, between 471 and 520 prompts per pair, and the
+stability runs use the same sets. `discovery/pair_metrics.csv` keeps the recorded
+all-520 counts, which the verifier still checks against the row labels. Refusals stay
+in the completeness batches, where they count as failed mutations.
 The matched screen compares chain and component success only on the identical
 complete subset and applies the four-batch average completeness gate. It is
 different from the old unmatched conditional screen.

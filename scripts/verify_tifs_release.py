@@ -9,6 +9,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import re
 from pathlib import Path
 
 import numpy as np
@@ -17,8 +18,17 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parents[1]
 SLUGS = {"GPT-5.6 Luna": "luna", "DeepSeek R1 8B": "r1",
          "Gemma 4 31B": "gemma", "Qwen3.8 27B": "qwen"}
-EXPECTED = {"luna": (41, 471, 22, 13), "r1": (156, 2785, 54, 34),
+# All 520 rows per condition, as recorded in discovery/pair_metrics.csv.
+RECORDED = {"luna": (41, 471, 22, 13), "r1": (156, 2785, 54, 34),
             "gemma": (56, 689, 21, 16), "qwen": (10, 114, 18, 9)}
+# The reported analysis, with writer-refused prompts excluded.
+EXPECTED = {"luna": (41, 470, 22, 13), "r1": (156, 2785, 54, 34),
+            "gemma": (56, 689, 23, 16), "qwen": (10, 114, 17, 9)}
+STABILITY_ATTEMPTS = 70935
+
+# A writer refusal is a mutation output that opens by declining the request instead of transforming it.
+REFUSAL = re.compile(r"^\W*(i'?m sorry|i am sorry|sorry|i can(?:'|’)?t|i cannot|i'?m unable|i am unable|i won(?:'|’)?t)"
+                     r"[^.\n]{0,60}\b(help|assist|comply|provide|fulfil|create|generate|rewrite|transform|with that|this request|that request)", re.I)
 
 
 def sha(path):
@@ -53,6 +63,32 @@ def joined(base, chains):
             columns={"mutator": f"mutator_{position}", "success": f"s{position}"}),
             on=[f"mutator_{position}", "prompt_row"], validate="many_to_one")
     return chains
+
+
+def refused(series):
+    return series.fillna("").map(lambda text: bool(REFUSAL.search(text.strip()[:300])))
+
+
+def refusal_flags(release):
+    """Writer refusals in the frozen prompts, which every target and run shares."""
+    chains = pd.read_csv(release / "prompts/frozen_chains.csv.gz", keep_default_na=False)
+    chains["chain_refused"] = refused(chains.jailbreak_prompt_1) | refused(chains.jailbreak_prompt_2)
+    base = pd.read_csv(release / "prompts/frozen_baselines.csv.gz", keep_default_na=False)
+    base["refused"] = refused(base.mutated_prompt)
+    return chains[["prompt_row", "mutator_1", "mutator_2", "chain_refused"]], base[["mutator", "prompt_row", "refused"]]
+
+
+def exclude_refusals(base, chains, flags):
+    """Mark rows left out of the analysis. A chain row is dropped when the chain or either standalone prompt
+    for that prompt identifier is a writer refusal, so a pair and its components keep the same prompts."""
+    chain_flags, base_flags = flags
+    base = base.merge(base_flags, on=["mutator", "prompt_row"], validate="one_to_one")
+    chains = chains.merge(chain_flags, on=["prompt_row", "mutator_1", "mutator_2"], validate="one_to_one")
+    for position in [1, 2]:
+        chains = chains.merge(base_flags.rename(columns={"mutator": f"mutator_{position}", "refused": f"r{position}"}),
+                              on=[f"mutator_{position}", "prompt_row"], validate="many_to_one")
+    chains["refused"] = chains.chain_refused | chains.r1 | chains.r2
+    return base, chains
 
 
 def validation_check(release, kind):
@@ -132,7 +168,9 @@ def reproduce(release):
         pr.complete_candidate.ge(pr.complete_candidate.median())).mean(), pilot_summary["point_estimates"]["median_gate_agreement"])
     assert np.isclose(pilot.complete_reference.eq(pilot.complete_candidate).mean(), pilot_summary["row_level_complete_agreement"])
     assert int(pilot.provider_status.str.startswith("blocked").sum()) == 109
-    model_rows, run_rows, condition_rows, sets = [], [], [], {}
+    model_rows, run_rows, condition_rows, pair_rows, sets = [], [], [], [], {}
+    flags = refusal_flags(release)
+    assert (int(flags[0].chain_refused.sum()), int(flags[1].refused.sum())) == (393, 28)
     for model, slug in SLUGS.items():
         selection = panel["models"][model]
         assert len(selection) == 7 and sum(r[0] == "positive" for r in selection) == 5
@@ -142,12 +180,13 @@ def reproduce(release):
         component_set = {m for pair in allowed for m in pair}
         base = load(release / f"discovery/{slug}_baselines.csv.gz", 12, True)
         chains = joined(base, load(release / f"discovery/{slug}_chains.csv.gz", 132))
+        base, chains = exclude_refusals(base, chains, flags)
         recorded = pairs.loc[pairs.model.eq(model)].set_index(["mutator_1", "mutator_2"])
+        recorded_raw, recorded_matched = set(), set()
         raw_positive, matched_positive = set(), set()
         discovery = {}
         for key, rows in chains.groupby(["mutator_1", "mutator_2"]):
             r = recorded.loc[key]
-            discovery[key] = int(rows.success.sum())
             complete = rows.loc[rows.complete]
             observed = [int(rows.success.sum()), int(rows.s1.sum()), int(rows.s2.sum()),
                         int((rows.success & ~rows.s1 & ~rows.s2).sum()), len(complete),
@@ -158,27 +197,48 @@ def reproduce(release):
                        "m1_successes", "m2_successes", "both_fail_rescues"]
             assert observed == [int(r[k]) for k in columns], (model, key)
             if observed[0] > max(observed[1:3]):
-                raw_positive.add(key)
+                recorded_raw.add(key)
             if r.retained_at_mean_median and observed[5] > max(observed[6:8]):
+                recorded_matched.add(key)
+            assert (key in recorded_matched) == bool(r.average_gate_matched_success)
+            kept = rows.loc[~rows.refused]
+            complete = kept.loc[kept.complete]
+            metric = dict(model=model, mutator_1=key[0], mutator_2=key[1], prompts=len(kept),
+                          pair_successes=int(kept.success.sum()), m1_successes=int(kept.s1.sum()),
+                          m2_successes=int(kept.s2.sum()),
+                          pair_only_rescues=int((kept.success & ~kept.s1 & ~kept.s2).sum()),
+                          complete_prompts=len(complete), complete_pair_successes=int(complete.success.sum()),
+                          complete_m1_successes=int(complete.s1.sum()), complete_m2_successes=int(complete.s2.sum()),
+                          passes_completeness_gate=bool(r.retained_at_mean_median))
+            metric["raw_positive"] = metric["pair_successes"] > max(metric["m1_successes"], metric["m2_successes"])
+            metric["matched_positive"] = metric["passes_completeness_gate"] and metric["complete_pair_successes"] > max(
+                metric["complete_m1_successes"], metric["complete_m2_successes"])
+            pair_rows.append(metric)
+            discovery[key] = metric["pair_successes"]
+            if metric["raw_positive"]:
+                raw_positive.add(key)
+            if metric["matched_positive"]:
                 matched_positive.add(key)
-            assert (key in matched_positive) == bool(r.average_gate_matched_success)
-        expected = (int(base.success.sum()), int(chains.success.sum()), len(raw_positive), len(matched_positive))
+        assert (int(base.success.sum()), int(chains.success.sum()), len(recorded_raw), len(recorded_matched)) == RECORDED[slug]
+        kept_base, kept_chains = base.loc[~base.refused], chains.loc[~chains.chain_refused]
+        expected = (int(kept_base.success.sum()), int(kept_chains.success.sum()), len(raw_positive), len(matched_positive))
         assert expected == EXPECTED[slug], (model, expected)
         sets[model] = raw_positive
-        model_rows.append(dict(model=model, individual_successes=expected[0], individual_attempts=6240,
-                               pair_successes=expected[1], pair_attempts=68640,
+        model_rows.append(dict(model=model, individual_successes=expected[0], individual_attempts=len(kept_base),
+                               pair_successes=expected[1], pair_attempts=len(kept_chains),
                                raw_positive_pairs=expected[2], matched_screen_pairs=expected[3],
-                               baseline_blocks=int(base.blocked.sum()), pair_blocks=int(chains.blocked.sum())))
+                               baseline_blocks=int(kept_base.blocked.sum()), pair_blocks=int(kept_chains.blocked.sum()),
+                               refused_standalone=int(base.refused.sum()), refused_chains=int(chains.chain_refused.sum())))
         for run in range(1, 6):
             b = load(release / f"stability/{slug}_run{run}_baselines.csv.gz", len(component_set), True)
             c = load(release / f"stability/{slug}_run{run}_chains.csv.gz", 7)
             assert set(b.mutator) == component_set
             assert set(zip(c.mutator_1, c.mutator_2)) == allowed
-            c = joined(b, c)
+            b, c = exclude_refusals(b, joined(b, c), flags)
             for role, a, z in selection:
-                rows = c.loc[c.mutator_1.eq(a) & c.mutator_2.eq(z)]
+                rows = c.loc[c.mutator_1.eq(a) & c.mutator_2.eq(z) & ~c.refused]
                 run_rows.append(dict(model=model, role=role, mutator_1=a, mutator_2=z, run=run,
-                                     attempts=520, pair_successes=int(rows.success.sum()),
+                                     attempts=len(rows), pair_successes=int(rows.success.sum()),
                                      m1_successes=int(rows.s1.sum()), m2_successes=int(rows.s2.sum()),
                                      both_fail_rescues=int((rows.success & ~rows.s1 & ~rows.s2).sum()),
                                      pair_blocks=int(rows.blocked.sum())))
@@ -202,7 +262,7 @@ def reproduce(release):
     models = pd.DataFrame(model_rows)
     runs = pd.DataFrame(run_rows)
     conditions = pd.DataFrame(condition_rows)
-    assert len(runs) == 140 and runs.attempts.sum() == 72800
+    assert len(runs) == 140 and runs.attempts.sum() == STABILITY_ATTEMPTS
     assert len(conditions) == 28
     assert conditions.query("role == 'positive'").groupby("model").outcome.apply(
         lambda x: int(x.eq("Retained").sum())).to_dict() == {
@@ -214,7 +274,7 @@ def reproduce(release):
         for b in list(SLUGS)[i + 1:]:
             overlap.append(dict(model_1=a, model_2=b, intersection=len(sets[a] & sets[b]),
                                 union=len(sets[a] | sets[b]), jaccard=len(sets[a] & sets[b]) / len(sets[a] | sets[b])))
-    return {"model_summary.csv": models, "stability_runs.csv": runs,
+    return {"pair_metrics.csv": pd.DataFrame(pair_rows), "model_summary.csv": models, "stability_runs.csv": runs,
             "stability_summary.csv": conditions, "cross_target_overlap.csv": pd.DataFrame(overlap),
             "common_positive_pairs.csv": pd.DataFrame(sorted(common), columns=["mutator_1", "mutator_2"]),
             "intent_validation.csv": validation_check(release, "intent"),
@@ -242,7 +302,7 @@ def main():
             frame.to_csv(path, index=False)
         else:
             pd.testing.assert_frame_equal(frame, pd.read_csv(path), check_dtype=False, rtol=1e-10)
-    markdown = stability_markdown(release, tables["stability_runs.csv"])
+    markdown = stability_markdown(release, tables["stability_runs.csv"], tables["pair_metrics.csv"])
     if args.freeze:
         (release / "STABILITY_TABLES.md").write_text(markdown)
     else:
@@ -250,24 +310,26 @@ def main():
     if args.freeze:
         manifest = {"status": "PASS", "release": "tifs-20261005", "source_dataset": "four_model_paper_20260914",
                     "stability_conditions_per_target": 7, "positive_conditions_per_target": 5,
-                    "controls_per_target": 2, "runs": 5, "prompts_per_condition_per_run": 520,
-                    "stability_pair_attempts": 72800, "inference": "descriptive, selected-panel stability; not formal confirmation",
+                    "controls_per_target": 2, "runs": 5, "prompts_sent_per_condition_per_run": 520,
+                    "writer_refused_chains": 393, "writer_refused_standalone_prompts": 28,
+                    "analysis": "writer-refused prompts excluded from every target comparison",
+                    "stability_pair_attempts_analyzed": STABILITY_ATTEMPTS, "inference": "descriptive, selected-panel stability; not formal confirmation",
                     "files": {str(p.relative_to(release)): sha(p) for p in sorted(release.rglob("*"))
                               if p.is_file() and p != manifest_path}}
         manifest_path.write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\n")
-    print("PASS: hashes, 4 full matrices, 528 pair metrics, 28 stability conditions, 140 pair-runs, 72,800 stability pair attempts, four-batch completeness, writer pilot, both judge validations")
+    print(f"PASS: hashes, 4 full matrices, 528 pair metrics with writer refusals excluded, 28 stability conditions, 140 pair-runs, {STABILITY_ATTEMPTS:,} analyzed stability pair attempts, four-batch completeness, writer pilot, both judge validations")
     print(tables["model_summary.csv"].to_string(index=False))
 
 
-def stability_markdown(release, runs):
+def stability_markdown(release, runs, pairs):
     panel = json.loads((release / "panel.json").read_text())
-    discovery = pd.read_csv(release / "discovery/pair_metrics.csv").set_index(["model", "mutator_1", "mutator_2"])
+    discovery = pairs.set_index(["model", "mutator_1", "mutator_2"])
     lines = ["# Reported seven-condition stability panels", "",
-             "Every cell uses 520 prompts. The rate is pair ASR. Parentheses give pair successes vs the stronger standalone component, then their multiplier. A zero baseline gives n/a. These are descriptive selected-panel measurements, not confidence intervals.", ""]
+             "Each run sends all 520 prompts, but prompts on which the chain or either standalone prompt is a writer refusal are excluded, so every cell uses the n prompts given with the ordered pair. The rate is pair ASR. Parentheses give pair successes vs the stronger standalone component, then their multiplier. A zero baseline gives n/a. These are descriptive selected-panel measurements, not confidence intervals.", ""]
 
-    def cell(pair, component):
+    def cell(pair, component, prompts):
         multiplier = f"{pair / component:.2f}x" if component else "n/a"
-        return f"**{100 * pair / 520:.2f}%**<br>({pair} vs {component}; {multiplier})"
+        return f"**{100 * pair / prompts:.2f}%**<br>({pair} vs {component}; {multiplier})"
 
     def name(mutator):
         return {"mm-nshot-hacking": "N-shot hacking", "ea-fictional": "Fictional scenario"}.get(
@@ -278,13 +340,14 @@ def stability_markdown(release, runs):
                   "| --- | --- | --- | --- | --- | --- | --- | --- |"]
         for role, a, z in conditions:
             original = discovery.loc[(model, a, z)]
-            cells = [cell(int(original.raw_chain_successes), int(max(original.raw_m1_successes, original.raw_m2_successes)))]
+            prompts = int(original.prompts)
+            cells = [cell(int(original.pair_successes), int(max(original.m1_successes, original.m2_successes)), prompts)]
             rows = runs.loc[runs.model.eq(model) & runs.mutator_1.eq(a) & runs.mutator_2.eq(z)].sort_values("run")
-            cells.extend(cell(int(r.pair_successes), int(max(r.m1_successes, r.m2_successes))) for r in rows.itertuples())
-            lines.append(f"| {role.capitalize()} | {name(a)} → {name(z)} | " + " | ".join(cells) + " |")
+            assert rows.attempts.eq(prompts).all()
+            cells.extend(cell(int(r.pair_successes), int(max(r.m1_successes, r.m2_successes)), prompts) for r in rows.itertuples())
+            lines.append(f"| {role.capitalize()} | {name(a)} → {name(z)} (n={prompts}) | " + " | ".join(cells) + " |")
         lines.append("")
     return "\n".join(lines)
-
 
 if __name__ == "__main__":
     main()

@@ -38,7 +38,8 @@ This command requires no API key, GPU, download, or model call. It recomputes th
 results into `outputs/paper/` and checks them against the immutable references.
 It verifies:
 
-- Four full target matrices, 528 ordered-pair comparisons, and equal denominators.
+- Four full target matrices and 528 ordered-pair comparisons on matched prompts, with
+  writer-refused prompts excluded and the recorded all-520 counts still checked.
 - The 28 reported stability conditions and all 140 pair-runs.
 - All 442,520 released target-response records against their original hashes.
 - Four mutation batches, the normalized completeness gate, and positional effects.

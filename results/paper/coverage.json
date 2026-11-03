@@ -1,7 +1,7 @@
 {
   "artifact_checks": "PASS",
   "paper_coverage": "INCOMPLETE",
-  "release_manifest_sha256": "cbebecf079f80091a1a7d4e61765fc74bfc78de6439cde49d7190daa404b2004",
+  "release_manifest_sha256": "2fd95caf2c0c992112620b23c3b495ef4b0fff5853a2deeb1171c57b2919ac93",
   "support_manifest_sha256": "d2eadf84040a1a2354a69df3b64c0271b1dc362d82bf57f4db0eb5001579c37c",
   "response_records_checked": 442520,
   "reported_stability_conditions": 28,

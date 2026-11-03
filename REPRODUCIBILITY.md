@@ -73,10 +73,14 @@ are not needed once the released support data are present.
 
 One frozen intermediate prompt is empty. Its final target input is nonempty.
 This row is preserved rather than regenerated or silently removed. Provider
-blocks likewise stay in the all-520 denominator as failed attacks. Writer refusals,
-mutation outputs that open by declining the request, are also kept as generated.
-`reproduce_paper.py` counts them with one fixed opening-phrase pattern, so the
-counts in `prose_checks.json` are a pattern match rather than a validated label.
+blocks stay in every denominator as failed attacks, because a block is the target's
+own defense. Writer refusals, mutation outputs that open by declining the request,
+are excluded from every target comparison, since they carry no transformation; a
+pair comparison also drops prompts where either standalone component was refused.
+`verify_tifs_release.py` finds them with one fixed opening-phrase pattern, so the
+exclusion and the counts in `prose_checks.json` rest on a pattern match rather than
+a validated label. The recorded all-520 counts in `discovery/pair_metrics.csv` are
+still checked against the row labels.
 
 ## Analysis entry points
 

@@ -34,22 +34,22 @@
   "stability": {
     "luna": {
       "max_discovery_rerun_count_difference": 8,
-      "stability_target_tasks": 36400,
+      "stability_target_tasks": 35575,
       "stability_provider_blocks": 87
     },
     "r1": {
       "max_discovery_rerun_count_difference": 19,
-      "stability_target_tasks": 36400,
+      "stability_target_tasks": 36180,
       "stability_provider_blocks": 0
     },
     "gemma": {
       "max_discovery_rerun_count_difference": 8,
-      "stability_target_tasks": 36400,
+      "stability_target_tasks": 35875,
       "stability_provider_blocks": 0
     },
     "qwen": {
       "max_discovery_rerun_count_difference": 6,
-      "stability_target_tasks": 33800,
+      "stability_target_tasks": 32975,
       "stability_provider_blocks": 0
     }
   },
@@ -151,6 +151,14 @@
     "candidate_complete_on_those_rows": 193,
     "reference_complete_on_those_rows": 241
   },
+  "refusal_exclusion": {
+    "standalone_prompts_analyzed": 6212,
+    "chains_analyzed": 68247,
+    "pair_comparison_prompts_min": 471,
+    "pair_comparison_prompts_max": 520,
+    "stability_pair_prompts_sent": 72800,
+    "stability_pair_prompts_analyzed": 70935
+  },
   "obfuscation_first_positions": {
     "A": {
       "encryption_chains": 520,
@@ -196,7 +204,7 @@
       "pair_success": true,
       "m1_success": false,
       "m2_success": false,
-      "complete_pair_only_rescues": 20
+      "complete_pair_only_rescues": 17
     },
     {
       "model": "DeepSeek R1 8B",
@@ -204,7 +212,7 @@
       "pair_success": true,
       "m1_success": false,
       "m2_success": false,
-      "complete_pair_only_rescues": 23
+      "complete_pair_only_rescues": 22
     },
     {
       "model": "Gemma 4 31B",
