@@ -187,6 +187,7 @@ def writer_refusals(release, support):
     pilot = pd.read_csv(release / "writer_pilot/row_labels.csv").merge(
         candidate[keys + ["blocked", "refused_first"]], on=keys, validate="one_to_one")
     kept = pilot.loc[~pilot.blocked & ~pilot.refused_first]
+    on_pilot_rows = frozen.prompt_row.isin(set(pilot.prompt_row))
     result = {
         "frozen_chains": {"chains": len(frozen), "first_stage": int(first.sum()), "second_stage": int(second.sum()),
                           "either": int(either.sum()),
@@ -196,6 +197,8 @@ def writer_refusals(release, support):
         "candidate_provider_blocks": int(candidate.blocked.sum()),
         "candidate_first_stage_refusals": int(candidate.refused_first.sum()),
         "candidate_first_stage_refusals_by_mutator": counts(candidate.groupby("mutator_1").refused_first.sum()),
+        "reference_refusals_on_pilot_chains": int((either & on_pilot_rows).sum()),
+        "pilot_chains": int(on_pilot_rows.sum()),
         "rows_without_block_or_first_stage_refusal": len(kept),
         "candidate_complete_on_those_rows": int((truth(kept.m1_persistence_candidate) & truth(kept.m2_persistence_candidate)).sum()),
         "reference_complete_on_those_rows": int((truth(kept.m1_persistence_reference) & truth(kept.m2_persistence_reference)).sum()),
@@ -203,6 +206,7 @@ def writer_refusals(release, support):
     assert (result["frozen_chains"]["either"], result["frozen_chains"]["complete"], result["frozen_standalone"]["refused"]) == (393, 0, 28)
     assert (result["candidate_provider_blocks"], result["candidate_first_stage_refusals"], len(kept)) == (109, 1698, 833)
     assert (result["candidate_complete_on_those_rows"], result["reference_complete_on_those_rows"]) == (193, 241)
+    assert (result["reference_refusals_on_pilot_chains"], result["pilot_chains"]) == (1, 2640)
     return result
 
 

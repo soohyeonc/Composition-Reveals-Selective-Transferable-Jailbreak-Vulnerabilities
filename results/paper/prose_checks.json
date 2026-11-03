@@ -145,6 +145,8 @@
       "mm-prompt-injection": 205,
       "mm-roleplay": 77
     },
+    "reference_refusals_on_pilot_chains": 1,
+    "pilot_chains": 2640,
     "rows_without_block_or_first_stage_refusal": 833,
     "candidate_complete_on_those_rows": 193,
     "reference_complete_on_those_rows": 241
